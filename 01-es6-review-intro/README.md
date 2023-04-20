@@ -13,7 +13,6 @@
   - [Task 1 (30 points)](#task-1-30-points)
   - [Task 2 (70 points)](#task-2-70-points)
 
-
 # An Introduction to ES6 (Review)
 
 ## Section 0 Notes
@@ -43,6 +42,8 @@ const fooFunc = (param) => {
     console.log(“hello”);
 }
 ```
+
+**JS FACT**
 
 ### Higher Order Array Methods
 
