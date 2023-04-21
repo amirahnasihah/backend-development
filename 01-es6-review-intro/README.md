@@ -191,6 +191,8 @@ This is one of the simplest functions you are going to use while working with Ar
 
 The callback passed to the `map()` function can accept any of the three arguments: `item`, `index`, `array`
 
+Source (array methods): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
 ## Task 2 (70 points)
 
 **Task 2**: Write an asynchronous function called “getRandomCatFact” which queries to the “https://meowfacts.herokuapp.com/" and then display the fun fact returned in the response in the console. (70 points)
