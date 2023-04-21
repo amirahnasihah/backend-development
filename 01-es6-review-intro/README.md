@@ -183,12 +183,13 @@ Source: https://dev.to/shrihankp/higher-order-array-methods-in-javascript-14e7
 
 Higher order functions are functions that operate on other functions, either by receiving them as arguments or by returning them. It is a function that accepts a function as a parameter or returns a function as the output.
 
-In this article, I am going to show you the most commonly used such methods when it comes to arrays.
+The most commonly used such methods when it comes to arrays.
 
-Array.prototype.map
+`Array.prototype.map`
+
 This is one of the simplest functions you are going to use while working with Arrays. It forms a new array by calling the function passed into it as an argument, on each and every element of the Array. It will map each of the return values of the callback and create a new array.
 
-The callback passed to the map() function can accept any of the three arguments: item, index, array
+The callback passed to the `map()` function can accept any of the three arguments: `item`, `index`, `array`
 
 ## Task 2 (70 points)
 
