@@ -183,5 +183,3 @@ const result = await fooFunc().catch((err) => { … });
 
 **JS FACT**
 
-
-**Task 2**: Write an asynchronous function called “getRandomCatFact” which queries to the “https://meowfacts.herokuapp.com/" and then display the fun fact returned in the response in the console. (70 points)
