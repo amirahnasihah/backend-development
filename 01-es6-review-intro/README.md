@@ -198,5 +198,3 @@ Source (array methods): https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 **Task 2**: Write an asynchronous function called “getRandomCatFact” which queries to the “https://meowfacts.herokuapp.com/" and then display the fun fact returned in the response in the console. (70 points)
 
 **JS FACT**
-
-Sending my warmest Eid Mubarak wishes to everyone in my network! May this day bring you closer to your goals and aspirations, and may you find success in all your endeavors. Have a blessed Eid!
