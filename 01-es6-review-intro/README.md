@@ -199,9 +199,3 @@ Source (array methods): https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 
 **JS FACT**
 
-
-
-
-
-jkljollol
-raya ke 3
