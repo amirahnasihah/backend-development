@@ -199,4 +199,3 @@ Source (array methods): https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 
 **JS FACT**
 
-task-2-70-points
