@@ -199,6 +199,6 @@ Source (array methods): https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 
 **JS FACT**
 
-```
+```JavaScript
 
 ```
