@@ -202,5 +202,10 @@ Source (array methods): https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 ```javaScript
 
 
-const response
+useEffect(
+( const getData = (await) => {
+  const response = async get(“https://meowfacts.herokuapp.com/")
+}
+
+), [])
 ```
