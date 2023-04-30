@@ -51,7 +51,7 @@ const fooFunc = (param) => {
 - **Filter**: get a new array of elements which matches a certain criteria.
 - **Map**: recreate a new array after performing operations on elements on an array.
 - **Sort**: order array by a certain criteria.
-- **Find**: search through an array and find an element
+- **Find**: search through an array and find an element.
 
 ### Rest and Spread
 
