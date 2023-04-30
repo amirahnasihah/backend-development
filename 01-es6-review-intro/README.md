@@ -179,6 +179,22 @@ Progress: DONE✅️
 ];
 ```
 
+Answer & explaination:
+
+```
+const payingCustomers = customers.filter((customer) => customer.isPayingCustomer);
+
+const sortedCustomers = payingCustomers.sort((a, b) => b.totalAmountSpent - a.totalAmountSpent);
+
+console.log(sortedCustomers);
+```
+
+In the code above, we first use the filter() method to filter out the customers who are not paying customers by checking the isPayingCustomer property.
+
+Then we sort the resulting array of paying customers by totalAmountSpent property in descending order by using the sort() method. We sort in descending order by using the comparison function b.totalAmountSpent - a.totalAmountSpent instead of a.totalAmountSpent - b.totalAmountSpent.
+
+Finally, we log the sorted array to the console using console.log().
+
 **JS FACT**
 
 Source: https://dev.to/shrihankp/higher-order-array-methods-in-javascript-14e7
