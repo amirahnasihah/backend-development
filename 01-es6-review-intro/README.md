@@ -53,6 +53,10 @@ const fooFunc = (param) => {
 - **Sort**: order array by a certain criteria.
 - **Find**: search through an array and find an element.
 
+**JS FACT**
+
+1. `.filter()`: 
+
 ### Rest and Spread
 
 ```javascript
