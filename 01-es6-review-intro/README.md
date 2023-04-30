@@ -141,6 +141,8 @@ const result = await fooFunc().catch((err) => { … });
 
 > ℹ️ This is an online material. Please download and read the [online exercise guide](https://prod-public-lms-sg.s3.amazonaws.com/Online+Exercise+Guide.pdf) before starting.
 
+Progress: 
+
 # Assignment 1 - Async Function & Higher Order Functions Exercises
 
 ## Task 1 (30 points)
