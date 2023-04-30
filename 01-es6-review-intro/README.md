@@ -55,7 +55,22 @@ const fooFunc = (param) => {
 
 **JS FACT**
 
-1. `.filter()`: 
+Higher-order array methods are methods in JavaScript that take a callback function as an argument and operate on arrays. These methods allow you to write more concise, declarative and functional code.
+
+Some common examples of higher-order array methods are:
+
+1. map() - returns a new array with each element modified according to the callback function.
+
+2. filter() - returns a new array with only the elements that pass the test implemented by the callback function.
+
+3. reduce() - applies the callback function to reduce an array to a single value.
+
+4. forEach() - executes the callback function for each element in the array.
+
+5. sort() - sorts the array based on a comparison function.
+
+6. every() - checks if every element in the array passes a test implemented by the callback function.
+7. some() - checks if at least one element in the array passes a test implemented by the callback function.
 
 ### Rest and Spread
 
