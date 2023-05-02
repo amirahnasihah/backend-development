@@ -171,10 +171,10 @@ givenArray.sort(({name1}, {name2}) => {
 console.log(givenArray);
 ```
 
-The way sort() works is a bit different than the others. Quoting this MDN doc:
+The way `sort()` works is a bit different than the others. Quoting [this MDN doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort):
 
-If compareFunction is supplied, all non-undefined array elements are sorted according to the return value of the compare function (all undefined elements are sorted to the end of the array, with no call to compareFunction). If a and b are two elements being compared, then:
-
+> If compareFunction is supplied, all non-undefined array elements are sorted according to the return value of the compare function (all undefined elements are sorted to the end of the array, with no call to compareFunction). If a and b are two elements being compared, then:
+> 
 If compareFunction(a, b) returns less than 0, sort a to an index lower than b (i.e. a comes first).
 If compareFunction(a, b) returns 0, leave a and b unchanged with respect to each other, but sorted with respect to all different elements. Note: the ECMAScript standard only started guaranteeing this behavior in 2019, thus, older browsers may not respect this.
 If compareFunction(a, b) returns greater than 0, sort b to an index lower than a (i.e. b comes first).
