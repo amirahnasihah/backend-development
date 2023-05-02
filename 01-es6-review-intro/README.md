@@ -155,6 +155,13 @@ const givenArray = [4, 5, 2, 1, 3];
 givenArray.sort((a, b) => a - b);
 
 console.log(givenArray);
+
+0:1
+1:2
+2:3
+3:4
+4:5
+length:5
 ```
 
 **Example 2**
