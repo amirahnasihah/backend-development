@@ -130,6 +130,57 @@ console.log(newArray); // console: ['pens', 'books', 'codes']
 
 ##### 3. `sort()` - sorts the array based on a comparison function.
 
+The `sort` method is self-explanatory: it "sorts" an array in place and returns a sorted the array. The default sort order is ascending.
+
+> Note the words "in place". It means that the original array is changed and the same reference to the array is returned. So, originalArray === newArray, if nothing is sorted.
+
+It takes a Function that specifies the criteria of sorting.
+
+**Example 1**
+Given an array of numbers, sort the array by ascending order and log the sorted array to the console.
+
+Solution:
+
+```javascript
+const givenArray = [4, 5, 2, 1, 3];
+
+givenArray.sort((a, b) => a - b);
+
+console.log(givenArray);
+```
+
+**Example 2**
+Given an array of contacts, sort them in alphabetical order by name, and log the sorted array.
+
+Solution:
+
+```javascript
+const givenArray = [
+  {"name": "Yosha Gamuda", "phone": 1234567890},
+  {"name": "Portia Umeng", "phone": 4894759371},
+  {"name": "Yosha Gamuda", "phone": 1234567890},
+  {"name": "Portia Umeng", "phone": 4894759371}
+];
+
+givenArray.sort(({name1}, {name2}) => {
+  name1 = name1.toUpperCase();
+  name2 = name2.toUpperCase();
+  return (name1 < name2) ? -1 : (name1 > name2) ? 1 : 0);
+});
+
+console.log(givenArray);
+```
+
+The way sort() works is a bit different than the others. Quoting this MDN doc:
+
+If compareFunction is supplied, all non-undefined array elements are sorted according to the return value of the compare function (all undefined elements are sorted to the end of the array, with no call to compareFunction). If a and b are two elements being compared, then:
+
+If compareFunction(a, b) returns less than 0, sort a to an index lower than b (i.e. a comes first).
+If compareFunction(a, b) returns 0, leave a and b unchanged with respect to each other, but sorted with respect to all different elements. Note: the ECMAScript standard only started guaranteeing this behavior in 2019, thus, older browsers may not respect this.
+If compareFunction(a, b) returns greater than 0, sort b to an index lower than a (i.e. b comes first).
+compareFunction(a, b) must always return the same value when given a specific pair of elements a and b as its two arguments. If inconsistent results are returned, then the sort order is undefined.
+To compare numbers instead of strings, the compare function can subtract b from a. The following function will sort the array in ascending order (if it doesn't contain Infinity and NaN).
+
 ##### 4. `find()`
 
 `Array.prototype.find`
