@@ -69,7 +69,7 @@ Higher-order array methods are methods in JavaScript that take a callback functi
 
 ##### 2. `map()` - returns a new array with each element modified according to the callback function.
 
-It forms a new array by calling the function passed into it as an argument, on each and every element of the Array. It will map each of the return values of the callback and create a new array.
+It forms a new array by calling the function passed into it as an argument, ==on each and every element of the Array. It will map each of the return values of the callback and create a new array==.
 
 The callback passed to the map() function can accept any of the three arguments: item, index, array.
 
