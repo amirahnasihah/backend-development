@@ -67,6 +67,39 @@ Higher-order array methods are methods in JavaScript that take a callback functi
 
 ##### 1. `filter()` - returns a new array with only the elements that pass the test implemented by the callback function.
 
+The `filter()` function is what you'd use if you're creating a search bar from a given list of items, for example. The filter() method also creates a new array by executing the passed callback on every element of the array, and keeps it in the resulting array IF and ONLY IF the element passes the Boolean test returned by the callback.
+
+The callback passed into the `filter()` method accepts any of the three arguments: item, index and array; same as the map() method.
+
+**Example 1**
+Given an array of costs of different products, create a new array with the costs from the input array if the cost is <= $350, and print it to the console.
+
+Solution:
+
+```javascript
+const givenArray = [390, 190, 311.85, 67, 19048, 5000, 670];
+const newArray = givenArray.filter(c => c <= 350);
+console.log(newArray) // console: [190, 311.85, 67];
+```
+
+**Example 2**
+Given an array of objects with the city name and population, create an array with objects from the first array if the population of that particular city is >= 5 million.
+
+Solution:
+
+```javascript
+const givenArray = [
+  { "name": "Shanghai", "population": 24300000 },
+  { "name": "Los Angeles", "population": 3792621 },
+  { "name": "New Delhi", "population": 21800000 },
+  { "name": "Mumbai", "population": 18400000 },
+  { "name": "Chicago", "population": 2695598 },
+  { "name": "Houston", "population": 2100263 },
+];
+const newArray = givenArray.filter( ({ population }) => population >= 5000000);
+console.log(newArray); // console: [{name: "Shanghai", population: 24300000}, {name: "New Delhi", population: 21800000}, {name: "Mumbai", population: 18400000}]
+```
+
 ##### 2. `map()` - returns a new array with each element modified according to the callback function.
 
 It forms a new array by calling the function passed into it as an argument, ==on each and every element of the Array. It will map each of the return values of the callback and create a new array==.
