@@ -1,4 +1,4 @@
-async function getRandomCatFact() {
+getRandomCatFact = async () => {
   try {
     const response = await fetch('https://meowfacts.herokuapp.com/');
     const data = await response.json();
