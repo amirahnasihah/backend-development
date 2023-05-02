@@ -53,6 +53,12 @@ const fooFunc = (param) => {
 - - **Sort**: order array by a certain criteria.
 - - **Find**: search through an array and find an element.
 
+> source: [Higher Order Array Methods in JavaScript](https://dev.to/shrihankp/higher-order-array-methods-in-javascript-14e7)
+
+```markdown
+
+```
+
 **JS FACT**
 
 Higher-order array methods are methods in JavaScript that take a callback function as an argument and operate on arrays. These methods allow you to write more concise, declarative and functional code.
