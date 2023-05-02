@@ -78,7 +78,9 @@ Solution:
 
 ```javascript
 const givenArray = [390, 190, 311.85, 67, 19048, 5000, 670];
+
 const newArray = givenArray.filter(c => c <= 350);
+
 console.log(newArray) // console: [190, 311.85, 67];
 ```
 
@@ -96,7 +98,9 @@ const givenArray = [
   { "name": "Chicago", "population": 2695598 },
   { "name": "Houston", "population": 2100263 },
 ];
+
 const newArray = givenArray.filter( ({ population }) => population >= 5000000);
+
 console.log(newArray); // console: [{name: "Shanghai", population: 24300000}, {name: "New Delhi", population: 21800000}, {name: "Mumbai", population: 18400000}]
 ```
 
@@ -113,7 +117,9 @@ Solution:
 
 ```javascript
 const givenArray = [477, 8914, 40461, 599148];
+
 const newArray = givenArray.map(n => n * 2);
+
 console.log(newArray); // console: [954, 17828, 80922, 1198296]
 ```
 
@@ -124,7 +130,9 @@ Solution:
 
 ```javascript
 const givenArray = [ 'pen', 'book', 'code' ];
+
 const newArray = givenArray.map(w => w + 's');
+
 console.log(newArray); // console: ['pens', 'books', 'codes']
 ```
 
