@@ -56,7 +56,7 @@ const fooFunc = (param) => {
 > source: [Higher Order Array Methods in JavaScript](https://dev.to/shrihankp/higher-order-array-methods-in-javascript-14e7)
 
 ```markdown
-
+Higher order functions are functions that operate on other functions, either by receiving them as arguments or by returning them. It is a function that accepts a function as a parameter or returns a function as the output.
 ```
 
 **JS FACT**
