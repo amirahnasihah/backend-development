@@ -132,7 +132,27 @@ console.log(newArray); // console: ['pens', 'books', 'codes']
 
 ##### 4. `forEach()` - executes the callback function for each element in the array.
 
-##### 5. `sort()` - sorts the array based on a comparison function.
+##### 3. `sort()` - sorts the array based on a comparison function.
+
+##### 4. `find()`
+
+Array.prototype.find
+The find method returns the first element of the array that satisfies the Boolean test in the callback. If no element passes the Boolean test, undefined is returned.
+
+The callback passed to the find function can accept any of the three arguments: item, index, array.
+
+Example
+Given an array of objects with fruits, find the 'apples' and log the corresponding object to the console.
+
+Solution:
+const fruits = [
+  {"name": "bananas", "quantity": 8},
+  {"name": "cherries", "quantity": 3},
+  {"name": "apples", "quantity": 80}
+];
+
+const apples = fruits.find( ({name}) => name == "apples" );
+console.log(apples); // console: {"name": "apples", "quantity": 80}
 
 ##### 6. `every()` - checks if every element in the array passes a test implemented by the callback function.
 
@@ -305,8 +325,6 @@ Source (array methods): https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 **JS FACT**
 
 ```javaScript
-
-
 useEffect(
  const getData = (await) => {
   const response = async get(“https://meowfacts.herokuapp.com/")
