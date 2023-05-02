@@ -1,4 +1,4 @@
-[
+const payingCustomers = [
   {
     name: "Jeff",
     totalAmountSpent: 203,
@@ -25,3 +25,9 @@
     isPayingCustomer: true,
   },
 ];
+
+const payingCustomers = customers.filter((customer) => customer.isPayingCustomer);
+
+const sortedCustomers = payingCustomers.sort((a, b) => b.totalAmountSpent - a.totalAmountSpent);
+
+console.log(sortedCustomers);
