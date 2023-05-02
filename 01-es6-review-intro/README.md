@@ -83,6 +83,8 @@ let arr = [0, 43, 54, 65, 76, 98];
 
 - Rest operator allows you extract an infinite number of unnamed values, this can be used to pass an infinite number of arguments to a function which will be captured in the form of an array.
 
+**JS FACT**
+
 ### Array and Object Destructuring
 
 Destructuring allows you to extract values from an object or an array in a very clean semantic manner.
