@@ -134,7 +134,7 @@ console.log(newArray); // console: ['pens', 'books', 'codes']
 
 `Array.prototype.find`
 
-The find method returns the first element of the array that satisfies the Boolean test in the callback. If no element passes the Boolean test, undefined is returned.
+The `find` method **returns the first element of the array that satisfies the Boolean test in the callback**. If no element passes the Boolean test, `undefined` is returned.
 
 The callback passed to the find function can accept any of the three arguments: `item`, `index`, `array`.
 
