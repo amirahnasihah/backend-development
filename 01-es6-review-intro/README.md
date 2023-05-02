@@ -128,23 +128,22 @@ const newArray = givenArray.map(w => w + 's');
 console.log(newArray); // console: ['pens', 'books', 'codes']
 ```
 
-##### 3. `reduce()` - applies the callback function to reduce an array to a single value.
-
-##### 4. `forEach()` - executes the callback function for each element in the array.
-
 ##### 3. `sort()` - sorts the array based on a comparison function.
 
 ##### 4. `find()`
 
-Array.prototype.find
+`Array.prototype.find`
+
 The find method returns the first element of the array that satisfies the Boolean test in the callback. If no element passes the Boolean test, undefined is returned.
 
-The callback passed to the find function can accept any of the three arguments: item, index, array.
+The callback passed to the find function can accept any of the three arguments: `item`, `index`, `array`.
 
-Example
+**Example**
 Given an array of objects with fruits, find the 'apples' and log the corresponding object to the console.
 
 Solution:
+
+```javascript
 const fruits = [
   {"name": "bananas", "quantity": 8},
   {"name": "cherries", "quantity": 3},
@@ -153,10 +152,15 @@ const fruits = [
 
 const apples = fruits.find( ({name}) => name == "apples" );
 console.log(apples); // console: {"name": "apples", "quantity": 80}
+```
 
-##### 6. `every()` - checks if every element in the array passes a test implemented by the callback function.
+##### 5. `reduce()` - applies the callback function to reduce an array to a single value.
 
-##### 7. `some()` - checks if at least one element in the array passes a test implemented by the callback function.
+##### 6. `forEach()` - executes the callback function for each element in the array.
+
+##### 7. `every()` - checks if every element in the array passes a test implemented by the callback function.
+
+##### 8. `some()` - checks if at least one element in the array passes a test implemented by the callback function.
 
 ### Rest and Spread
 
