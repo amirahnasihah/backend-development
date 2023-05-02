@@ -63,21 +63,47 @@ Higher order functions are functions that operate on other functions, either by 
 
 Higher-order array methods are methods in JavaScript that take a callback function as an argument and operate on arrays. These methods allow you to write more concise, declarative and functional code.
 
-Some common examples of higher-order array methods are:
+#### Some common examples of higher-order array methods are:
 
-1. `filter()` - returns a new array with only the elements that pass the test implemented by the callback function.
+##### 1. `filter()` - returns a new array with only the elements that pass the test implemented by the callback function.
 
-2. `map()` - returns a new array with each element modified according to the callback function.
+##### 2. `map()` - returns a new array with each element modified according to the callback function.
 
-3. `reduce()` - applies the callback function to reduce an array to a single value.
+It forms a new array by calling the function passed into it as an argument, on each and every element of the Array. It will map each of the return values of the callback and create a new array.
 
-4. `forEach()` - executes the callback function for each element in the array.
+The callback passed to the map() function can accept any of the three arguments: item, index, array.
 
-5. `sort()` - sorts the array based on a comparison function.
+**Example 1**
+Given an array of integers, create a new array in which the double of each integer in the first array is stored, and log it to the console.
 
-6. `every()` - checks if every element in the array passes a test implemented by the callback function.
+Solution:
 
-7. `some()` - checks if at least one element in the array passes a test implemented by the callback function.
+```javascript
+const givenArray = [477, 8914, 40461, 599148];
+const newArray = givenArray.map(n => n * 2);
+console.log(newArray); // console: [954, 17828, 80922, 1198296]
+```
+
+**Example 2**
+Given an array of singular nouns, create a new array that stores the plural noun of each of the words in the first array, and log it to the console (assume that the singular nouns can be made plural by adding a 's').
+
+Solution:
+
+```javascript
+const givenArray = [ 'pen', 'book', 'code' ];
+const newArray = givenArray.map(w => w + 's');
+console.log(newArray); // console: ['pens', 'books', 'codes']
+```
+
+##### 3. `reduce()` - applies the callback function to reduce an array to a single value.
+
+##### 4. `forEach()` - executes the callback function for each element in the array.
+
+##### 5. `sort()` - sorts the array based on a comparison function.
+
+##### 6. `every()` - checks if every element in the array passes a test implemented by the callback function.
+
+##### 7. `some()` - checks if at least one element in the array passes a test implemented by the callback function.
 
 ### Rest and Spread
 
