@@ -1,4 +1,4 @@
-const payingCustomers = [
+const customers = [
   {
     name: "Jeff",
     totalAmountSpent: 203,
