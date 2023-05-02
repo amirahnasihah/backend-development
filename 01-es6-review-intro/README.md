@@ -59,9 +59,9 @@ Higher-order array methods are methods in JavaScript that take a callback functi
 
 Some common examples of higher-order array methods are:
 
-1. `map()` - returns a new array with each element modified according to the callback function.
+1. `filter()` - returns a new array with only the elements that pass the test implemented by the callback function.
 
-2. `filter()` - returns a new array with only the elements that pass the test implemented by the callback function.
+2. `map()` - returns a new array with each element modified according to the callback function.
 
 3. `reduce()` - applies the callback function to reduce an array to a single value.
 
