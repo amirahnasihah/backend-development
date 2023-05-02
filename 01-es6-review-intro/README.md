@@ -177,10 +177,10 @@ const givenArray = [
   {"name": "Portia Umeng", "phone": 4894759371}
 ];
 
-givenArray.sort(({name1}, {name2}) => {
+givenArray.sort(({name: name1}, {name: name2}) => {
   name1 = name1.toUpperCase();
   name2 = name2.toUpperCase();
-  return (name1 < name2) ? -1 : (name1 > name2) ? 1 : 0);
+  return (name1 < name2 ? -1 : (name1 > name2) ? 1 : 0);
 });
 
 console.log(givenArray);
