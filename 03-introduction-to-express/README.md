@@ -100,4 +100,7 @@ app.listen(3000, () => {
 
 > ℹ️ This is an online material. Please download and read the [online exercise guide](https://prod-public-lms-sg.s3.amazonaws.com/Online+Exercise+Guide.pdf) before starting.
 
+Progress: DONE✅️
+
 # Assignment 2 - Creating Simple APIs
+
