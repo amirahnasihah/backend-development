@@ -16,7 +16,7 @@ You can always reset the test in TalentLabs Platform but all your previous answe
 
 Multiple-choice options (select one):
 
-A. To iterate over the array and transform it into another✅
+✅️A. To iterate over the array and transform it into another
 
 B. To create a hash-map using the data-set
 
@@ -36,7 +36,7 @@ console.log(result);
 
 Multiple-choice options (select one):
 
-A. [76, 54, 10]✅
+✅️A. [76, 54, 10]
 
 B. undefined
 
@@ -60,7 +60,7 @@ Multiple-choice options (select one):
 
 A. A regular function which follows the arrow function syntax
 
-B. It is a wrapper for creating promises✅
+✅️B. It is a wrapper for creating promises
 
 C. A shorthand for a traditional function
 
@@ -89,7 +89,7 @@ A. “John”
 
 B. Object { name: “Jake”, age: 30 }
 
-C. “Jake”✅
+✅️C. “Jake”
 
 D. Object { name: “John”, age: 30 }
 
@@ -107,7 +107,7 @@ Multiple-choice options (select one):
 
 A. Last matching element of the array
 
-B. First matching element of the array✅
+✅️B. First matching element of the array
 
 C. All matching elements from the array
 
