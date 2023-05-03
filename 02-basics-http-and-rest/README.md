@@ -80,4 +80,84 @@ Source: https://kbseung12345.tistory.com/42
 
 > ℹ️ This is an online material. Please download and read the [online exercise guide](https://prod-public-lms-sg.s3.amazonaws.com/Online+Exercise+Guide.pdf) before starting.
 
-1. 
+Session 1 - HTTP and REST Quiz:
+
+1. Which of these statements is true about HTTP?
+
+Multiple-choice options (select one):
+
+✅️A.
+HTTP is a stateless protocol
+
+B.
+HTTP uses UDP (Unigram Data Protocol) to send and receive packets
+
+C.
+HTTP does not follow the server-client model
+
+D.
+All of the above
+
+2. What separates the body from headers in a request?
+
+Multiple-choice options (select one):
+
+A.
+Semicolon “;”
+
+B.
+Tab “\t”
+
+✅️C.
+Empty line with carriage return “\n”
+
+D.
+Closing angle bracket “>”
+
+3. Which of these is not a part of the request line?
+
+Multiple-choice options (select one):
+
+A.
+Request URI
+
+B.
+Protocol Version
+
+C.
+Method
+
+✅️D.
+Content-Type
+
+4.What type of status is 409?
+
+Multiple-choice options (select one):
+
+✅️A.
+Client Error
+
+B.
+Informational
+
+C.
+Redirection
+
+D.
+Server Error
+
+5. What should the patch HTTP method be used for?
+
+Multiple-choice options (select one):
+
+A.
+Get all entities
+
+B.
+Create a new entity
+
+✅️C.
+Update and modify some parameters of entity
+
+D.
+Update and replace an entity
