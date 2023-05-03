@@ -87,78 +87,58 @@ Session 1 - HTTP and REST Quiz:
 
 Multiple-choice options (select one):
 
-✅️A.
-HTTP is a stateless protocol
+✅️A.HTTP is a stateless protocol
 
-B.
-HTTP uses UDP (Unigram Data Protocol) to send and receive packets
+B.HTTP uses UDP (Unigram Data Protocol) to send and receive packets
 
-C.
-HTTP does not follow the server-client model
+C.HTTP does not follow the server-client model
 
-D.
-All of the above
+D.All of the above
 
 2. What separates the body from headers in a request?
 
 Multiple-choice options (select one):
 
-A.
-Semicolon “;”
+A.Semicolon “;”
 
-B.
-Tab “\t”
+B.Tab “\t”
 
-✅️C.
-Empty line with carriage return “\n”
+✅️C.Empty line with carriage return “\n”
 
-D.
-Closing angle bracket “>”
+D.Closing angle bracket “>”
 
 3. Which of these is not a part of the request line?
 
 Multiple-choice options (select one):
 
-A.
-Request URI
+A.Request URI
 
-B.
-Protocol Version
+B.Protocol Version
 
-C.
-Method
+C.Method
 
-✅️D.
-Content-Type
+✅️D.Content-Type
 
 4.What type of status is 409?
 
 Multiple-choice options (select one):
 
-✅️A.
-Client Error
+✅️A.Client Error
 
-B.
-Informational
+B.Informational
 
-C.
-Redirection
+C.Redirection
 
-D.
-Server Error
+D.Server Error
 
 5. What should the patch HTTP method be used for?
 
 Multiple-choice options (select one):
 
-A.
-Get all entities
+A.Get all entities
 
-B.
-Create a new entity
+B.Create a new entity
 
-✅️C.
-Update and modify some parameters of entity
+✅️C.Update and modify some parameters of entity
 
-D.
-Update and replace an entity
+D.Update and replace an entity
