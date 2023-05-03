@@ -8,7 +8,6 @@
     - [What makes a good API?](#what-makes-a-good-api)
 - [HTTP and REST Quiz](#http-and-rest-quiz)
 
-
 # Basics of HTTP and REST
 
 ## Section 1 Notes
