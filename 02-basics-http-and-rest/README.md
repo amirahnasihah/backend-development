@@ -80,6 +80,8 @@ Source: https://kbseung12345.tistory.com/42
 
 > ℹ️ This is an online material. Please download and read the [online exercise guide](https://prod-public-lms-sg.s3.amazonaws.com/Online+Exercise+Guide.pdf) before starting.
 
+Progress: DONE✅️
+
 Session 1 - HTTP and REST Quiz:
 
 1. Which of these statements is true about HTTP?
