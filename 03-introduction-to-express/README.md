@@ -100,7 +100,7 @@ app.listen(3000, () => {
 
 > ℹ️ This is an online material. Please download and read the [online exercise guide](https://prod-public-lms-sg.s3.amazonaws.com/Online+Exercise+Guide.pdf) before starting.
 
-Progress: DONE✅️
+Progress: DONE ✅️
 
 Section 2 - ExpressJS Basics Quiz
 
@@ -108,13 +108,13 @@ Section 2 - ExpressJS Basics Quiz
 
 Multiple-choice options (select one):
 
-A.A restful api hosted at https://foo.bar/api/v1
+✅️A. A restful api hosted at https://foo.bar/api/v1
 
-B.An OS framework exposing bindings to a language
+B. An OS framework exposing bindings to a language
 
-C.Interface for interacting with an app
+C. Interface for interacting with an app
 
-D.All of the above
+D. All of the above
 
 **EXPLAINATION**
 
@@ -128,13 +128,13 @@ Option B refers to a framework, which can expose an API, but it is not an API in
 
 Multiple-choice options (select one):
 
-A.Core business logic
+✅️A. Core business logic
 
-B.Formulation of a response
+B. Formulation of a response
 
-C.Interactions with 3rd party APIs and DBs
+C. Interactions with 3rd party APIs and DBs
 
-D.None of these
+D. None of these
 
 **EXPLAINATION**
 
@@ -150,9 +150,9 @@ Instead, business logic is typically encapsulated in the model layer or in servi
 
 Multiple-choice options (select one):
 
-A.Yes
+✅️A. Yes
 
-B.No
+B. No
 
 **EXPLAINATION**
 
@@ -170,13 +170,13 @@ In such cases, it can be appropriate to include some business logic in the route
 
 Multiple-choice options (select one):
 
-A.Interceptor -> Router -> Middleware -> Controller
+A. Interceptor -> Router -> Middleware -> Controller
 
-B.Router -> Controller -> Middleware -> Interceptor
+B. Router -> Controller -> Middleware -> Interceptor
 
-C.Controller -> Router -> Middleware -> Interceptor
+C. Controller -> Router -> Middleware -> Interceptor
 
-D.Router -> Middleware -> Controller -> Interceptor
+✅️D. Router -> Middleware -> Controller -> Interceptor
 
 **EXPLAINATION**
 
