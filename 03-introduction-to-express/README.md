@@ -114,7 +114,7 @@ B. An OS framework exposing bindings to a language
 
 C. Interface for interacting with an app
 
-D. All of the above✅️
+D. All of the above✅
 
 **EXPLAINATION**
 
@@ -132,9 +132,9 @@ A. Core business logic
 
 B. Formulation of a response
 
-C. Interactions with 3rd party APIs and DBs
+C. Interactions with 3rd party APIs and DBs✅️
 
-D. None of these✅️
+D. None of these
 
 **EXPLAINATION**
 
