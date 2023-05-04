@@ -43,9 +43,9 @@ $ npm install express
 
 - **Routers**: Routers are supposed to handle what happens when a specific path has been queried to, routers are by design supposed to be “dumb”, what this means is that routers should not be making any decisions and they should only be responsible for calling the methods associated.
 
-- **Middleware**: Middleware is a piece of code that sits between a router and the controller which can perform certain operations before a controller is ever reached, these can be used to authenticate users or serialize data
+- **Middleware**: Middleware is a piece of code that sits between a router and the controller which can perform certain operations before a controller is ever reached, these can be used to authenticate users or serialize data.
 
-- **Controllers**: controllers are supposed to house the core logic of the application, controllers should still not ever directly deal with database, any DB requests shall be deferred to a service
+- **Controllers**: controllers are supposed to house the core logic of the application, controllers should still not ever directly deal with database, any DB requests shall be deferred to a service.
 
 - **Services**: A Service is supposed to be an interface between the DataBase and a Controller, it is supposed to be replaceable and implement a standard where it is very trivial of a task to swap out a service for another, it is observed that the pieces of software we need to change the most in any application are things like the database interface as the DB updates, so having plug and play services tends to help that.
 
