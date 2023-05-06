@@ -121,7 +121,7 @@ app.listen(3000, () => {
 
 - The route method can be chained with, **“.get()”, “.post()”, “.patch()”, “.put()”, “.delete()”** methods to register what to do when a specific HTTP method is invoked on the specific route.
 
-- The controller methods take a callback function which takes request and response as parameters (here written as req, and res), these specific objects contain data about the request sent and the response sent.
+- The controller methods take a callback function which takes request and response as parameters (here written as `req`, and `res`), these specific objects contain data about the request sent and the response sent.
 
 - The response object contains methods to send data back to the user who made the request, we can use “.send()”, “.json()”, “.file()” “.render()” and “.redirect()” to process the request.
 
