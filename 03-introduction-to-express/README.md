@@ -251,7 +251,7 @@ Instructions
 
 **Task**
 
-Create an express app with the following routes
+Create an **express app** with the following routes
 
 a)	`“/api/:animal/”` where `“animal”` is a path parameter, when the route is visited the api should send back a response saying `“<animal> is the best!”`. For example, visiting `“/api/dog”` shall return `“dog is the best!”` (40 points)
 
