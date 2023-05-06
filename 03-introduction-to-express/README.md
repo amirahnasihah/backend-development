@@ -119,7 +119,7 @@ app.listen(3000, () => {
 
 - We can use the route method to register a route on the express application.
 
-- The route method can be chained with, “.get()”, “.post()”, “.patch()”, “.put()”, “.delete()” methods to register what to do when a specific HTTP method is invoked on the specific route.
+- The route method can be chained with, **“.get()”, “.post()”, “.patch()”, “.put()”, “.delete()”** methods to register what to do when a specific HTTP method is invoked on the specific route.
 
 - The controller methods take a callback function which takes request and response as parameters (here written as req, and res), these specific objects contain data about the request sent and the response sent.
 
