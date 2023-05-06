@@ -9,7 +9,6 @@
 - [ExpressJS Basics Quiz](#expressjs-basics-quiz)
 - [Assignment 2 - Creating Simple APIs](#assignment-2---creating-simple-apis)
 
-
 # Aquatinting yourself with Express
 
 ## Section 2 Notes
