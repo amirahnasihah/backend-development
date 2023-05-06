@@ -275,3 +275,5 @@ app.listen(3000, () => {
     console.log("Yay! server is live!");
 });
 ```
+
+CodeSandbox: https://codesandbox.io/p/sandbox/strange-vaughan-6z0kvw
