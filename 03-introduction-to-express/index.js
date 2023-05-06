@@ -1,5 +1,4 @@
 const express = require("express");
-
 const app = express();
 
 // start the server on port 3000
