@@ -123,7 +123,7 @@ app.listen(3000, () => {
 
 - The controller methods take a callback function which takes request and response as parameters (here written as `req`, and `res`), these specific objects contain data about the request sent and the response sent.
 
-- The response object contains methods to send data back to the user who made the request, we can use “.send()”, “.json()”, “.file()” “.render()” and “.redirect()” to process the request.
+- The response object contains methods to send data back to the user who made the request, we can use **“.send()”, “.json()”, “.file()” “.render()” and “.redirect()”** to process the request.
 
 ```javascript
 const express = require("express");
