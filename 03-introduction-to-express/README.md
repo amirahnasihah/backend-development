@@ -265,7 +265,7 @@ $ npm init —y
 $ npm install express
 ```
 
-2. app.js file
+2. Using CodeSandbox, in app.js file
 
 ```javascript
 const express = require("express");
