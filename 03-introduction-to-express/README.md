@@ -258,7 +258,7 @@ b)	`“/api/exponent/:n/:m”` where `“n”` and `“m”` are path parameters
 
 ### ExpressJS how to
 
-1. Install ExpressJS with npm (node.js)
+1. Install Express with npm (node.js)
 
 ```bash
 $ npm init —y
