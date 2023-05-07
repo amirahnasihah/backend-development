@@ -259,7 +259,29 @@ b)	`“/api/exponent/:n/:m”` where `“n”` and `“m”` are path parameters
 **potential answer**
 
 ```javascript
+// Importing necessary modules
+const express = require("express");
 
+// Creating the Express app
+const app = express();
+
+// Route to handle requests to /api/:animal
+app.get("/api/:animal", (req, res) => {
+  const animal = req.params.animal;
+  res.send(`${animal} is the best!`);
+});
+
+// Route to handle requests to /api/exponent/:n/:m
+app.get("/api/exponent/:n/:m", (req, res) => {
+  const n = parseInt(req.params.n);
+  const m = parseInt(req.params.m);
+  res.send(`${n ** m}`);
+});
+
+// Starting the server
+app.listen(3000, () => {
+  console.log("Server listening on port 3000!");
+});
 ```
 
 ### ExpressJS how to
