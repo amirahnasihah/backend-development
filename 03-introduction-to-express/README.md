@@ -305,7 +305,3 @@ app.listen(3000, () => {
 ```
 
 CodeSandbox: https://codesandbox.io/p/sandbox/strange-vaughan-6z0kvw
-
-<script type="application/javascript" charset="utf-8">
-  iu ui
-</script>
