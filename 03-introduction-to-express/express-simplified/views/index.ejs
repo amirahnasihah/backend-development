@@ -20,8 +20,10 @@
   </head>
 
   <body>
-    <p>EJS File</p>
-    Hello
+    <p>EJS File <%= 2 + 2 %>
+    </p>
+    <!-- try add locals -->
+    Hello <%= locals.text || "default" %>
   </body>
 
 </html>
