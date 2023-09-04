@@ -59,7 +59,7 @@ router.delete("/:userId", (req, res) => {
 - this function is going to run any time it finds a param that matches the name you pass in.
 - saying hey whenever you find a parameter with the name of id i want you to run this function and this function is going to take `request`, `response`, `next` property and take the value of the thing in our case the `id` itself
 */
-const users = [{ name: "Ludwig" }, { name: "Mozart" }];
+const users = [{ name: "Ludwig" }, { name: "Tchaikovsky" }];
 router.param("userId", (req, res, next, userId) => {
   console.log(userId);
   req.user = users[userId];
