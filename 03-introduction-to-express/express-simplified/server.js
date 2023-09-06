@@ -7,7 +7,7 @@ app.set("view engine", "ejs");
 // app.use(logger);
 
 /* Route handler for a GET request (http method)
-app.get for setup a route.
+app.get(path, request, response, next) for setup a route
 */
 app.get("/", (request, response) => {
   console.log("Here is a GET request");
