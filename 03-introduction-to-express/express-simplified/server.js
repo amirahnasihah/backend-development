@@ -39,4 +39,6 @@ function logger(req, res, next) {
   next();
 }
 
-app.listen(3000); // to start and run server
+app.listen(3000); // to start and run server at localhost 3000 (server initialized)
+
+
