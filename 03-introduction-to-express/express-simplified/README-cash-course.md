@@ -1,3 +1,15 @@
+- [Project Setup](#project-setup)
+- [Server Setup](#server-setup)
+- [Basic Routing](#basic-routing)
+- [Sending Data](#sending-data)
+- [Rendering HTML](#rendering-html)
+- [Routers](#routers)
+- [Advanced Routing](#advanced-routing)
+- [Middleware](#middleware)
+- [Rendering Static Files](#rendering-static-files)
+- [Parsing From/JSON Data](#parsing-fromjson-data)
+- [Parse Query Params](#parse-query-params)
+
 # Project Setup
 
 > install node
@@ -25,3 +37,20 @@
 
 # Sending Data
 
+1. `res.sendStatus(500)` will display *Internal Server Error*. to send status and pass in http status code. 500 means there is an error on our server.
+2. `res.status(500).send("Hi")` will display Hi but on console will print code 500 error message. so, can chain together statuses with others such as sending down a text string or more commonly send down some json.
+3. `res.status(500).send(JSON)`
+
+# Rendering HTML
+
+# Routers
+
+# Advanced Routing
+
+# Middleware
+
+# Rendering Static Files
+
+# Parsing From/JSON Data
+
+# Parse Query Params
