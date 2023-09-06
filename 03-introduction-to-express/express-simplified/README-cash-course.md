@@ -5,7 +5,7 @@
 - [Rendering HTML](#rendering-html)
 - [Routers](#routers)
 - [Advanced Routing](#advanced-routing)
-- [Middleware](#middleware)
+- [Middleware (basic concept)](#middleware-basic-concept)
 - [Rendering Static Files](#rendering-static-files)
 - [Parsing From/JSON Data](#parsing-fromjson-data)
 - [Parse Query Params](#parse-query-params)
@@ -63,14 +63,45 @@ Rendering file
 
 - if have hundreds of different routes in our application this file would become huge and really difficult to deal.
 - router is a way for you to create another instance of your application that is its own little mini application that has all of its own logic applied to it and can insert it into main application.
+- more sense if we took all the code related to our users and put that inside of its own file that way it's kind of encapsulated in its own area it all is in its own section and we can just kind of import that into our main application.
 
-1. go to server.js, create two simple routes.
-2. first, `app.get('/users', (req, res, next)){}`. to list out all of users.
-3. second, `app.get('/users/new', (req, res, next)){}`. to generate a new user form
+1. want create two simple routes. create a folder called *routes*. inside it, create a file *users.js* to contain all the routes for our user file.
+2. inside *users.js* file, import express `const express = require('express')`.
+3. then, put a router `const router = express.Router()`. variable router same as variable app in server .js file.
+4. first, `router.get('/users', (req, res, next)){}`. to list out all of users.
+5. second, `router.get('/users/new', (req, res, next)){}`. to generate a new user form.
+6. change them to `router.get('/', (req, res, next)){}` and `router.get('/new', (req, res, next)){}`. because we can nest it inside of a parent route.
+7. `module.exports = router` to use this users router. we export this router from this users file to be used in the server.js file
+8. then, `const userRouter = require("./routes/users")` to import users router into our server and the file we require `users.js`.
+9. next, `app.use("/users", userRouter)` to link up these users routes into our main app to a particular path. so first, pass actual path (a starter path) second, pass our router (user router).
 
 # Advanced Routing
 
-# Middleware
+# Middleware (basic concept)
+
+> `param`: is one version of middleware.
+> middleware is code that runs between the starting of the request and the ending of the request so a really common type of middleware that you might want to create is a middleware for logging out something.
+> every single piece in middleware takes `request`, `response` and `next`.
+> commonly you only ever really see `next` when creating middleware.
+> middleware runs from top to bottom
+
+```javascript
+function logger(req, res, next) {
+  console.log(req.originalUrl);
+  next();
+}
+```
+
+1. inside `server.js` file, create function called `logger(req, res, next)`.
+2. `console.log(req.originalUrl)` to print out the url that this request comes from.
+3. then, call `next()` function. remember: req,res,next is a function arguments.
+4. `app.use(logger)` to use this middleware, we pass it in the `logger` function that we want to use.
+5. save and refresh. on url *`http://localhost:3000/users/1`* will display *Get User with ID 1* but, in console print it out the url of `/users/1` and shows the json `{name: 'Tchaikovsky'}`.
+6. if we go to main page *`http://localhost:3000/`* will display Hello but, in console print it out the url `/`.
+7. its printing out that url and it's doing it on every single request (refresh).
+8. start at the top of our page. then, first middleware we insert is `logger()`. then, we create `app.get()` request. next, we set up our router for our users. so, everything comes after this `logger` middleware.
+9. if have a middleware that you want to use everywhere on all of your routes always define it at the very top of your page.
+10. if don't want to use everywhere you can use it on individual endpoints.
 
 # Rendering Static Files
 

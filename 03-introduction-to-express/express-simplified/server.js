@@ -4,13 +4,15 @@ const app = express(); // to setup actual server (npm run devStart)
 
 /* View Engine */
 app.set("view engine", "ejs");
-// app.use(logger);
+
+/* Middleware - to use logger function, the first middleware we insert */
+app.use(logger);
 
 /* Route handler for a GET request (http method)
 app.get(path, request, response, next) for setup a route
 */
 app.get("/", (request, response) => {
-  console.log("Here is a GET request");
+  console.log("Here is a GET request"); // print this string whenever refresh at that page
   // response.sendStatus(500); // to send status
   // response.status(500).send("Hello"); // to send status and with message
   // response.send("Hello, world!"); // sending info to user (display ob browser)
@@ -37,7 +39,7 @@ app.use("/users", userRouter);
 - if you have a middleware that you want to use everywhere on all of your routes always define it at the very top of your page
 */
 function logger(req, res, next) {
-  console.log(req.originalUrl);
+  console.log(req.originalUrl); // print url path
   next();
 }
 
