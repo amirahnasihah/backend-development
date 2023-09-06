@@ -5,13 +5,15 @@ const app = express(); // to setup actual server (npm run devStart)
 /* View Engine */
 app.set("view engine", "ejs");
 
-/* Middleware - to use logger function, the first middleware we insert */
+/* Middleware - to use logger function, the first middleware we insert
+
 app.use(logger);
+*/
 
 /* Route handler for a GET request (http method)
 app.get(path, request, response, next) for setup a route
 */
-app.get("/", (request, response) => {
+app.get("/", logger, (request, response) => {
   console.log("Here is a GET request"); // print this string whenever refresh at that page
   // response.sendStatus(500); // to send status
   // response.status(500).send("Hello"); // to send status and with message
