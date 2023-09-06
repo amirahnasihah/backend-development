@@ -39,9 +39,16 @@
 
 1. `res.sendStatus(500)` will display *Internal Server Error*. to send status and pass in http status code. 500 means there is an error on our server.
 2. `res.status(500).send("Hi")` will display Hi but on console will print code 500 error message. so, can chain together statuses with others such as sending down a text string or more commonly send down some json.
-3. `res.status(500).send(JSON)`
+3. `res.status(500).json({message: "Error to get json"})` will display actual json code {"message":"Error to get json"} but on console will print code 500 error message.
+4. `res.json({message: "Error"})` will display json code but on console will print no error message because by default the status is a successful 200 status.
+5. `res.download("server.js")` will pop up a information for me/user to download `server.js` file directly to hard drive. we pass it the path to the file we want.
 
 # Rendering HTML
+
+Rendering file
+
+1. `res.render("index")` use the `render` method and then you pass it the path to the file that you want to render. to set up our application to actually work, we need to tell our app where these files are and by default *all of your view files* are going to live inside of the folder called *views*
+2. create views folder. inside folder, create `index.html` file and put some html codes.
 
 # Routers
 
