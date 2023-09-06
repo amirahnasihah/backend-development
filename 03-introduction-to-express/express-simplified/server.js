@@ -13,7 +13,7 @@ app.get("/", (request, response) => {
   console.log("Here is a GET request");
   // response.sendStatus(500); // to send status
   // response.status(500).send("Hello"); // to send status and with message
-  // response.send("Hello, world!"); // sending info to user
+  // response.send("Hello, world!"); // sending info to user (display ob browser)
   // response.status(500).json({ message: "Error" }); // using this inside of some type of api and to send json to client
 
   // response.download("server.js"); // send file to user to download
