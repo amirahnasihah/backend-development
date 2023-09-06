@@ -6,7 +6,9 @@ const app = express(); // to setup actual server (npm run devStart)
 app.set("view engine", "ejs");
 // app.use(logger);
 
-/* Route handler for a GET request */
+/* Route handler for a GET request (http method)
+app.get for setup a route.
+*/
 app.get("/", (request, response) => {
   console.log("Here is a GET request");
   // response.sendStatus(500); // to send status
