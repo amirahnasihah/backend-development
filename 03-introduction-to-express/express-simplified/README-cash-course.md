@@ -122,6 +122,10 @@ Middleware apply to individual routes or individual endpoints:
 
 # Rendering Static Files
 
+> static files things like static html css or javascript that you want to serve to the user
+
+
+
 # Parsing From/JSON Data
 
 # Parse Query Params
