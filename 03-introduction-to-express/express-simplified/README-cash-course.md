@@ -103,11 +103,15 @@ function logger(req, res, next) {
 9. if have a middleware that you want to use everywhere on all of your routes always define it at the very top of your page.
 10. if don't want to use everywhere you can use it on individual endpoints.
 
-if middleware don't want to be used everywhere:
+if middleware don't want to be used everywhere, you can use it on individual endpoints:
 
-1. remove `app.use(logger)`. now, no login anywhere.
-2. `app.get('/', logger, (req, res))` this `logger()` is only going to work in here. can pass multiple functions to `app.get()`. so, it's going to run our `logger` and then it's going to run this function `next`.
-3. .
+1. in `server.js`, remove `app.use(logger)`. now, no login anywhere.
+2. `app.get('/', logger, (req, res))` will run our `logger` and then it's going to run this function `next`. this `logger()` is only going to work on this `app.get()` here. to do that we can just pass multiple functions to `app.get()`.
+3. `app.get('/', logger, (req, res))` shows if we go to our slash `/` page it prints out our login of slash `/` but if we go to anywhere else such as users page it doesn't print anything in the console and that's because this `logger()` is only on this `app.get()`.
+
+Multiple middlewares:
+
+1. `app.get('/', logger, logger, logger, (req, res))` could put as many pieces of middleware in here as you wanted to and all three of them are going to run in order.
 
 # Rendering Static Files
 
