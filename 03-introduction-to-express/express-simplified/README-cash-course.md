@@ -112,6 +112,13 @@ if middleware don't want to be used everywhere, you can use it on individual end
 Multiple middlewares:
 
 1. `app.get('/', logger, logger, logger, (req, res))` could put as many pieces of middleware in here as you wanted to and all three of them are going to run in order.
+2. it should print out slash `/` 3 separate times.
+
+Middleware apply to individual routes or individual endpoints:
+
+1. move the `logger()` middleware into the router for users.
+2. inside `users.js`, then at the top `router.use(logger)`
+3. if go to go to `/users` it logs it out slash user slash one but, if go to the home page `/` it doesn't log anything out and that's because this `logger` is only defined inside of the *user router*.
 
 # Rendering Static Files
 

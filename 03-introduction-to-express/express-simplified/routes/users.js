@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+/* using middleware into router */
+router.use(logger);
+
 /* GET request */
 router.get("/", (req, res) => {
   res.send("Users list");
@@ -66,5 +69,13 @@ router.param("id", (req, res, next, id) => {
   req.user = users[id];
   next();
 });
+
+/* Middleware - logger()
+ */
+
+function logger(req, res, next) {
+  console.log("logger:", req.originalUrl); // print url path
+  next();
+}
 
 module.exports = router;
