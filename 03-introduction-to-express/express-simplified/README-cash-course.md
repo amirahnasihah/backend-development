@@ -107,7 +107,7 @@ if middleware don't want to be used everywhere:
 
 1. remove `app.use(logger)`. now, no login anywhere.
 2. `app.get('/', logger, (req, res))` this `logger()` is only going to work in here. can pass multiple functions to `app.get()`. so, it's going to run our `logger` and then it's going to run this function `next`.
-3. 
+3. .
 
 # Rendering Static Files
 
