@@ -124,7 +124,7 @@ Middleware apply to individual routes or individual endpoints:
 
 > static files things like static html css or javascript that you want to serve to the user
 
-
+1. `app.ge()` inside the server.js file are rendering the index.ejs file inside the views folder.
 
 # Parsing From/JSON Data
 
