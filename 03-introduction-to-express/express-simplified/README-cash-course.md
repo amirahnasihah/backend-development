@@ -132,6 +132,10 @@ Middleware apply to individual routes or individual endpoints:
 
 # Parsing From/JSON Data
 
+> built-in middleware for parsing all the info sent to yoyr server from like forms or JSON requests
+
+1. 
+
 # Parse Query Params
 
 its harddd, the exercise is hard too. so muchh
