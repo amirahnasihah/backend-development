@@ -134,7 +134,9 @@ Middleware apply to individual routes or individual endpoints:
 
 > built-in middleware for parsing all the info sent to yoyr server from like forms or JSON requests
 
-1. 
+1. inside users.js, and `router.get("/new", (req, res)) => {res.render("users/new")}` here to render a form and going to render this page *users/new*.
+2. go to views folder and create `users/new.ejs` file. so, its in the users folder called new.ejs.
+3. inside new.ejs, put in the code ofmcreating a form and on the form our action is going to be making a post request to /users and inside here you can see we have a post that goes to /users.
 
 # Parse Query Params
 
