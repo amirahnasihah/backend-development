@@ -128,7 +128,7 @@ Middleware apply to individual routes or individual endpoints:
 2. create a folder public, rename index.ejs to index.html. and move index.html into public folder.
 3. remove `app.get()` that rendering index file and index.html only have body Hello World.
 4. put `app.use(express.static("public"))` inside server.js to use this middleware which is `express.static(public)` function that pass it in the name of the folder where all of our static files are in, *public*.
-5. if refresh the browser, will display Hello World. Example, create a test folder inside folder public and create tt.html that have random text. the, 
+5. if refresh the browser, will display Hello World. Example, create a test folder inside folder public and create tt.html that have random text. then, navigate to that page *localhost:3000/test/tt.html* will allow to access that file directly from the public folder. this is handy way to render static html or css or javascript.
 
 # Parsing From/JSON Data
 
