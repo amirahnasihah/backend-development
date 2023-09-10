@@ -137,7 +137,7 @@ Middleware apply to individual routes or individual endpoints:
 1. inside users.js, and `router.get("/new", (req, res)) => {res.render("users/new")}` here to render a form and going to render this page *users/new*.
 2. go to views folder and create `users/new.ejs` file. so, its in the users folder called new.ejs.
 3. inside new.ejs, put in the code of creating a form and `<form action="/users" method="POST">...</form>` on the form our action is going to be making a post request to /users and inside users.js file here you can see we have a post (`router.post("/", (req, res) => {res.send("Create User")})`) that goes to /users which right now just sends out Create User.
-4. inside new.ejs, also have `<input />` that has type of text, name is firstName and `value="<%= locals.firstName %>"` a value that's set to `locals.firstName`. so, we can put in a placeholder value, example, in users.js `router.get("/new", (req, res, next) => {res.render("users/new", { firstName: "test" })})`
+4. inside new.ejs, also have `<input />` that has type of text, name is firstName and `value="<%= locals.firstName %>"` a value that's set to `locals.firstName`. so, we can put in a placeholder value, example, in users.js `router.get("/new", (req, res, next) => {res.render("users/new", { firstName: "Test" })})`
 
 
 also have a button that submit the form.
