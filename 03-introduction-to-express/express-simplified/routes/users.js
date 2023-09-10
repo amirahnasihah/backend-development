@@ -10,19 +10,20 @@ router.get("/", (req, res) => {
 });
 
 // static, always put it above dynamic routes.
+/* Parsing From/JSON Data */
 router.get("/new", (req, res) => {
-  res.send("User new form");
+  // res.send("User new form");
+  res.render("users/new", {firstName: "Test"})
 });
 
 /*
 - POST request - can put in different file.
 - Express read from top to bottom.
 - that's static make sure you always put it above your dynamic routes.
-
+*/
 router.post("/", (req, res) => {
   res.send("Create User");
 });
-*/
 
 /*
 Another method called the `route`. To pass the path and chain together all http request.
