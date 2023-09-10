@@ -22,7 +22,9 @@ router.get("/new", (req, res) => {
 - that's static make sure you always put it above your dynamic routes.
 */
 router.post("/", (req, res) => {
-  res.send("Create User");
+  // res.send("Create User");
+  console.log(req.body.firstName)
+  res.send("Hii")
 });
 
 /*
