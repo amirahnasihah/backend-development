@@ -14,7 +14,7 @@ app.use(logger);
 app.get(path, request, response, next) for setup a route
 */
 app.get("/", (request, response) => {
-  console.log("Here is a GET request"); // print this string whenever refresh at that page
+  console.log("Here at server.js is a GET request"); // print this string whenever refresh at that page
   // response.sendStatus(500); // to send status
   // response.status(500).send("Hello"); // to send status and with message
   // response.send("Hello, world!"); // sending info to user (display ob browser)

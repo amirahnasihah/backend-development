@@ -141,9 +141,10 @@ Middleware apply to individual routes or individual endpoints:
 5. the, if navigate to *localhost:3000/users/new* will display the First Name and Test with submit button. but, if remof firstName `router.get("/new", (req, res, next) => {res.render("users/new")})` when refresh the page it display a blank.
 6. Now, if type other first name like Kyle and click submit. it will shows Create User because its doing this *post* (router.post())
 
-want to access that variable yhat just posted to the server from the form:
+want to access that variable that just posted to the server from the form:
 
-1. we have our request we can access the body of that request `req.body.firstName` thats because *inside news.ejs we have input a name of firstName*.
+1. in users.js we have our request, we can access the body of that request `req.body.firstName` thats because *inside new.ejs we have this input a name of firstName* in views/users/new.ejs. so, whatever name your input has is going to match directly to whatever you get on the body.
+2. if navigate to *localhost:3000/users/new*
 
 
 also have a button that submit the form.

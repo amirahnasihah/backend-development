@@ -4,27 +4,29 @@ const router = express.Router();
 /* using middleware into router */
 router.use(logger);
 
-/* GET request */
+/* GET request 
+- static files always put it above dynamic routes.
+*/
 router.get("/", (req, res) => {
   res.send("Users list");
 });
 
-// static, always put it above dynamic routes.
 /* Parsing From/JSON Data */
 router.get("/new", (req, res) => {
-  // res.send("User new form");
-  res.render("users/new", {firstName: "Test"})
+  console.log("req.body.firstName:", req.body.firstName); // req body of html
+  res.send("Hi there from users.js");
+  res.render("users/new", { firstName: "Test" });
 });
 
-/*
-- POST request - can put in different file.
+/* POST request
+- can put in different file.
 - Express read from top to bottom.
 - that's static make sure you always put it above your dynamic routes.
 */
 router.post("/", (req, res) => {
   // res.send("Create User");
-  console.log(req.body.firstName)
-  res.send("Hii")
+  console.log(req.body.firstName);
+  res.send("Hii");
 });
 
 /*
@@ -73,8 +75,9 @@ router.param("id", (req, res, next, id) => {
   next();
 });
 
-/* Middleware - logger()
- */
+/* Middleware
+- logger() middleware
+*/
 
 function logger(req, res, next) {
   console.log("logger:", req.originalUrl); // print url path
