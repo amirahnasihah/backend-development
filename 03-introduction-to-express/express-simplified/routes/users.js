@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 /* Parsing From/JSON Data */
 router.get("/new", (req, res) => {
   console.log("req.body.firstName:", req.body.firstName); // req body of html
-  res.send("Hi there from users.js");
+  res.send("Hi from users.js");
   res.render("users/new", { firstName: "Test" });
 });
 
