@@ -2,6 +2,11 @@
 const express = require("express");
 const app = express(); // to setup actual server (npm run devStart)
 
+/* Standard middleware */
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 /* View Engine */
 app.set("view engine", "ejs");
 
