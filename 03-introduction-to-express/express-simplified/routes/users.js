@@ -31,8 +31,7 @@ router.post("/", (req, res) => {
     console.log("Error")
     res.render("users/new", { firstName: req.body.firstName })
   }
-  
-  console.log(req.body.firstName)
+  // console.log(req.body.firstName)
   res.send("Hi from users.js post request")
 });
 
