@@ -6,7 +6,7 @@ router.use(logger);
 
 /* GET request */
 router.get("/", (req, res) => {
-  req.query.name
+  console.log(req.query.name)
   res.send("Users list");
 });
 
