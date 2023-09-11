@@ -26,7 +26,7 @@ router.post("/", (req, res) => {
   const isValid = true;
   if (isValid) {
     users.push({ firstName: req.body.firstName})
-    res.redirect(`/users/`)
+    res.redirect(`/users/${users.length - 1}`)
   }
   
   console.log(req.body.firstName)
