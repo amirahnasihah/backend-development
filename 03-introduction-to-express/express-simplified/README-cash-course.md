@@ -178,3 +178,4 @@ const isValid = true;
 
 # Parse Query Params
 
+> when have to deal with query parameters:
