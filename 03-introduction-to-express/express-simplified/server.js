@@ -3,7 +3,7 @@ const express = require("express");
 const app = express(); // to setup actual server (npm run devStart)
 
 /* Standard middleware setup */
-app.use(express.static("public"));
+app.use(express.static("public")); // for display static files
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
