@@ -124,7 +124,7 @@ Middleware apply to individual routes or individual endpoints:
 
 > static files things like static html css or javascript that you want to serve to the user
 
-1. `app.get()` inside the server.js file are rendering the index.ejs file of the views folder.
+1. go to `app.get()` inside the server.js file that are rendering the `index.ejs` file of the views folder.
 2. create a folder public, rename `index.ejs` to `index.html`. then, move `index.html` into public folder.
 3. remove `app.get()` that rendering index file and put `index.html` only have body Hello World.
 4. put `app.use(express.static("public"))` inside server.js to use this middleware which is `express.static(public)` function that pass it in the name of the folder where all of our static files are in, *public*.
