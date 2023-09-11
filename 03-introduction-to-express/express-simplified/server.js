@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express(); // to setup actual server (npm run devStart)
 
-/* Standard middleware */
+/* Standard middleware setup */
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,7 +17,7 @@ app.use(logger);
 
 /* Route handler for a GET request (http method)
 app.get(path, request, response, next) for setup a route
-*/
+
 app.get("/", (request, response) => {
   console.log("Here at server.js is a GET request"); // print this string whenever refresh at that page
   // response.sendStatus(500); // to send status
@@ -28,6 +28,7 @@ app.get("/", (request, response) => {
   // response.download("server.js"); // send file to user to download
   response.render("index", { text2321: "World" }); // to render a file + object parameter
 });
+*/
 
 /* Router - to create another instance of your application that is its own little mini application that has all of its own logic, let's all the code related to our users and put that inside of its own file `routes`:
 
@@ -51,4 +52,5 @@ function logger(req, res, next) {
 }
 */
 
-app.listen(3000); // to start and run server at localhost 3000 (server initialized)
+/* to start and run server at localhost 3000 (server initialized) */
+app.listen(3000);
