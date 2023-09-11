@@ -172,8 +172,9 @@ const isValid = true;
 3. then, after created new user we want the page to redirect the user to the get page. say `response.redirect`, and redirect just change the url completely. so, the page redirect to `/users/${the id of the last user added which is the new user}`.
 4. next, in else statement just console.log error. then, can re-render that form say `res.render(we want to go to users/new)` and we want to pass down the firstName that they tried to create this with request.body.firstName. why do this?? *minute 34:00*
 
+> posting JSON information to the server:
 
-also have a button that submit the form.
+1. put `app.use(express.json())` inside server.js, its for whenever we make a json request like making a fetch from the client to the server or calling an APIs this allow to parse json information from the body.
 
 # Parse Query Params
 
