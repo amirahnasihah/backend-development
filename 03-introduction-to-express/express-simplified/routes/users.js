@@ -24,7 +24,7 @@ router.get("/new", (req, res) => {
 router.post("/", (req, res) => {
   // res.send("Create User");
   console.log(req.body.firstName)
-  res.send("Hii")
+  res.send("Hi from users.js post req")
 });
 
 /*
