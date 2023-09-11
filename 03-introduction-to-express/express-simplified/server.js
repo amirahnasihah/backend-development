@@ -2,7 +2,9 @@
 const express = require("express");
 const app = express(); // to setup actual server (npm run devStart)
 
-/* Standard middleware setup */
+/* Standard middleware setup
+- static middleware, urlencoded middleware, json middleware
+*/
 app.use(express.static("public")); // for display static files
 app.use(express.urlencoded({ extended: true })); // to access body in new.ejs
 app.use(express.json());
