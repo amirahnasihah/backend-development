@@ -144,7 +144,10 @@ Middleware apply to individual routes or individual endpoints:
 want to access that variable that just posted to the server from the form:
 
 1. in users.js we have our request, we can access the body of that request `req.body.firstName` thats because *inside new.ejs we have this input a name of firstName* in views/users/new.ejs. so, whatever name your input has is going to match directly to whatever you get on the body.
-2. if navigate to *localhost:3000/users/new*
+2. lets just, `console.log(req.body.firstName)` and say `res.send("Hi from users.js post req")` in users.js
+3. then, go back to *localhost:3000/users/new* and type random text and click submit. we will get error says *cannot read property firstName of undefined*, we not be able to access the body at all.
+4. that is because by default express not allow to access body. we need middleware to do that.
+5. go to server.js and put `app.use(express.urlencoded({ extended: true }))`
 
 
 also have a button that submit the form.
