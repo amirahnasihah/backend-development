@@ -150,6 +150,10 @@ Middleware apply to individual routes or individual endpoints:
 5. go to server.js and put `app.use(express.urlencoded({ extended: true }))` and pass an object that haa extended set to true. this is just a spoiler plate code.
 6. then, refresh again the page will print out the placeholder value of firstName.
 
+few code to emulate real world situation:
+
+1. go to users.js in `router.post()` say `const isValid = true`. this just a variable to see if different scenarios work for what happens when we have a valid response and invalid.
+
 
 also have a button that submit the form.
 
