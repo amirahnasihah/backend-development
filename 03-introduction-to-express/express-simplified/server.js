@@ -7,7 +7,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-/* View Engine */
+/* View Engine ejs or pug */
 app.set("view engine", "ejs");
 
 /* Middleware - to use logger function, the first middleware we insert
