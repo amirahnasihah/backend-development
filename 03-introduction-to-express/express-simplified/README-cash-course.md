@@ -147,7 +147,8 @@ Middleware apply to individual routes or individual endpoints:
 2. lets just, `console.log(req.body.firstName)` and say `res.send("Hi from users.js post req")` in users.js
 3. then, go back to *localhost:3000/users/new* and type random text and click submit. we will get error says *cannot read property firstName of undefined*, we not be able to access the body at all.
 4. that is because by default express not allow to access body. we need middleware to do that.
-5. go to server.js and put `app.use(express.urlencoded({ extended: true }))`
+5. go to server.js and put `app.use(express.urlencoded({ extended: true }))` and pass an object that haa extended set to true. this is just a spoiler plate code.
+6. then, refresh again the page will print out the placeholder value of firstName.
 
 
 also have a button that submit the form.
