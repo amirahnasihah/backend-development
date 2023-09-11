@@ -179,3 +179,5 @@ const isValid = true;
 # Parse Query Params
 
 > when have to deal with query parameters:
+
+1. example, in search bar browser we put query parameter that says `localhost:3000/users?name=Kyle` and enter
