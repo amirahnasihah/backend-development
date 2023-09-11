@@ -138,7 +138,7 @@ Middleware apply to individual routes or individual endpoints:
 2. go to views folder and create `users/new.ejs` file. so, its in the users folder called new.ejs.
 3. inside new.ejs, put in the code of creating a form and `<form action="/users" method="POST">...</form>` on the form our action is going to be making a post request to /users and inside users.js file here you can see we have a post (`router.post("/", (req, res) => {res.send("Create User")})`) that goes to /users which right now just sends out Create User.
 4. inside new.ejs, also have `<input />` that has type of text, name is firstName and `value="<%= locals.firstName %>"` a value that's set to `locals.firstName`. so, we can put in a placeholder value that starts out firstName which is Test. example, in users.js `router.get("/new", (req, res, next) => {res.render("users/new", { firstName: "Test" })})`.
-5. then, if navigate to *localhost:3000/users/new* will display the First Name and Test with submit button. but, if remof firstName `router.get("/new", (req, res, next) => {res.render("users/new")})` when refresh the page it display a blank.
+5. then, if navigate to *localhost:3000/users/new* will display the First Name and Test with submit button. but, if remove the firstName `router.get("/new", (req, res, next) => {res.render("users/new")})` when refresh the page it display a blank.
 6. Now, if type other first name like Kyle and click submit. it will shows Create User because its doing this *post* (router.post())
 
 want to access that variable that just posted to the server from the form:
