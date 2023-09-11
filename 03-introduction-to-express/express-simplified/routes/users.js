@@ -23,6 +23,12 @@ router.get("/new", (req, res) => {
 */
 router.post("/", (req, res) => {
   // res.send("Create User");
+  const isValid = true;
+  if (isValid) {
+    users.push({ firstName: req.body.firstName})
+    res.redirect(`/users/`)
+  }
+  
   console.log(req.body.firstName)
   res.send("Hi from users.js post request")
 });
