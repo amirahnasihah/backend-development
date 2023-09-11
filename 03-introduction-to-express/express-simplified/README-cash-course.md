@@ -10,6 +10,8 @@
 - [Parsing From/JSON Data](#parsing-fromjson-data)
 - [Parse Query Params](#parse-query-params)
 
+source: [Learn Express JS In 35 Minutes](https://youtu.be/SccSCuHhOw0?si=ugSDtUagHm5pEFkm)
+
 # Project Setup
 
 > install node
@@ -168,7 +170,7 @@ const isValid = true;
 1. a variable to see if different scenarios work for what happens when we have a valid response and invalid.
 2. so, if this is a valid request, we want to create our user. so, can just say users (the array of object data), with all of our users we are going to push in a new user and that new user is going to have a firstName which is coming from `request.body.firstName`.
 3. then, after created new user we want the page to redirect the user to the get page. say `response.redirect`, and redirect just change the url completely. so, the page redirect to `/users/${the id of the last user added which is the new user}`.
-4. next, in else statement just console.log error
+4. next, in else statement just console.log error. then, can re-render that form say `res.render(we want to go to users/new)` and we want to pass down the firstName that they tried to create this with request.body.firstName. why do this?? *minute 34:00*
 
 
 also have a button that submit the form.
