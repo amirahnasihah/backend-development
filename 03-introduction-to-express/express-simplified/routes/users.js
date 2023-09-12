@@ -6,7 +6,7 @@ router.use(logger);
 
 /* GET request */
 router.get("/", (req, res) => {
-  console.log(req.query.name)
+  console.log(req.query.name);
   res.send("Users list");
 });
 
@@ -14,7 +14,8 @@ router.get("/", (req, res) => {
 /* Parsing From/JSON Data */
 router.get("/new", (req, res) => {
   // res.send("User new form");
-  res.render("users/new", {firstName: "Test"})
+  // {firstName: "Test"} is a placeholder
+  res.render("users/new", { firstName: "Test" });
 });
 
 /*
@@ -26,14 +27,14 @@ router.post("/", (req, res) => {
   // res.send("Create User");
   const isValid = true;
   if (isValid) {
-    users.push({ firstName: req.body.firstName})
-    res.redirect(`/users/${users.length - 1}`)
+    users.push({ firstName: req.body.firstName });
+    res.redirect(`/users/${users.length - 1}`);
   } else {
-    console.log("Error")
-    res.render("users/new", { firstName: req.body.firstName })
+    console.log("Error");
+    res.render("users/new", { firstName: req.body.firstName });
   }
   // console.log(req.body.firstName)
-  res.send("Hi from users.js post request")
+  res.send("Hi from users.js post request");
 });
 
 /*

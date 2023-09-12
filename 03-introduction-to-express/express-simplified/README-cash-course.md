@@ -181,7 +181,7 @@ const isValid = true;
 > when have to deal with query parameters:
 
 1. example, in search bar browser we put query parameter that says `localhost:3000/users?name=Kyle` and enter.
-2. what we want to do ia we want to be able to acceaa the actual name property from user which is we have name equals Kyle and we want to get that name from the query string.
+2. what we want to do is we want to be able to access the actual name property from user which is we have name equals Kyle and we want to get that name from the query string.
 3. go to users.js file, we now on route /users: `router.get("/")` and we can just say `request.query.<whatever we passed in here>`so we called it name, console.log the `req.query.name`
 4. if refresh page, it print out Kyle. if change name to John it print John. so, we able to get that info directly from the query string by using request.query
 
