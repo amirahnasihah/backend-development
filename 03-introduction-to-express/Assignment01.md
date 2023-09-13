@@ -11,6 +11,10 @@ POST /products Create a new product
 GET /products/:id Get a specific product by the id supplied in parameter
 PATCH /products/:id Update the specific product by id
 DELETE /products/:id Delete the product specified in the id
+
+
+# 
+
 Q2. Create an Express API which has one route “/pyramid/:n” which creates a pyramid with “n” 
 rows, for example visiting “/pyramid/5” will render.
 (30 points)
