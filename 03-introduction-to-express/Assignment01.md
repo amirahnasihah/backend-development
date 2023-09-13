@@ -15,9 +15,10 @@ DELETE /products/:id Delete the product specified in the id
 
 # 
 
-Q2. Create an Express API which has one route “/pyramid/:n” which creates a pyramid with “n” 
-rows, for example visiting “/pyramid/5” will render.
+Q2. Create an Express API which has one route “/pyramid/:n” which creates a pyramid with “n” rows, for example visiting “/pyramid/5” will render.
 (30 points)
+
+
 *
 * *
 * * *
