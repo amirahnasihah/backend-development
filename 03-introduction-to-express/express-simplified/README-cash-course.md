@@ -14,7 +14,7 @@
 
 # Project Setup
 
-> install node hh
+> install node
 
 1. `npm init -y` will create *package.json* file and this is to install all our different libraries we're going to use.
 2. `npm i express` will create node_modules file and to install the express library.
