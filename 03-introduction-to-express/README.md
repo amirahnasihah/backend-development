@@ -8,6 +8,7 @@
     - [Creating our first Route](#creating-our-first-route)
 - [ExpressJS Basics Quiz](#expressjs-basics-quiz)
 - [Assignment 2 - Creating Simple APIs](#assignment-2---creating-simple-apis)
+    - [ExpressJS how to](#expressjs-how-to)
 
 # Aquatinting yourself with Express
 
