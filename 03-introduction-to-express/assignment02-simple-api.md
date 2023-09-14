@@ -7,6 +7,8 @@
     - [`req.params`](#reqparams)
     - ["prefix" and a route parameter](#prefix-and-a-route-parameter)
   - [Task (b)](#task-b)
+    - [exponent](#exponent)
+    - [exponent vs factorial](#exponent-vs-factorial)
 
 # Task
 
@@ -127,3 +129,45 @@ In the example `/api/:animal`, `/api` is the route prefix, and `:animal` is a ro
 - `:animal` is a route parameter. It's a dynamic part of the URL and serves as a placeholder for variable data. For example, if you visit `/api/dog`, `:animal` will capture the value "dog" from the URL, and you can access it in your route handler as a parameter.
 
 ## Task (b)
+
+### exponent
+
+In mathematics, an "exponent" refers to a numerical notation that indicates how many times a number (the base) should be multiplied by itself. When you see an expression like "10^2," it means that 10 should be multiplied by itself 2 times. 
+
+So, "10^2" can be calculated as follows:
+
+10^2 = 10 * 10 = 100
+
+In this calculation, "10" is the base, and "2" is the exponent. When you raise a number to an exponent, you are essentially performing repeated multiplication of the base number by itself as many times as the exponent specifies.
+
+In the example you provided, "10^2" equals 100 because you are multiplying 10 by itself two times, resulting in 100 as the final value. This is a fundamental concept in mathematics and is often used in various calculations and scientific contexts.
+
+> Certainly! In simple plain English for coding beginners:
+
+```txt
+Exponentiation is a way of multiplying a number by itself a certain number of times. It's like saying, "Take this number and use it as many times as the small number tells you to."
+
+For example, if you have 2^3, it means take the number 2 and multiply it by itself three times:
+
+2^3 = 2 * 2 * 2 = 8
+
+So, 2^3 is equal to 8. It's a shorthand way of writing down multiple multiplications of the same number.
+
+In coding, you might use exponentiation when you need to calculate things like compound interest, growth rates, or any situation where a number needs to be repeatedly multiplied by itself.
+```
+
+### exponent vs factorial
+
+No, exponentiation and factorial are not the same concepts; they are quite different mathematical operations.
+
+Exponentiation:
+- Exponentiation involves raising a number (the base) to a certain power (the exponent).
+- It's denoted as "base^exponent" or "base**exponent" in mathematical notation.
+- For example, 10^2 means multiplying 10 by itself two times, resulting in 100 (10 * 10).
+
+Factorial:
+- Factorial is an operation that involves multiplying a sequence of consecutive positive integers from 1 up to a given number.
+- It's denoted as "n!" where "n" is a non-negative integer.
+- For example, 5! (read as "five factorial") is calculated as 5 * 4 * 3 * 2 * 1, which equals 120.
+
+In summary, exponentiation is about raising a number to a power, while factorial is about multiplying a sequence of integers. These operations serve different purposes and are used in various mathematical and computational contexts.
