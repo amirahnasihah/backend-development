@@ -89,14 +89,20 @@ GET:
 
 POST:
 
+```javascript
 
+```
 
 PUT:
 
+```javascript
 
+```
 
 DELETE:
 
+```javascript
 
+```
 
 # CRUD (Express with MongoDB)
