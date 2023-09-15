@@ -22,6 +22,8 @@ a) “/api/:animal/” where “animal” is a path parameter, when the route is
 b) “/api/exponent/:n/:m” where “n” and “m” are path parameters, the api shall send back in response n^m, for example “/api/exponent/10/2” should return 100.
 (60 points)
 
+> tips: exponent
+
 # Study Notes
 
 ## Task (a)
