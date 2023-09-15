@@ -22,7 +22,7 @@ a) “/api/:animal/” where “animal” is a path parameter, when the route is
 b) “/api/exponent/:n/:m” where “n” and “m” are path parameters, the api shall send back in response n^m, for example “/api/exponent/10/2” should return 100.
 (60 points)
 
-> tips: exponent
+> tips: exponent, uses of Math.pow(base, exponent) prototypes. and 
 
 # Study Notes
 
@@ -173,3 +173,19 @@ Factorial:
 - For example, 5! (read as "five factorial") is calculated as 5 * 4 * 3 * 2 * 1, which equals 120.
 
 In summary, exponentiation is about raising a number to a power, while factorial is about multiplying a sequence of integers. These operations serve different purposes and are used in various mathematical and computational contexts.
+
+###  `res.send()`, it expects a string as an argument
+
+Certainly! In the `/api/exponent/:n/:m` route of your code, you're calculating the exponentiation of two numbers, `n` and `m`, from the URL parameters. The problem arises when you try to send the result as a response.
+
+In JavaScript, when you perform mathematical operations like `Math.pow()`, the result is a number, not a string. However, when you send a response using `res.send()`, it expects a string as an argument. So, you need to convert the numeric result into a string before passing it to `res.send()`.
+
+In the corrected code snippet I provided, here's what happens:
+
+1. We use `parseFloat()` to ensure that the values of `n` and `m` from the URL parameters are treated as numbers, not strings, as they come from the URL and may be in string form.
+
+2. We calculate the exponentiation using `Math.pow()` as you did before, resulting in a numeric value stored in the `result` variable.
+
+3. Before sending the `result` as a response using `res.send()`, we use `result.toString()` to convert it to a string. This step ensures that the numeric result is sent as a string in the response.
+
+By converting the result to a string before sending it as a response, you ensure that the response is correctly formatted as a string, which is the expected data type for the response body in Express.js.
