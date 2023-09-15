@@ -83,7 +83,9 @@ In summary, use PUT when you want to completely replace or update a resource, an
 
 GET
 
+```javascript
 
+```
 
 POST
 
