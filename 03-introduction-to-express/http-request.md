@@ -84,12 +84,17 @@ In summary, use PUT when you want to completely replace or update a resource, an
 GET
 
 
+
 POST
+
 
 
 PUT
 
 
+
 DELETE
+
+
 
 # CRUD (Express with MongoDB)
