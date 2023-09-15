@@ -81,21 +81,21 @@ In summary, use PUT when you want to completely replace or update a resource, an
 
 # CRUD (Express only)
 
-GET
+GET:
 
 ```javascript
 
 ```
 
-POST
+POST:
 
 
 
-PUT
+PUT:
 
 
 
-DELETE
+DELETE:
 
 
 
