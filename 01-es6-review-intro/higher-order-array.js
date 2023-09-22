@@ -4,6 +4,7 @@ higher-order array: filter(), map(), sort(), find()
 - (e) means element. traverse thru element
 - % means divide. element 1 divide by 2 is equal to 1 condition.
 - sort() by default is unicode. to sort numbers have to customize parameter to compare element 1 with next element.
+- find . if not found it return undefined
 */
 
 // filter to find odd numbers
