@@ -9,4 +9,5 @@ const oddNumbers = arr.filter((e) => {
 	return e % 2 === 1
 })
 
+console.log("")
 console.log("filter odd:", oddNumbers)
