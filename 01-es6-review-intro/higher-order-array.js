@@ -14,6 +14,8 @@ const oddNumbers = arr.filter((e) => {
 // map out the array
 const lists = arr.map((e) => e)
 
+// sort numbers in ascending order
+
 // results
 console.log("array:", arr)
 console.log("filter odd:", oddNumbers)
