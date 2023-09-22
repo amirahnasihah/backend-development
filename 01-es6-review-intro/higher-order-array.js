@@ -14,4 +14,5 @@ const oddNumbers = arr.filter((e) => {
 console.log("array:", arr)
 console.log("filter odd:", oddNumbers)
 
-// map
+// map out the array
+const  = arr.map(())
