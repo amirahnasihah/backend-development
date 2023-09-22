@@ -13,3 +13,8 @@ const oddNumbers = arr.filter((e) => {
 
 // map out the array
 const lists = arr.map((e) => e)
+
+// results
+console.log("array:", arr)
+console.log("filter odd:", oddNumbers)
+console.log("ma")
