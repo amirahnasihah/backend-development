@@ -2,6 +2,7 @@
 higher-order array: filter(), map(), sort(), find()
 
 - (e) means element. traverse thru element
+- sort() by default is unicode. to sort numbers 
 */
 
 // filter to find odd numbers
@@ -17,7 +18,7 @@ const lists = arr.map((e) => e)
 // sort numbers in ascending order
 const unsorted = [5, 3, 1, 600, 1000]
 
-const sorted = unsorted.sort()
+const sorted = unsorted.sort((a, b) => a - b)
 
 // results
 console.log("array:", arr)
