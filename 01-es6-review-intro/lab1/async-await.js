@@ -10,3 +10,12 @@ const getPublicAPI = async () => {
 };
 
 getPublicAPI();
+
+// getRandomCatFact
+
+const getRandomCatFact = async () => {
+  const res = await axios.get("https://meowfacts.herokuapp.com");
+  console.log("getRandomCatFact:", res.data);
+};
+
+getRandomCatFact();
