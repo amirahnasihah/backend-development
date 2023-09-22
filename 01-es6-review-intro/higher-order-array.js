@@ -2,7 +2,7 @@
 higher-order array: filter(), map(), sort(), find()
 
 - (e) means element. traverse thru element
-- sort() by default is unicode. to sort numbers 
+- sort() by default is unicode. to sort numbers have to customize parameter to compare element 1 with next element.
 */
 
 // filter to find odd numbers
