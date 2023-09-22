@@ -21,10 +21,14 @@ const unsorted = [5, 3, 1, 600, 1000]
 
 const sorted = unsorted.sort((a, b) => a - b)
 
-// find numbers
+// find number 68 in Data array
+const Data = [23, 61, 83, 68, 103]
+
+const found = 
 
 // results
 console.log("array:", arr)
 console.log("filter odd:", oddNumbers)
 console.log("map:", lists)
 console.log("sorted:", sorted)
+console.lo
