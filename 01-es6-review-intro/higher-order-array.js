@@ -17,4 +17,4 @@ const lists = arr.map((e) => e)
 // results
 console.log("array:", arr)
 console.log("filter odd:", oddNumbers)
-console.log("ma")
+console.log("map:", lists)
