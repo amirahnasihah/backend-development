@@ -15,8 +15,12 @@ const oddNumbers = arr.filter((e) => {
 const lists = arr.map((e) => e)
 
 // sort numbers in ascending order
+const unsorted = [5, 3, 1, 600, 1000]
+
+const sorted = unsorted.sort()
 
 // results
 console.log("array:", arr)
 console.log("filter odd:", oddNumbers)
 console.log("map:", lists)
+console.log()
