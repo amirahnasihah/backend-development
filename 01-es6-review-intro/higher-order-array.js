@@ -11,8 +11,5 @@ const oddNumbers = arr.filter((e) => {
 	return e % 2 === 1
 })
 
-console.log("array:", arr)
-console.log("filter odd:", oddNumbers)
-
 // map out the array
-const  = arr.map(())
+const lists = arr.map((e) => e)
