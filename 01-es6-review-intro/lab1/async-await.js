@@ -11,8 +11,7 @@ const getPublicAPI = async () => {
 
 getPublicAPI();
 
-// getRandomCatFact
-
+// Assignment 1 - Async Function & Higher Order Functions Exercises
 const getRandomCatFact = async () => {
   const res = await axios.get("https://meowfacts.herokuapp.com");
   console.log("getRandomCatFact:", res.data);

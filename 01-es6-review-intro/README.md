@@ -3,6 +3,15 @@
     - [What is ES6](#what-is-es6)
     - [Arrow Functions](#arrow-functions)
     - [Higher Order Array Methods](#higher-order-array-methods)
+      - [Some common examples of higher-order array methods are:](#some-common-examples-of-higher-order-array-methods-are)
+        - [1. `filter()` - returns a new array with only the elements that pass the test implemented by the callback function.](#1-filter---returns-a-new-array-with-only-the-elements-that-pass-the-test-implemented-by-the-callback-function)
+        - [2. `map()` - returns a new array with each element modified according to the callback function.](#2-map---returns-a-new-array-with-each-element-modified-according-to-the-callback-function)
+        - [3. `sort()` - sorts the array based on a comparison function.](#3-sort---sorts-the-array-based-on-a-comparison-function)
+        - [4. `find()`](#4-find)
+        - [5. `reduce()` - applies the callback function to reduce an array to a single value.](#5-reduce---applies-the-callback-function-to-reduce-an-array-to-a-single-value)
+        - [6. `forEach()` - executes the callback function for each element in the array.](#6-foreach---executes-the-callback-function-for-each-element-in-the-array)
+        - [7. `every()` - checks if every element in the array passes a test implemented by the callback function.](#7-every---checks-if-every-element-in-the-array-passes-a-test-implemented-by-the-callback-function)
+        - [8. `some()` - checks if at least one element in the array passes a test implemented by the callback function.](#8-some---checks-if-at-least-one-element-in-the-array-passes-a-test-implemented-by-the-callback-function)
     - [Rest and Spread](#rest-and-spread)
     - [Array and Object Destructuring](#array-and-object-destructuring)
     - [The need for promises](#the-need-for-promises)
@@ -395,10 +404,28 @@ Source (array methods): https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 **JS FACT**
 
 ```javaScript
-useEffect(
- const getData = (await) => {
-  const response = async get(“https://meowfacts.herokuapp.com/")
-}
+const axios = require("axios");
 
-, [])
+const getRandomCatFact = async () => {
+  const res = await axios.get("https://meowfacts.herokuapp.com");
+  console.log("getRandomCatFact:", res.data);
+};
+
+getRandomCatFact();
+```
+
+Or
+
+```javaScript
+getRandomCatFact = async () => {
+  try {
+    const response = await fetch("https://meowfacts.herokuapp.com/");
+    const data = await response.json();
+    console.log(data.data);
+  } catch (error) {
+    console.log("An error occurred:", error);
+  }
+};
+
+getRandomCatFact();
 ```
