@@ -8,3 +8,6 @@ const router = Router();
 // first arg is the prefix for all of routes that in the router.
 router.use("/", indexRouter);
 router.use("/users", userRouter);
+
+// { router } bcs this the only router that will have in application.
+module.exports = { router };
