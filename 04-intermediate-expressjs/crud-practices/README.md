@@ -6,3 +6,7 @@
 - router.route("/").get() is a router.
 
 # Routers
+
+# Controllers
+
+- contains all the core logic that gives the whole flow of application
