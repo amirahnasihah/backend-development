@@ -12,6 +12,8 @@
 
 ## Section 1 Notes
 
+> source: [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+> vscode extensions: HTTP Client
 ### What is HTTP
 
 - HTTP is an application layer protocol which is used to serve content over the internet between a server and client.
