@@ -1,0 +1,29 @@
+<!--
+- tell our app where these files are and by default all of your view files are going to live inside of this `views` folder.
+- inside here create an index.html file.
+- we're getting an error that just says no default engine was specified.
+- the reason we're getting that error is because we don't actually have a view engine set up.
+- the nice thing about using your server to output your views is that you can actually run your server code to generate the code inside of your views.
+- we're going to be using `ejs` / `pug` as our view engine. (npm i ejs)
+- need to tell our application to use that view engine so we can say `app.set`.
+- then, rename file to have an .ejs extension at the end.
+- Embedded JavaScript(EJS) templates is a simple templating language that lets generate HTML markup with plain JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Crash Course</title>
+  </head>
+
+  <body>
+    <p>EJS File <%= 2 + 2 %>
+    </p>
+    <!-- try add locals <%= %>-->
+    Hello <%= locals.text || "default" %>
+  </body>
+
+</html>
