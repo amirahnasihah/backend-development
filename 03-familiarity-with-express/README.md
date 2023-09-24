@@ -1,4 +1,4 @@
-- [Aquatinting yourself with Express](#aquatinting-yourself-with-express)
+- [Acquainting yourself with Express](#acquainting-yourself-with-express)
   - [Section 2 Notes](#section-2-notes)
     - [What is a REST API?](#what-is-a-rest-api)
     - [What is Express.JS?](#what-is-expressjs)
@@ -10,8 +10,9 @@
 - [Assignment 2 - Creating Simple APIs](#assignment-2---creating-simple-apis)
     - [ExpressJS how to](#expressjs-how-to)
 
-# Aquatinting yourself with Express
+# Acquainting yourself with Express
 
+Acquainting = get familiar with Express
 ## Section 2 Notes
 
 ### What is a REST API?
