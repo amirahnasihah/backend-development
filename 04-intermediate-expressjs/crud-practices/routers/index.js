@@ -10,4 +10,5 @@ router.use("/", indexRouter);
 router.use("/users", userRouter);
 
 // { router } bcs this the only router that will have in application.
+// so, we named export
 module.exports = { router };
