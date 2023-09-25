@@ -21,7 +21,7 @@ const getUserById = (req, res) => {
   const { id } = req.params;
   // u is the user. basically, we want to find the user with a matching id.
   const user = users.find((u) => {
-    return u.id == id;
+    return u.id === Number(id);
   });
   if (!user) return res.json({ error: "User not found" });
   res.json(user);
@@ -58,11 +58,22 @@ const deleteUserById = (req, res) => {
 /* UPDATE */
 const updateUserById = (req, res) => {
   const { id } = req.params;
+  // we find the user first.
   const user = users.find((u) => {
     return u.id === Number(id);
   });
+  // then, check if the user doesn't exist.
+  if (!user) res.json({ error: "User not found" });
+  // after find and check, we'll filter the user.
+  users = users.filter((u) => u.id !== Number(id));
 
-  const updatedUser = users.find((u) => u.id === Number(id));
+  // otherwise, update the user. we'll spread the user and then spread the request.body.
+  // this will take all the user fields but it will also update the user fields with anything being added by the body.
+  const updatedUser = {
+    ...user,
+    ...req.body,
+  };
+  users.push(updatedUser);
   res.json(updatedUser);
 };
 
