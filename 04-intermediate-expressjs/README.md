@@ -141,7 +141,7 @@ res.render(“templateName”, { …variables });
 
 ### Handing Secrets
 
-> custom Error Handler to handle info that are importants such as password or env variable.
+> handle secrets like API_KEY where store in ".env" file
 
 - Working with backend applications we would often find ourselves holding several important secrets and its important secrets and its of paramount significance that we keep those secrets secure and unattainable to the regular user, and dont accidentally leak them.
 - Secrets should never be in the actual code, and the code should borrow them from an external file, which is not a part of the actual application, and they can be exposed to the application through a utility.
