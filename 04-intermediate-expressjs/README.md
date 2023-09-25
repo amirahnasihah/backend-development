@@ -6,7 +6,8 @@
     - [Using Controllers](#using-controllers)
     - [Templating with EJS](#templating-with-ejs)
     - [Setting up express for EJS](#setting-up-express-for-ejs)
-    - [Project 1: Weather app](#project-1-weather-app)
+    - [Handing Secrets](#handing-secrets)
+  - [Project 1: Weather app](#project-1-weather-app)
 - [Assignment 3 - Creating Complex APIs](#assignment-3---creating-complex-apis)
 
 # Intermediate Express.JS
@@ -138,7 +139,34 @@ app.listen(3000, () => {
 res.render(“templateName”, { …variables });
 ```
 
-### Project 1: Weather app
+### Handing Secrets
+
+> custom Error Handler to handle info that are importants such as password or env variable.
+
+- Working with backend applications we would often find ourselves holding several important secrets and its important secrets and its of paramount significance that we keep those secrets secure and unattainable to the regular user, and dont accidentally leak them.
+- Secrets should never be in the actual code, and the code should borrow them from an external file, which is not a part of the actual application, and they can be exposed to the application through a utility.
+- Traditionally, it is done by adding a ".env" file which contains the secrets.
+- This also includes making sure that the secrets never make it to any sort of staging environment in our Version Control System. This commonly involves adding the secrets file to ".gitignore".
+
+```env
+# SECRETS.ENV file
+
+FOO_SECRET = "foo_secret"
+BAR_SECRET = "bar_secret"
+```
+
+```javascript
+// config.js
+
+const dotenv = require('dotenv');
+const path = require('path');
+
+dotenv.config({ path: path.resolve(__dirname, "../" )});
+
+module.exports = { ...process.env };
+```
+
+## Project 1: Weather app
 
 **Weather app**
 
