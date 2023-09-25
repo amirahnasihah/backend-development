@@ -2,6 +2,10 @@ const express = require("express");
 const { router } = require("./routers");
 
 const app = express();
+
+// important for request body parsing
+app.use(express.json());
+
 // standard to add prefix with /api
 app.use("/api", router);
 
