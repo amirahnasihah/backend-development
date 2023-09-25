@@ -42,3 +42,20 @@ const fooController = (req, res) => {
 - In order to send off this request we cannot do that in Chrome so easily. Instead, recommend to install "Insomnia", its a REST client.
 - For `Number`, we dont have to explicitly state the number when sending a POST request.
 - This is because these aren't actually strings to begin with.
+
+# A practical example of CRUD routes
+
+- We want to create a CRUD routes for users but now we don't have a database. Instead, just create an empty array called "users" to store data temporarily.
+- The structure that we want inside the object would be `{ id, name, age}`.
+
+## CRUD without uses of Database
+
+CREATE
+
+GET ALL
+
+GET BY ID
+
+DELETE
+
+UPDATE
