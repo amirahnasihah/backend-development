@@ -1,0 +1,37 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+  </head>
+
+  <body>
+    <h1>User Profile</h1>
+    <!-- to use the data that we want, take the arguments that we passed before, "user" -->
+    <p>Name: <%= user.name %>
+    </p>
+    <p>Email: <%= user.email %>
+    </p>
+
+    <h2>Recent Posts</h2>
+    <ul>
+      <% for (let i=0; i < user.posts.length; i++) { %>
+        <li>
+          <%= user.posts[i].title %>
+        </li>
+        <% } %>
+    </ul>
+
+    <!-- map() method -->
+    <p>map() Method:</p>
+    <ul>
+      <% user.posts.map((p)=> {%>
+        <li>
+          <%= p.title %>
+        </li>
+        <% }) %>
+    </ul>
+  </body>
+
+</html>
