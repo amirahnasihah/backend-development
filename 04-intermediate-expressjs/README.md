@@ -99,13 +99,15 @@ module.exports = { router };
 
 ### Templating with EJS
 
+> **Angle brackets**, sometimes known as chevrons, are a pair of punctuation marks that take the form of `<` and `>`
+
 1. EJS is a templating engine which is very minimalistic and easy to pick up because of how well it resembles HTML.
 
 2. An EJS file has a “`.ejs`” extension and follows the same syntax as HTML.
 
 3. The “`<% %>`” tag is used to house JS logic that we do not want to render but execute, example: `for` loops, `while` loops, higher order array methods etc.
 
-4. `<%= %>` is used to house JS logic or variables that you wan’t to render on the page.
+4. `<%= %>` is used to house JS logic or variables that you want to render/show on the page.
 
 ### Setting up express for EJS
 
