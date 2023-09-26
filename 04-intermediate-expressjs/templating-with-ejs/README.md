@@ -1,4 +1,18 @@
+- [Templating with EJS](#templating-with-ejs)
+  - [Dynamic applications](#dynamic-applications)
+- [dotenv.config](#dotenvconfig)
+  - [`dotenv.config({ path: path.resolve(__dirname, "../.env") })`](#dotenvconfig-path-pathresolve__dirname-env-)
+
 # Templating with EJS
+
+Installed dependencies:
+
+> [node.js documentation](https://nodejs.org/api/path.html)
+
+- express
+- nodemon
+- dotenv
+- ejs
 
 > **Angle brackets**, sometimes known as chevrons, are a pair of punctuation marks that take the form of `<` and `>`
 
@@ -79,3 +93,40 @@ router.route("/profile").get(profileRoute);
 
 </html>
 ```
+
+# dotenv.config
+
+> source: [npmjs/config](https://www.npmjs.com/package/dotenv)
+
+As early as possible in your application, import and configure dotenv:
+
+```javascript
+require('dotenv').config()
+console.log(process.env) // remove this after you've confirmed it is working
+```
+
+In ReactJS:
+
+```env
+REACT_APP_CHANGE_ME=CHANGE_ME
+```
+
+```javascript
+const ENV_VAR = process.env.REACT_APP_CHANGE_ME;
+```
+
+## `dotenv.config({ path: path.resolve(__dirname, "../.env") })`
+
+The code `dotenv.config({ path: path.resolve(__dirname, "../.env") });` is a configuration statement that sets up the `dotenv` library to load environment variables from a specific `.env` file in a Node.js application. Here's what it does step by step:
+
+1. `dotenv` is a Node.js library commonly used to load environment variables from a `.env` file into the application's process environment (`process.env`).
+
+2. `dotenv.config()` is a method provided by the `dotenv` library that loads the environment variables from a specified `.env` file. It reads the file, parses its contents, and sets the key-value pairs as environment variables.
+
+3. `{ path: path.resolve(__dirname, "../.env") }` is an **object passed as a configuration parameter** to `dotenv.config()`. It takes an object as an argument with a `path` property that specifies the path to the `.env` file to be loaded. It specifies the path to the `.env` file that should be loaded.
+
+   - `path.resolve(__dirname, "../.env")` constructs an absolute file path to the `.env` file. Here's what's happening within `path.resolve`:
+     - `__dirname` is a built-in Node.js variable that represents the directory name of the current module (the JavaScript file where this code is located), in our case *secrets.js*.
+     - `path.resolve()` combines `__dirname` with `"../.env"` to create an absolute file path to the `.env` file that is located one directory level above the current module.
+
+So, when you run this code, it sets up the `dotenv` library to load environment variables from the `.env` file located one directory level above the current module, ensuring that those variables are available for the rest of your Node.js application.

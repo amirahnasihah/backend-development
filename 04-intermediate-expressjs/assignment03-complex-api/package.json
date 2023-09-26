@@ -1,0 +1,19 @@
+{
+  "name": "assignment03-complex-api",
+  "version": "1.0.0",
+  "description": "Create an Express API for Products, containing a basic array for products and perform CRUD operations on them with the following routes. Where a product would have 3 fields, “id”, “name” and “price”",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

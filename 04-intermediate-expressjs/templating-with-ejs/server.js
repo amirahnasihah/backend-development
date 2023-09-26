@@ -1,4 +1,5 @@
 const express = require("express");
+// The node:path module provides utilities for working with file and directory paths
 const path = require("path");
 const { router } = require("./routers");
 
@@ -9,6 +10,7 @@ const { PORT } = require("./config/secrets");
 
 const app = express();
 
+// EJS
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"));
 

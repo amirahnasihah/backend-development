@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-require("dotenv").config();
+require("dotenv").config(); // dotenv
 const productsRoute = require("./routes/productsRoute");
 const errorMiddleware = require("./middleware/errorMiddleware");
 

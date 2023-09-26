@@ -1,3 +1,10 @@
+- [Separation of Concerns](#separation-of-concerns)
+- [Routers](#routers)
+- [Abstracting Controllers](#abstracting-controllers)
+- [Handling data payloads in requests](#handling-data-payloads-in-requests)
+- [A practical example of CRUD routes](#a-practical-example-of-crud-routes)
+  - [CRUD without uses of Database](#crud-without-uses-of-database)
+
 > separation of concerns
 
 # Separation of Concerns
@@ -50,15 +57,25 @@ const fooController = (req, res) => {
 
 ## CRUD without uses of Database
 
-CREATE
+1. CREATE
 
-GET ALL
+2. GET ALL
 
-GET BY ID
+3. GET BY ID
 
-DELETE
+- get data by id means this coming from the users asking for something from the server.
+- imagine this, users want to get specific data by searching the ID. so, the users requests to get the data by ID from server. that's why use req.params
+- then, the server will respond the specific data to the users back.
 
-UPDATE
+> users ask for a specific product. so, server will find the product by id where if the product id is same as what the user requested. While server is finding, if no product server will respond an error message. If product exist, we return that specific product.
+
+```javascript
+const getDataById = (req, res) => {}
+```
+
+1. DELETE
+
+2. UPDATE
 
 ```javascript
 // {id, name, age}
