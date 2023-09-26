@@ -42,6 +42,8 @@ $ npm install express
 
 ### The components of an Express App
 
+> Routers, Middle, Controllers, Services
+
 - **Routers**: Routers are supposed to handle what happens when a specific path has been queried to, routers are by design supposed to be “dumb”, what this means is that routers should not be making any decisions and they should only be responsible for calling the methods associated.
 
 - **Middleware**: Middleware is a piece of code that sits between a router and the controller which can perform certain operations before a controller is ever reached, these can be used to authenticate users or serialize data.
