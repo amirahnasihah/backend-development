@@ -308,4 +308,4 @@ app.listen(3000, () => {
 });
 ```
 
-CodeSandbox: https://codesandbox.io/p/sandbox/strange-vaughan-6z0kvw
+[CodeSandbox](https://codesandbox.io/p/sandbox/strange-vaughan-6z0kvw)
