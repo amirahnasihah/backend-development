@@ -130,3 +130,9 @@ const createData = (req, res) => {
   res.json(product);
 }
 ```
+
+## DELETE
+
+```javascript
+
+```
