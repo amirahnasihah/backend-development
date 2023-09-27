@@ -10,10 +10,10 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 ```
 */
 
-const pyramid = () => {
+const pyramid = (n) => {
 	for (let i = 0;  i <= 5; i++) {
-		console.log(i = "*")
+		console.log(n**5)
 	}
 }
 
-pyramid()
+pyramid(5)
