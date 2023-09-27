@@ -86,17 +86,19 @@ let datas = [
 
 1. Get all datas
 
-> what we want our url looks like: "/api/products"
+> what we want our url looks like: "/data"
+> .get()
 
 ```javascript
-const getDatas = (req, res) => {
+const getAllData = (req, res) => {
   res.json(datas)
 }
 ```
 
 1. Get a specific data by ID
 
-> what we want our url looks like: "/api/products/:id"
+> our url route will looks like this: "/data/:id"
+> .get()
 
 - get data by id means this coming from the users asking for something from the server.
 - imagine this, users want to get specific data by searching the ID. so, the users requests to get the data by ID from server. that's why we use `req.params`.
@@ -109,6 +111,9 @@ const getDataById = (req, res) => {}
 ```
 
 ## POST
+
+> route wil be like this: "/data"
+> .post()
 
 - when creating a new data, the users no need to put a specific things such as ID.
 - so, as the server, it wants to push that new data to an array. or if have database, server push new data into the database. keyword here is `push()` and spread operator (`...`) which means copy all the data object.
