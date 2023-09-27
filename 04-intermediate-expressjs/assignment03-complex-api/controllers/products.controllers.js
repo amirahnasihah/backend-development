@@ -16,7 +16,6 @@ let products = [
   },
 ];
 
-// /products
 const getProducts = (req, res) => {
   res.json(products);
 };
@@ -24,7 +23,8 @@ const getProducts = (req, res) => {
 const getProductById = (req, res) => {
   const { id } = req.params;
   const product = products.find((p) => p.id === Number(id));
-  if (!product) res.status(404).json({ error: "Product not found" });
+  if (!product) res.json({ error: "Product not found" });
+
   res.json(product);
 };
 
@@ -40,8 +40,7 @@ const createProduct = (req, res) => {
   res.json(product);
 };
 
-// /products/:id
-const deleteProduct = (req, res) => {
+const deleteProductById = (req, res) => {
   const { id } = req.params;
 
   const product = products.find((p) => p.id === Number(id));
@@ -51,12 +50,25 @@ const deleteProduct = (req, res) => {
   res.json(product);
 };
 
-const updateProduct = (req, res) => {};
+const updateProductById = (req, res) => {
+  const { id } = req.params;
+  const product = products.find((p) => p.id === Number(id));
+  if (!product) res.json({ error: "Product with given ID not exist" });
+
+  products = products.filter((p) => p.id !== Number(id));
+  const updatedProduct = {
+    ...product,
+    ...req.body,
+  };
+
+  products.push(updatedProduct);
+  res.json(updatedProduct);
+};
 
 module.exports = {
   getProducts,
   getProductById,
   createProduct,
-  deleteProduct,
-  updateProduct,
+  deleteProductById,
+  updateProductById,
 };

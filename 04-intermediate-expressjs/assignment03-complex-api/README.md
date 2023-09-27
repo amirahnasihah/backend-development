@@ -220,3 +220,92 @@ So, in plain English, this line of code is creating a new list of users that doe
 
 ## UPDATE (PATCH vs PUT)
 
+> PUT is like swapping the whole thing, while PATCH is like making small, specific changes. They're used in web applications to update information, but PUT replaces everything, while PATCH updates just what you specify.
+
+"/data/:id"
+
+- first, extracts the value of the variable called "id" from the `req.params` object. It's a way to get a specific piece of information (the "id" in this case) from the data provided in a web request.
+- server check if the specific data requested exist in the database based on ID. if not found, server respond back with error status to client.
+- if exist, server proceeds to filter the whole db to get specific data requested by client.
+- after server get the specific data requested, it edit all info in req.body of the specific data with spread operator.
+- It takes the data found and the information provided by the client (in req.body). Then, it combines them using something called the "spread operator" (...). This means it's taking the existing data and changing only the parts that the client wants to change.
+- after had edit the specific data, server appends the updatedData to the end of the datas array.
+- server responds back with the updated data to the client.
+
+```javascript
+const updateData = (req, res) => {
+  const {id} = req.params;
+  const data = datas.find((d) => d.id === Number(id));
+  if (!data) res.json({error: "Data not found"});
+
+  const data = datas.filter((d) => d.id === Number(id));
+  const updatedData = {
+    ...data, // Copy existing properties from the original product.
+    ...req.body, // Apply changes from the request body.
+  }
+
+  datas.push(updatedData);
+  res.json(updatedData);
+};
+```
+
+**const updatedData = {...}**
+
+The `updatedData` variable is used to temporarily hold the changes made to the data before it is saved back into the database. Here's why it's needed:
+
+1. **Database Integrity**: When you're updating data in a database, it's important to maintain the integrity of the database. This means you want to be sure that you have a complete and accurate representation of the data before and after the update.
+
+2. **Preview Changes**: By creating the `updatedData` variable, you can preview the changes that will be made to the data before committing those changes to the database. This can be helpful for logging, validation, or displaying the updated data to the client.
+
+3. **Transaction Safety**: In some database systems, updates are performed as transactions. Creating the `updatedData` variable allows you to build the updated data outside of the database transaction. This can help ensure that the transaction is as short and efficient as possible, reducing the risk of conflicts or issues during the update process.
+
+Here's how it works step by step:
+
+- You first find the existing data in the database (`data`).
+- Then, you create a new object (`updatedData`) that combines the existing data with the changes provided in `req.body`. This allows you to see what the data will look like after the update without actually modifying the database yet.
+- Finally, you save the `updatedData` back into the database. If something goes wrong during this step (e.g., an error occurs while saving to the database), you still have the original data (`data`) intact and can handle the error gracefully.
+
+So, the `updatedData` variable acts as an intermediate step to ensure that the update process is safe, previewable, and can be rolled back if needed.
+
+---
+
+**Difference with `const updatedProduct = await Products.findById(id);`**
+
+In the code you provided, `updatedProduct` and `updatedData` serve similar purposes, which is to represent the updated version of a resource, but they are used in different contexts and have some differences:
+
+1. **Context**:
+
+   - `updatedData` (from your previous example): This variable is used in a custom function for updating data, and it is not tied to any specific database library or framework. It's a general-purpose variable for managing updates to data in your own code.
+
+   - `updatedProduct` (from your new example): This variable is used in the context of a database operation with Mongoose (a MongoDB library for Node.js). It's specifically used to retrieve the updated product from the database after the update operation has been performed using Mongoose's `findByIdAndUpdate` method.
+
+2. **Database Interaction**:
+
+   - `updatedData`: In your previous example, you manually created and updated this variable before saving it back to your database. You controlled the update process and data structure.
+
+   - `updatedProduct`: In your new example, `updatedProduct` is fetched from the database after the update operation using Mongoose's `findById` method. This means that it reflects the actual state of the data in the database after the update, as opposed to being a custom representation of the data you create yourself.
+
+3. **Usage**:
+
+   - `updatedData`: In your previous example, you could use `updatedData` for various purposes, such as sending a response to the client or logging changes. It's a flexible variable that you can use in your own way.
+
+   - `updatedProduct`: In your new example, `updatedProduct` is specifically intended for responding to the client. It reflects the updated state of the product in the database, and it's used to send a response to the client to show them what the product looks like after the update.
+
+The key difference is that `updatedData` is a custom variable you manage manually for updating data, while `updatedProduct` is used in the context of a database operation with "Mongoose" to fetch and respond with the updated product from the database. The choice between them depends on your specific use case and the technology stack you're using.
+
+---
+
+PUT and PATCH in simple terms:
+
+**PUT (Update or Replace)**
+
+Think of PUT like replacing a whole pizza with a new one. If you order a pizza and decide you want a different one, you give the old pizza back, and they give you a completely new pizza.
+
+- **Example**: You have a profile picture on your social media page. If you want to change the picture, you send a PUT request with the new picture, and it completely replaces the old one with the new image.
+
+**PATCH (Partial Update)**
+
+Now, imagine you have a coloring book, and you want to change just a few colors on a few pages without redoing the entire book. PATCH is like telling someone which specific colors to change on certain pages.
+
+- **Example**: You have a to-do list, and you want to change the due date of just one task. Instead of sending the whole list, you send a PATCH request saying, "Hey, please change the due date of task #3 to tomorrow," and the server updates only that part.
+

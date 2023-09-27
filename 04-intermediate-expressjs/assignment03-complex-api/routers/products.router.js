@@ -3,12 +3,17 @@ const {
   getProducts,
   getProductById,
   createProduct,
-  deleteProduct,
+  deleteProductById,
+  updateProductById,
 } = require("../controllers/products.controllers");
 
 const router = Router();
 
 router.route("/").get(getProducts).post(createProduct);
-router.route("/:id").get(getProductById).delete(deleteProduct);
+router
+  .route("/:id")
+  .get(getProductById)
+  .delete(deleteProductById)
+  .patch(updateProductById);
 
 module.exports = router;

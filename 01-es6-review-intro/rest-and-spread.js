@@ -44,7 +44,8 @@ let obj = {
 };
 
 // const { nickname, lifetime, career, languages } = obj;
-const { nickname, lifetime, ...rest } = obj;
+// const { nickname, lifetime, ...rest } = obj;
+const { first, second, ...rest } = obj;
 
 console.log("obj:", nickname, lifetime, rest); // output: John 29 { career: 'coder', languages: [ 'JS', 'CPP', 'PY' ] }
 
