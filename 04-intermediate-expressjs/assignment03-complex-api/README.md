@@ -138,6 +138,9 @@ const createData = (req, res) => {
 
 ## DELETE
 
+> route: "/data/:id"
+> .delete()
+
 ```javascript
 
 ```
