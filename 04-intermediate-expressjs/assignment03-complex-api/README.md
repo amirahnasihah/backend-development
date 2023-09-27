@@ -113,12 +113,19 @@ const getDataById = (req, res) => {}
 - when creating a new data, the users no need to put a specific things such as ID.
 - so, as the server, it wants to push that new data to an array. or if have database, server push new data into the database. keyword here is `push()` and spread operator (`...`) which means copy all the data object.
 - so imagine this, when wants to create a new data its the users who will request. and the users put the values that they want to create, which inside the *body* of the HTTP request, so its `req.body`. because the users not request data from searching url (req.params). (extract the key object from req.body)
-- then, as client wants to create a new data, we want to have check all the key values to be putted.
-- the users request to post new data to the database. then, the server will find if there is already existing data and return error message. otherwise, server will push new data to the database and return the that new data.
+- then, as client wants to create a new data, we want to have check all the key values to be putted. Print error if not all key values created.
+- as the users request to post new data to the database. then, the server will find first if there is already existing data in databases by ID and return error message. otherwise, server will push new data to the database and return the that new data.
 
 ```javascript
 const createData = (req, res) => {
   const {id, foo} = req.body;
+  if (!id && foo) res.json({error: "Bad request"});
   
+  const product = { id, foo };
+  if (products.find((p) => p.id === Number(id) {
+    return res.json({ error: "Product already existed" })
+  }));
+  
+  res.json(product);
 }
 ```
