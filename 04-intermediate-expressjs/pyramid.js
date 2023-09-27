@@ -11,5 +11,9 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 */
 
 const pyramid = () => {
+	let star = 1;
 	
+	if () {
+		
+	}
 }
