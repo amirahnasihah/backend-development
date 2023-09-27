@@ -13,9 +13,9 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 const pyramid = (n) => {
 	for (let i = 0;  i < 5; i++) {
 		//console.log(n)
-		if (i += n) {
-			// 3 + 3 = 6
-			console.log(n +)
+		if (i ) {
+			// 
+			console.log(n)
 		}
 	}
 }
