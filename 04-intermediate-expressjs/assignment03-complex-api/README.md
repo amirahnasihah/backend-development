@@ -126,6 +126,7 @@ const createData = (req, res) => {
     return res.json({ error: "Product already existed" })
   }));
   
+  products.push(product)
   res.json(product);
 }
 ```
