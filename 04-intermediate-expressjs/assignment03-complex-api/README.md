@@ -141,6 +141,9 @@ const createData = (req, res) => {
 > route: "/data/:id"
 > .delete()
 
+- clients want to delete from database by searching of id.
+- 
+
 ```javascript
 
 ```
