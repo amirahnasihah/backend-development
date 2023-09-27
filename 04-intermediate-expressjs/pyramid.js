@@ -14,6 +14,8 @@ const pyramid = () => {
 	let star = 1;
 	
 	for (let i = 0;  i <= 5; i++) {
-		
+		console.log(i)
 	}
 }
+
+pyramid()
