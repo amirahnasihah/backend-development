@@ -13,7 +13,9 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 let star = 5
 
 for (var i = 1; i <= star; i++) {
-	console.log(i)
+	for (var j = 1; j <= star; j++) {
+		console.log(i + " " + j)
+	}
 	
 }
 
