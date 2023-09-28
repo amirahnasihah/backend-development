@@ -19,7 +19,7 @@ for (var i = 1; i <= numsRow; i++) {
 	console.log(row)
 	
 	for (var j = 1; j <= i; j++) {
-		// now, i = 1, j = 1 less than 1
+		// now at row1 i = 1, j = 1; 1 <= 1;
 	}
 }
 
