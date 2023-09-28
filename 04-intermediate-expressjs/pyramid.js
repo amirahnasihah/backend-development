@@ -14,7 +14,8 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 let numsRow = 5;
 
 for (var i = 1; i <= numsRow; i++) {
-	let row 
+	let row = "+"
+	console.log(row)
 }
 
 
