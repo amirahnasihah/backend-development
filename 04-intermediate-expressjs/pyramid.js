@@ -7,6 +7,7 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 * * * *
 * * * * *
 
+- pyramid have 5 rows.
 */
 
 
