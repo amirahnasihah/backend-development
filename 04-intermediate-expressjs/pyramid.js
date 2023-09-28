@@ -22,10 +22,9 @@ for (var i = 1; i <= heightRow; i++) {
 	
 	for (var j = 1; j <= i; j++) {
 		
-		row += "# "
+		row += "#"
+		
 	}
 	
 	console.log(row)
 }
-
-//pyramid("*")
