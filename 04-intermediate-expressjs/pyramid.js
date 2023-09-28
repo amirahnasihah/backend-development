@@ -18,8 +18,8 @@ for (var i = 1; i <= numsRow; i++) {
 	let row = "+"
 	console.log(row)
 	
-	for (var j = 0; j <= i; j++) {
-		
+	for (var j = 1; j <= i; j++) {
+		// now, i = 1, j = 1 less than 1
 	}
 }
 
