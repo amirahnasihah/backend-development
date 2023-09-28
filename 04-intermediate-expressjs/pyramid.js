@@ -17,9 +17,11 @@ row1, col1, col 2
 let heightRow = 5
 
 for (var i = 1; i <= heightRow; i++) {
+	let row = ""
+	
 	for (var j = 1; j <= i; j++) {
-		let row = ""
-		console.log(row += "# ")
+		
+		row += "# "
 	}
 	
 }
