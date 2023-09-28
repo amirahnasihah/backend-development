@@ -10,6 +10,8 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 */
 
 
+
+
 /*
 row1
 row1, col1
