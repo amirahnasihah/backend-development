@@ -11,13 +11,13 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 */
 
 const pyramid = (n) => {
-	for (let i = 0;  i < 5; i++) {
+	for (let i = 0;  i < n; i++) {
 		console.log(i)
 		for (var j = 0; j < i; j++) {
-			console.log(j)
+			console.log("j", j)
 		}
 	}
 }
 
 //pyramid("*")
-pyramid("j")
+pyramid(4)
