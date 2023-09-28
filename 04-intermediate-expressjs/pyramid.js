@@ -23,6 +23,8 @@ for (var i = 1; i <= numsRow; i++) {
 		let withinRow = "j"
 		console.log(withinRow)
 	}
+	
+	console.log("end:", row)
 }
 
 
