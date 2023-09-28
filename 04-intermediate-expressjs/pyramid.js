@@ -8,6 +8,10 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 * * * *
 * * * * *
 ```
+
+row1
+row1, col1
+row1, col1, col 2
 */
 
 let star = 5
