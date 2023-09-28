@@ -12,10 +12,9 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 
 let star = 5
 
-for (var i = 1; i < star; i++) {
-	for (var j = 1; j < Things.length; j++) {
-		Things[j]
-	}
+for (var i = 1; i <= star; i++) {
+	console.log(i)
+	
 }
 
 //pyramid("*")
