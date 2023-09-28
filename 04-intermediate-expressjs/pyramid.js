@@ -17,6 +17,7 @@ row1, col1, col 2
 let heightRow = 5
 
 for (var i = 1; i <= heightRow; i++) {
+	
 	let row = ""
 	
 	for (var j = 1; j <= i; j++) {
@@ -24,6 +25,7 @@ for (var i = 1; i <= heightRow; i++) {
 		row += "# "
 	}
 	
+	console.log(row)
 }
 
 //pyramid("*")
