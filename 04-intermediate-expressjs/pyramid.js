@@ -11,7 +11,11 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 - iterates within each row.
 */
 
+let numsRow = 5;
 
+for (var i = 0; i <= row; i++) {
+	
+}
 
 
 /*
