@@ -13,8 +13,8 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 
 let numsRow = 5;
 
-for (var i = 0; i <= row; i++) {
-	
+for (var i = 1; i <= numsRow; i++) {
+	let row 
 }
 
 
