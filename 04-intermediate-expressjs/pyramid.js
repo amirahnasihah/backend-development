@@ -9,6 +9,7 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 
 - pyramid have 5 rows.
 - iterates within each row.
+- 
 */
 
 let numsRow = 5;
@@ -16,6 +17,10 @@ let numsRow = 5;
 for (var i = 1; i <= numsRow; i++) {
 	let row = "+"
 	console.log(row)
+	
+	for (var j = 0; j <= i; j++) {
+		
+	}
 }
 
 
