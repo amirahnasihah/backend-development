@@ -36,6 +36,8 @@ row1, col1, col 2
 
 with Express its different, hmmm: res, req
 
-const pyramid = 
+const pyramid = (req, res) => {
+	
+}
 */
  
