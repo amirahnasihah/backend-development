@@ -40,7 +40,9 @@ const pyramid = (req, res) => {
 	let numsRow = 5
 	
 	for (let i = 1; i < numsRow; i++) {
+		let row = " "
 		
+		for 
 	}
 }
 */
