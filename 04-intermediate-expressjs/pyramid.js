@@ -39,7 +39,9 @@ with Express its different, hmmm: res, req
 const pyramid = (req, res) => {
 	let numsRow = 5
 	
-	for 
+	for (let i = 1; i < numsRow; i++) {
+		
+	}
 }
 */
  
