@@ -38,6 +38,8 @@ with Express its different, hmmm: res, req
 
 const pyramid = (req, res) => {
 	let numsRow = 5
+	
+	for 
 }
 */
  
