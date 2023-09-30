@@ -42,7 +42,9 @@ const pyramid = (req, res) => {
 	for (let i = 1; i < numsRow; i++) {
 		let row = " "
 		
-		for 
+		for (let j = 1; j < i; j++) {
+			
+		}
 	}
 }
 */
