@@ -49,5 +49,7 @@ const pyramid = (req, res) => {
 	}
 	console.log(row)
 }
+
+pyramid()
 */
  
