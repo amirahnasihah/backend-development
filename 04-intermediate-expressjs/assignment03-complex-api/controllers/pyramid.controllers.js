@@ -1,22 +1,17 @@
 const pyramidByParam = (req, res) => {
-  // Extracting the parameter from the request
-  let numsRow = Number(req.params);
+  let numsRow = req.params;
 
-  // Building the pyramid
-  let result = "";
-  for (let i = 1; i <= numsRow; i++) {
-    let row = "s";
+  for (var i = 1; i <= numsRow; i++) {
+    let row = " ";
 
-    for (let j = 1; j <= i; j++) {
-      row += "*";
+    for (var j = 1; j <= i; j++) {
+      // now at row1 i = 1, j = 1; 1 <= 1;
+      let withinRow = "*";
+      // console.log(withinRow)
+      result = Number((row += withinRow));
+      console.log();
     }
-
-    // Concatenate the row to the result
-    result += row + "\n";
   }
-
-  // Sending the result as a response
-  res.send(result);
 };
 
-module.exports = pyramidByParam;
+module.exports = { pyramidByParam };
