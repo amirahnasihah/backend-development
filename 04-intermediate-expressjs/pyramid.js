@@ -40,12 +40,14 @@ const pyramid = (req, res) => {
 	let numsRow = 5
 	
 	for (let i = 1; i < numsRow; i++) {
-		let row = " "
+		let row = "*"
 		
 		for (let j = 1; j < i; j++) {
-			let 
+			let nextRow = "*"
+			res.send(row += nextRow)
 		}
 	}
+	console.log(row)
 }
 */
  
