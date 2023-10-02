@@ -26,7 +26,7 @@ for (var i = 1; i <= numsRow; i++) {
 		// console.log(row += withinRow)
 	}
 	
-	console.log("end:", row)
+	console.log(result)
 }
 
 
