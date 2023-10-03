@@ -45,10 +45,10 @@ const pyramid = (req, res) => {
 		
 		for (let j = 1; j < i; j++) {
 			let nextRow = "*"
-			res.send(row += nextRow)
+			row += nextRow
 		}
 	}
-	console.log(row)
+	(row)
 }
 */
  
