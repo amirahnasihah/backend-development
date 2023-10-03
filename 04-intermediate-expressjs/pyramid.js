@@ -38,7 +38,7 @@ row1, col1, col 2
 with Express its different, hmmm: res, req
 
 const pyramid = (req, res) => {
-	let numsRow = 5
+	let {numsRow} = req.params
 	
 	for (let i = 1; i < numsRow; i++) {
 		let row = "*"
