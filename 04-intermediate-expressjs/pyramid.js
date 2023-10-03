@@ -12,20 +12,21 @@ Create an Express API which has one route “/pyramid/:n” which creates a pyra
 - 
 */
 
-let numsRow = 4;
+let numsRow = 5;
 
 for (var i = 1; i <= numsRow; i++) {
-	let row = "+"
-	console.log(row)
+	let row = " "
+	// console.log(row)
 	
 	for (var j = 1; j <= i; j++) {
 		// now at row1 i = 1, j = 1; 1 <= 1;
 		let withinRow = "j"
 		// console.log(withinRow)
-		console.log(row += withinRow)
+		result = row += withinRow
+		// console.log(row += withinRow)
 	}
 	
-	console.log("end:", row)
+	console.log(result)
 }
 
 
@@ -36,20 +37,20 @@ row1, col1, col 2
 
 with Express its different, hmmm: res, req
 
+/pyramid/:numsRow
+
 const pyramid = (req, res) => {
-	let numsRow = 5
+	let {numsRow} = req.params
 	
-	for (let i = 1; i < numsRow; i++) {
+	for (let i = 1; i <= numsRow; i++) {
 		let row = "*"
 		
-		for (let j = 1; j < i; j++) {
+		for (let j = 1; j <= i; j++) {
 			let nextRow = "*"
-			res.send(row += nextRow)
+			row += nextRow
 		}
 	}
-	console.log(row)
+	res.send(row)
 }
-
-pyramid()
 */
  
