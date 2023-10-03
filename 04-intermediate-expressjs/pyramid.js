@@ -48,7 +48,7 @@ const pyramid = (req, res) => {
 			row += nextRow
 		}
 	}
-	(row)
+	res.send(row)
 }
 */
  
