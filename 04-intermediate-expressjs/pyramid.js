@@ -42,10 +42,10 @@ with Express its different, hmmm: res, req
 const pyramid = (req, res) => {
 	let {numsRow} = req.params
 	
-	for (let i = 1; i < numsRow; i++) {
+	for (let i = 1; i <= numsRow; i++) {
 		let row = "*"
 		
-		for (let j = 1; j < i; j++) {
+		for (let j = 1; j <= i; j++) {
 			let nextRow = "*"
 			row += nextRow
 		}
