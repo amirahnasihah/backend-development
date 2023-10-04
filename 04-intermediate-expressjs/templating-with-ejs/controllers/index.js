@@ -17,4 +17,12 @@ const profileRoute = (req, res) => {
   res.render("profile", { user });
 };
 
-module.exports = { indexRoute, profileRoute };
+// PYRMID //
+const pyramidRoute = (req, res) => {
+  console.log("pyramid route");
+
+  const { numsRow } = req.params;
+  res.render("pyramid", { numsRow: numsRow });
+};
+
+module.exports = { indexRoute, profileRoute, pyramidRoute };

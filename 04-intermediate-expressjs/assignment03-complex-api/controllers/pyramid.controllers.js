@@ -9,7 +9,7 @@ const pyramidByParam = (req, res) => {
       let withinRow = "*";
       // console.log(withinRow)
       result = Number((row += withinRow));
-      console.log();
+      console.log("pyramidByParam");
     }
   }
 };
