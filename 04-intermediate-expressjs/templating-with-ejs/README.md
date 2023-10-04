@@ -2,6 +2,7 @@
   - [Dynamic applications](#dynamic-applications)
 - [dotenv.config](#dotenvconfig)
   - [`dotenv.config({ path: path.resolve(__dirname, "../.env") })`](#dotenvconfig-path-pathresolve__dirname-env-)
+- [EJS Tags](#ejs-tags)
 
 # Templating with EJS
 
@@ -130,3 +131,15 @@ The code `dotenv.config({ path: path.resolve(__dirname, "../.env") });` is a con
      - `path.resolve()` combines `__dirname` with `"../.env"` to create an absolute file path to the `.env` file that is located one directory level above the current module.
 
 So, when you run this code, it sets up the `dotenv` library to load environment variables from the `.env` file located one directory level above the current module, ensuring that those variables are available for the rest of your Node.js application.
+
+# EJS Tags
+
+- `<%`: 'Scriptlet' tag, for control-flow, no output
+- `<%_`: 'Whitespace Slurping' Scriptlet tag, strips all whitespace before it
+- `<%=`: Outputs the value into the template (HTML escaped)
+- `<%-`: Outputs the unescaped value into the template
+- `<%#`: Comment tag, no execution, no output
+- `<%%`: Outputs a literal '<%'
+- `%>`: Plain ending tag
+- `-%>`: Trim-mode ('newline slurp') tag, trims following newline
+- `_%>`: 'Whitespace Slurping' ending tag, removes all whitespace after it
