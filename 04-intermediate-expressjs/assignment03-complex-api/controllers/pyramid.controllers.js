@@ -1,5 +1,5 @@
 const pyramidByParam = (req, res) => {
-  let numsRow = req.params;
+  let { numsRow } = req.params;
 
   for (var i = 1; i <= numsRow; i++) {
     let row = " ";
@@ -14,4 +14,8 @@ const pyramidByParam = (req, res) => {
   }
 };
 
-module.exports = { pyramidByParam };
+const getPyramids = (req, res) => {
+  res.json({ msg: "working..." });
+};
+
+module.exports = { pyramidByParam, getPyramids };
