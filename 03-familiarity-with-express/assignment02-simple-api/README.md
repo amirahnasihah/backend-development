@@ -1,4 +1,5 @@
 - [Initial Step](#initial-step)
+- [Task](#task)
 
 Things to install:
 1. node.js `node -v`
@@ -24,3 +25,17 @@ Things to install:
 13. install nodemon `npm i nodemon -D` as a dev dependency.
 14. on *package.json*, add `"dev": "nodemon server.js"` to run nodemon with *server.js* under `"scripts"`.
 15. on terminal, type `npm run dev` to open *server.js* with nodemon.
+
+# Task
+
+Create an express app with the following routes
+
+a) “/api/:animal/” where “animal” is a path parameter, when the route is visited the api should send back a response saying “<animal> is the best!”. For example, visiting “/api/dog” shall return “dog is the best!”.
+(40 points)
+
+> tips: the uses of `req.params` to access route parameters which is `:animal` where we will get the name of a specified animal in a dynamic and different URL using colon (`:`)
+
+b) “/api/exponent/:n/:m” where “n” and “m” are path parameters, the api shall send back in response n^m, for example “/api/exponent/10/2” should return 100.
+(60 points)
+
+> tips: exponent, uses of Math.pow(base, exponent) prototypes
