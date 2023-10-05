@@ -19,6 +19,8 @@ Weather app is a simple project which touches on a few fundamentals that we have
 -	OpenCage API (sign up for API Key here https://opencagedata.com/)
 -	OpenMeteo API
 
+> express, ejs, dotenv, axios, nodemon
+> folder config, public, routes, controllers, views
 
 ## Specifications of the Project: 
 
