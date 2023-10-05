@@ -1,12 +1,12 @@
 const { Router } = require("express");
 const {
-  pyramidByParam,
   getPyramids,
+  getPyramidShape,
 } = require("../controllers/pyramid.controllers");
 
 const router = Router();
 
 router.route("/").get(getPyramids);
-router.route("/:numsRow").get(pyramidByParam);
+router.route("/:numsRow").get(getPyramidShape);
 
 module.exports = router;

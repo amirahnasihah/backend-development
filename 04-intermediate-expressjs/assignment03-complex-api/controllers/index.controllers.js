@@ -1,5 +1,5 @@
 const getRoot = (req, res) => {
-  res.send("This is a root file");
+  res.json({ msg: "Assignment 3: Complex API" });
 };
 
 module.exports = { getRoot };
