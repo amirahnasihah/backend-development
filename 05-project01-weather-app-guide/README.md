@@ -21,6 +21,7 @@ Weather app is a simple project which touches on a few fundamentals that we have
 
 > express, ejs, dotenv, axios, nodemon
 > folder config, public, routes, controllers, views
+> require express, path, dotenv, axios. mw json, urlencoded, view engine --ejs, static --public, cors
 
 ## Specifications of the Project: 
 
