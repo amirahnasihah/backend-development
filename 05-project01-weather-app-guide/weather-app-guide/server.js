@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const {router} = require('./routers')
 const {EXPRESS_OPENCAGE_API, PORT} = require('./config/secrets')
 
 const app = express()
@@ -14,6 +15,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(path.resolve())
 
 // routes
+app.use('/api', router)
 
 // server running
 app.listen(PORT, () => {
