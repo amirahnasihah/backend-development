@@ -6,8 +6,11 @@ const app = express()
 // set view engine
 
 // use middleware
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+app.use(path.resolve())
 
 // routes
 
 // server running
-app.listen()
+app.listen(PORT)
