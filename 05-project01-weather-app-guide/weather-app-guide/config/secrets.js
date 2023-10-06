@@ -4,3 +4,5 @@ const dotenv = require('dotenv')
 const path = require('path')
 
 const config = dotenv.config({path.resolve(__dirname, '../.env')})
+
+module.expoxrts = {...process.env}
