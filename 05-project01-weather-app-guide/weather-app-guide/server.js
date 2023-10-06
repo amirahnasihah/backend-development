@@ -2,7 +2,9 @@ const express = require('express')
 
 const app = express()
 
-// set 
+// set view engine
+
+// use middleware
 
 // routes
 
