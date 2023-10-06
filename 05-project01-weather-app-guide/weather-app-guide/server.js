@@ -5,7 +5,7 @@ const app = express()
 
 // set view engine
 app.set('view engine', 'ejs')
-app.set('views', pathm)
+app.set('views', path.resolve(__dirname, 'views'))
 
 // use middleware
 app.use(express.json())
