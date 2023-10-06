@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const {
+const {EXPRESS_OPENCAGE_API, PORT} = require('./config/secrets')
 
 const app = express()
 
