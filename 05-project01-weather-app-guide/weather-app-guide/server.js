@@ -13,4 +13,6 @@ app.use(path.resolve())
 // routes
 
 // server running
-app.listen(PORT)
+app.listen(PORT, () => {
+	console.log(``)
+})
