@@ -4,7 +4,11 @@
 
 1. **`for` Loop:**
    - A `for` loop is a general-purpose loop construct that allows you to perform iterations over an array or any iterable object.
-   
+   - You have full control over the iteration process, including specifying the start and end points, the step size, and more.
+   - It can be used for any kind of operation within the loop, such as modifying array elements, filtering, or any custom logic.
+   - It does not return a new array; it's typically used for side effects or accumulating results.
+
+   Example:
    ```javascript
    const numbers = [1, 2, 3, 4, 5];
    for (let i = 0; i < numbers.length; i++) {
