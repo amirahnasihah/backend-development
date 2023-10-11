@@ -2,8 +2,6 @@
 
 `for`, `forEach`, and `map()` are JavaScript constructs used to iterate over elements in an array, but they have different purposes and use cases:
 
-
-
 1. **`for` Loop:**
    - A `for` loop is a general-purpose loop construct that allows you to perform iterations over an array or any iterable object.
    - You have full control over the iteration process, including specifying the start and end points, the step size, and more.
