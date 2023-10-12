@@ -47,4 +47,3 @@ In summary:
 - Use `forEach()` when you want to perform an action (e.g., logging, updating elements) for each element in the array.
 - Use `map()` when you want to create a new array where each element is transformed based on a callback function.
 
-fin
