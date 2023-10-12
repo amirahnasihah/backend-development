@@ -3,6 +3,7 @@
 - [CRUD (Express only)](#crud-express-only)
 - [CRUD (Express with MongoDB)](#crud-express-with-mongodb)
   - [`express.json()` and `express.urlencoded()`](#expressjson-and-expressurlencoded)
+  - [`req.params` vs `req.body` vs `req.query`](#reqparams-vs-reqbody-vs-reqquery)
 
 # Tell me more about HTTP methods.
 
@@ -144,4 +145,29 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // combines the 2 above, then you can parse incoming Request Object if object, with nested objects, or generally any type.
 app.use(bodyParser.urlencoded({ extended: true }));
+```
+
+## `req.params` vs `req.body` vs `req.query`
+
+`req.params` is used to access route parameters, `req.body` is used to access the actual body of the request, and `req.query` is used to access any query parameters.
+
+For example, if I declare this route:
+
+```javascript
+router.get('/user/:id', function(req, res) {});
+```
+
+In this case, `req.params` will contain `id`.
+
+If I pass a body to this route:
+
+```json
+{
+  "name": "josh"
+}
+```
+
+This body will be available in `req.body`.
+
+If I pass some query parameters to `http://myserver.com/api/user?name="josh"`, `req.query` will be `{ name: 'josh' }`.
 ```
