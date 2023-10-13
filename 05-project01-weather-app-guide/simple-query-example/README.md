@@ -1,8 +1,9 @@
 - [request.query and request.param and request.body](#requestquery-and-requestparam-and-requestbody)
   - [request.query and request.param and request.body (part 2)](#requestquery-and-requestparam-and-requestbody-part-2)
 - [request query vs request param](#request-query-vs-request-param)
-- [Error Handling for User Data (Important)](#error-handling-for-user-data-important)
+- [Error Handling for User Data - GET (Important)](#error-handling-for-user-data---get-important)
   - [explain this more what it means length equal 0 , `if (response.data.length === 0) {`](#explain-this-more-what-it-means-length-equal-0--if-responsedatalength--0-)
+  - [Ternary Operator for Error Handling `if...else`](#ternary-operator-for-error-handling-ifelse)
 
 # request.query and request.param and request.body
 
@@ -201,7 +202,7 @@ Here are some key differences between request query parameters and request path 
 
 Ultimately, the choice between request query parameters and request path parameters depends on the specific requirements of your web application and the conventions of the API or framework you are working with.
 
-# Error Handling for User Data (Important)
+# Error Handling for User Data - GET (Important)
 
 To handle the case where no user name is provided in the query parameters and show an appropriate message, you can modify your code as follows:
 
@@ -260,3 +261,38 @@ Here's what it means:
 In the context of your code, if `response.data.length` is 0, it means that no user data was found for the provided query, and the code responds with a 404 status code and a message indicating that the user was not found.
 
 So, essentially, it's a way to handle cases where the API response is empty or does not contain the expected user data.
+
+## Ternary Operator for Error Handling `if...else`
+
+If you're looking for a more concise way to express the `if...else` statement, you can use a ternary operator. Here's how you can rewrite the `if...else` block in the `getUserData` function using a ternary operator:
+
+```javascript
+const getUserData = async (req, res) => {
+  const API_URL = 'https://jsonplaceholder.typicode.com/users';
+  const user = req.query.user;
+
+  try {
+    const response = user
+      ? await axios.get(`${API_URL}?q=${user}`)
+      : null;
+
+    if (!user) {
+      res.status(400).json({
+        message: 'Please provide a user name'
+      });
+    } else if (!response || response.data.length === 0) {
+      res.status(404).json({
+        message: 'User not found'
+      });
+    } else {
+      const userData = response.data[0];
+      res.status(200).json(userData);
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+}
+```
+
+In this code, we use the ternary operator to conditionally make the API request based on whether the `user` query parameter is provided. If it's not provided, we set `response` to `null`. The rest of the code remains largely the same as the previous version.
