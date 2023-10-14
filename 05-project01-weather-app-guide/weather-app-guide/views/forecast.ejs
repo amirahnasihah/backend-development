@@ -18,10 +18,10 @@
         <p>Hi</p>
 
         <h1>
-          <% apiData.users[0].map((u)=> { %>
-            <!-- <% const {firstName, ssn, hair}=users %> -->
-            <%= u.firstName %>
-              <% }) %>
+          <% apiData.map((u)=> { %>
+            <% const {firstName, age, email, address, ssn}=u %>
+              <%= firstName %>
+                <% }) %>
         </h1>
       </div>
 

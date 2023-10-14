@@ -15,7 +15,7 @@ const getWeather = async (req, res) => {
       if (response.data.length === 0) {
         res.status(404).json({ msg: "No data found" });
       } else {
-        const apiData = response.data;
+        const apiData = response.data.users[0];
 
         res.status(200);
         res.render("forecast", { apiData });
