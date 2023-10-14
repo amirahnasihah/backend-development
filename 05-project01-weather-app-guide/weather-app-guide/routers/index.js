@@ -1,11 +1,10 @@
 const { Router } = require("express");
-const rootRouter = require("../controllers/root.controllers");
-const forecastRouter = require("../controllers/forecast.controllers");
+const rootRouter = require("./root.router");
+const weatherRouter = require("./forecast.router");
 
 const router = Router();
 
-router.route("/", rootRouter);
-
-router.route("/forecast", forecastRouter);
+router.use("/", rootRouter);
+router.use("/forecast", weatherRouter);
 
 module.exports = { router };

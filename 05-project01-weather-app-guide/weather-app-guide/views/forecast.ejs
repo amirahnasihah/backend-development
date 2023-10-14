@@ -1,14 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forecast</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather Info</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheet/style.css">
   </head>
 
   <body>
-    <h1>Forecast today</h1>
+    <div>
+      <h1>Today's weather info</h1>
+
+      <div>
+        <p>Hi</p>
+
+        <h1>
+          <% apiData.users[0].map((u)=> { %>
+            <!-- <% const {firstName, ssn, hair}=users %> -->
+            <%= u.firstName %>
+              <% }) %>
+        </h1>
+      </div>
+
+      <button onclick="document.location='/'" type="button" title="Get weather">Search again</button>
+    </div>
+
+    <script src="" async defer></script>
   </body>
 
 </html>

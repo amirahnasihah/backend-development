@@ -1,5 +1,5 @@
 const getRoot = (req, res) => {
-  console.log("home page");
+  res.render("root");
 };
 
 module.exports = { getRoot };

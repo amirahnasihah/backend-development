@@ -1,0 +1,13 @@
+body {
+  font-family: monospace;
+  background-color: aqua;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: darkgoldenrod;
+}
