@@ -21,7 +21,7 @@
 For keeping secrets like API keys
 
 ```env
-EXPRESS_OPENCAGE_API = a9e584620e7b4b318df2d454fedbec8e
+EXPRESS_OPENCAGE_API = 123456789
 PORT = 3000
 TEST_ENV = "development"
 ```
