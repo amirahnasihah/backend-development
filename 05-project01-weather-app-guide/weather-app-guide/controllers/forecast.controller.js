@@ -12,13 +12,12 @@ const getWeather = async (req, res) => {
         `${BASE_URL}users/search?q=${query_params}`
       );
 
-      if (response.data.length === 0) {
+      if (response.data.users.length === 0) {
         res.status(404).json({ msg: "No data found" });
       } else {
-        const apiData = response.data.users[0];
-
+        const weather = response.data.users;
         res.status(200);
-        res.render("forecast", { apiData });
+        res.render("forecast", { weather });
       }
     }
   } catch (error) {

@@ -11,18 +11,48 @@
   </head>
 
   <body>
-    <div>
+    <div class="weather-block">
       <h1>Today's weather info</h1>
 
-      <div>
-        <p>Hi</p>
+      <div class="sub-block">
+        <% weather.map((w)=> { %>
+          <% const {firstName, lastName, address, age, id, weight, ssn, ein, company}=w %>
+            <div class="first-block">
+              <h2>
+                <%= firstName + ' ' + lastName %>
+              </h2>
+              <p>
+                Location: <%= address.city + ', ' + address.state %>
+              </p>
+              <p>
+                Latitude: <%= address.coordinates.lat %> || Longitude: <%= address.coordinates.lng %>
+              </p>
+            </div>
 
-        <h1>
-          <% apiData.map((u)=> { %>
-            <% const {firstName, age, email, address, ssn}=u %>
-              <%= firstName %>
-                <% }) %>
-        </h1>
+            <div class="second-block">
+              <h3>Current Time</h3>
+              <ul>
+                <li>
+                  Temperature: <%= id %>
+                </li>
+                <li>
+                  Wind Speed: <%= age %>
+                </li>
+                <li>
+                  Wind Direction: <%= weight %>
+                </li>
+              </ul>
+            </div>
+
+            <div class="third-block">
+              <h3>Hourly Forecast</h3>
+
+              <p>
+                <%= company.department + ", " + company.name + ", " + company.title %>
+              </p>
+            </div>
+
+            <% }) %>
       </div>
 
       <button onclick="document.location='/'" type="button" title="Get weather">Search again</button>

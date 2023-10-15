@@ -1,13 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic");
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: monospace;
-  background-color: aqua;
-  text-align: center;
+  font-family: "Nunito";
+  background-color: wheat;
 }
 
 button {
   cursor: pointer;
+  background-color: goldenrod;
 }
 
-a {
-  color: darkgoldenrod;
+.root {
+  text-align: center;
+  margin: 10%;
+}
+
+.search-form {
+  text-align: center;
+  margin-top: 10%;
+}
+
+/* WEATHER */
+
+li {
+  list-style-type: none;
+}
+
+.weather-block {
+  text-align: center;
+}
+
+.sub-block {
+  border: 1em solid #ccc;
+  border-radius: 3%;
+  margin: 5%;
+}
+
+.first-block {
+  border: 1cap solid #ccc;
+  margin: 5%;
+}
+
+.second-block {
+  border: 1cap solid #ccc;
+  margin: 5%;
+}
+
+.third-block {
+  border: 1cap solid #ccc;
+  margin: 5%;
 }
