@@ -15,6 +15,10 @@
   - [Update or Edit Data in Database](#update-or-edit-data-in-database)
   - [Remove or Delete Data from Database](#remove-or-delete-data-from-database)
 
+#### Deploy via Render
+
+☁️ Click here https://node-api-v2-p781.onrender.com/
+
 # Get Started
 
 1. install nodejs (LTS version), check if its installed on shell by `node -v`.
