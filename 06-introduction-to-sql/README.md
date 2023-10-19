@@ -101,7 +101,6 @@ WHERE <condition>;
 
 Example;
 ```sql
-SELECT (Name, Age) FROM users
-
-SELECT * FROM users
+DELETE FROM users
+WHERE id is 2
 ```
