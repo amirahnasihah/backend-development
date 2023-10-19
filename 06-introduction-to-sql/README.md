@@ -4,11 +4,22 @@ Web Backend Development With ExpressJS (Beta version)
 
 # Basic SQL Command
 
-Example create a db named Comp A
+> Example create a db named Comp A
 
-1. CREATE DATABASE comp-A
+1. Creating a Database and Table
 
-2.USE comp-A
+Example;
+
+```sql
+CREATE DATABASE comp-A
+```
+
+2.
+
+Example;
+```sql
+USE comp-A
+```
 
 3.CREATE TABLE <table_name> (
  <column_name> <data_type> <…constraints>,
