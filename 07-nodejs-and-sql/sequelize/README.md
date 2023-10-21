@@ -78,3 +78,27 @@ Sequelize will keep the connection open by default, and use the same connection 
 > NOTE: Once `sequelize.close()` has been called, it's impossible to open a new connection. You will need to create a new Sequelize instance to access your database again.
 
 # Models
+
+> https://sequelize.org/api/v6/class/src/model.js~model
+
+Models are the essence of Sequelize. A model is an abstraction that represents a table in your database. In Sequelize, it is a class that extends [Model](https://sequelize.org/api/v6/class/src/model.js~model).
+
+The model tells Sequelize several things about the entity it represents, such as the name of the table in the database and which columns it has (and their data types).
+
+A model can be defined using the define method on sequelize:
+
+```javascript
+sequelize.define(“<model_name>”, attributes, options);
+sequelize.define(“User”, {
+ email: { 
+ primaryKey: true, 
+ allowNull: false, 
+ unique: true, 
+ type: DataTypes.STRING
+ }, 
+ name: { 
+ type: DataTypes.STRING, 
+ allowNull: false
+ }
+});
+```
