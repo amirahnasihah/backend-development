@@ -4,6 +4,8 @@ In this tutorial you will learn to make a simple setup of Sequelize.
 
 ## Installing
 
+> https://sequelize.org/docs/v6/getting-started/
+
 ```shell
 npm install --save sequelize
 ```
