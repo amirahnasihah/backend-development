@@ -85,7 +85,7 @@ Models are the essence of Sequelize. A model is an abstraction that represents a
 
 The model tells Sequelize several things about the entity it represents, such as the name of the table in the database and which columns it has (and their data types).
 
-A model can be defined using the define method on sequelize:
+A model can be defined using the `define` method on sequelize:
 
 ```javascript
 sequelize.define(“<model_name>”, attributes, options);
