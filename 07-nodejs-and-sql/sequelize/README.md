@@ -56,3 +56,19 @@ A Sequelize instance is the core component of the Sequelize ORM (Object-Relation
    - `define`: Object with options for table and model definition.
    - Other options specific to the chosen database dialect.
 
+### Testing the connection
+
+You can use the `.authenticate()` function to test if the connection is OK:
+
+```javascript
+try {
+  await sequelize.authenticate();
+  console.log('Connection has been established successfully.');
+} catch (error) {
+  console.error('Unable to connect to the database:', error);
+}
+```
+
+**Closing the connection**:
+
+Sequelize will keep the connection open by default, and use the same connection for all queries. If you need to close the connection, call `sequelize.close()` (which is asynchronous and returns a Promise).
