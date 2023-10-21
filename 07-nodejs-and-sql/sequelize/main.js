@@ -7,3 +7,11 @@ const db = new Sequelize({
   password: "pass",
   port: 3306
 })
+
+const run = async () => {
+  try{
+    await db.authenticate();
+    console.log()
+  }
+  catch(error){}
+}
