@@ -131,3 +131,7 @@ const User = sequelize.define('User', {
 // `sequelize.define` also returns the model
 console.log(User === sequelize.models.User); // true
 ```
+
+**Synchronize Models with Database**: Create or update the database tables based on your models using Sequelize's synchronization methods.
+
+`await sequelize.sync();`
