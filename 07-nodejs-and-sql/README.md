@@ -10,4 +10,8 @@ So, if you're building a Node.js application and want to work with a MySQL datab
 
 # Sequelize
 
-`npm install sequelize`
+> source: https://sequelize.org/
+
+Installing. Sequelize is available via [npm](https://www.npmjs.com/package/sequelize) (or [yarn](https://yarnpkg.com/package/sequelize)).
+
+`npm install --save sequelize`
