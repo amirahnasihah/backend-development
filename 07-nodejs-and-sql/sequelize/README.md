@@ -89,16 +89,17 @@ A model can be defined using the `define` method on sequelize:
 
 ```javascript
 sequelize.define(“<model_name>”, attributes, options);
+
 sequelize.define(“User”, {
- email: { 
- primaryKey: true, 
- allowNull: false, 
- unique: true, 
- type: DataTypes.STRING
+  email: { 
+  primaryKey: true, 
+  allowNull: false, 
+  unique: true, 
+  type: DataTypes.STRING
  }, 
- name: { 
- type: DataTypes.STRING, 
- allowNull: false
+  name: { 
+  type: DataTypes.STRING, 
+  allowNull: false
  }
 });
 ```
