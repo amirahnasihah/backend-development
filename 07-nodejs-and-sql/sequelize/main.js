@@ -7,7 +7,8 @@ const db = new Sequelize({
   host: "127.0.0.1",
   username: "root",
   password: "pass",
-  port: 3306
+  port: 3306,
+  database: "sequelize"
 })
 
 const run = async () => {
