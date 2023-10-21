@@ -1,3 +1,2 @@
-# Backend Development
+# Sequelize, MySQL, and MySQL2
 
-Web Backend Development With ExpressJS (Beta version)
