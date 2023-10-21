@@ -8,3 +8,6 @@
 
 So, if you're building a Node.js application and want to work with a MySQL database, you might use MySQL2 as the driver to interact with the MySQL database, and you can use Sequelize as an additional layer to work with the database more easily using JavaScript objects and models. The choice between MySQL and MySQL2 depends on your specific requirements, but MySQL2 is generally considered more efficient and faster when working with Node.js.
 
+# Sequelize
+
+`npm install sequelize`
