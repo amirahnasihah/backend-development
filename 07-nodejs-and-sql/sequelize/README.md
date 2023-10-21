@@ -108,6 +108,8 @@ sequelize.define(“User”, {
 
 > https://sequelize.org/docs/v6/core-concepts/model-basics/#using-sequelizedefine
 
+Sequelize best practices:
+
 ```javascript
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
