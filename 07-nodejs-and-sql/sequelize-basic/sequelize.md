@@ -76,4 +76,6 @@ TalentLabs:
 
 ```javascript
 sequelize.define("<model_name>", attributes, options)
+
+
 ```
