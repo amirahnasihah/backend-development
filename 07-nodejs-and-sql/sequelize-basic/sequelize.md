@@ -31,13 +31,14 @@ const run = async () => {
     await db.authenticate();
     // .sync() method to create or update database tables based on your defined models
     await db.sync();
-    // create entities
+    // create entities (values)
+    
+     // debug
+  console.log(user, "\n", user.toJSON());
     console.log("Connection has been established successfully.");
   } catch (error) {
     console.error("Unable to connect to the database:", error);
   }
-  // debug
-  console.log(user, "\n", user.toJSON());
 };
 run();
 ```
