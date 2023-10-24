@@ -81,3 +81,19 @@ console.log(User === sequelize.models.User); // true
 
 ## Table name inference
 
+By default, when the table name is not given, Sequelize automatically pluralizes the model name and uses that as the table name. This pluralization is done under the hood by a library called [inflection](https://www.npmjs.com/package/inflection), so that irregular plurals (such as `person -> people`) are computed correctly.
+
+Of course, this behavior is easily configurable.
+
+You can stop the auto-pluralization performed by Sequelize using
+
+1. the `freezeTableName: true` option.
+
+2. simply tell Sequelize the name of the table directly.
+```javascript
+sequelize.define('User', {
+  // ... (attributes)
+}, {
+  tableName: 'Employees'
+});
+```
