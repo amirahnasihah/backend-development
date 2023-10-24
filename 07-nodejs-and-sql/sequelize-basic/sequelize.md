@@ -26,6 +26,7 @@ const run = async () => {
   try{
     // .authenticate() function to test if the connection is OK
     await db.authenticate();
+    // .sync() method to create or update database tables based on your defined models
     await db.sync();
     console.log('Connection has been established successfully.');
   }
