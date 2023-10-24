@@ -36,6 +36,8 @@ const run = async () => {
   } catch (error) {
     console.error("Unable to connect to the database:", error);
   }
+  // debug
+  console.log(user, "\n", user.toJSON());
 };
 run();
 ```
