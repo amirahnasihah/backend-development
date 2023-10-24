@@ -114,7 +114,6 @@ Company.belongsTo(User, { foreignKey: “owner” });
 
 - One to many relationship is when one model owns multiple entities of another type, let’s take the example where we have one user who can have multiple posts, and we define this relationship with the foreign key of “creator” in the posts table.
 
-
 ```javascript
 const User = sequelize.define(“User”, <attributes>);
 const Post = sequelize.define(“Post”, <attributes>);
@@ -128,3 +127,33 @@ Post.belongsTo(User, { foreignKey: “creator” });
 - Let’s take the following case, we have a table of Projects and a Table of Employees, a Project can have many employees and an employee could be working on multiple projects at once. Or the case where one class can have many students and the student can be taking many classes, in such cases we have 2 tables which are associated to each other in a fashion know as M:N or Many to Many.
 
 In a Many to Many association we use a Junction Table, or a Join table to describe the relationship so as to not mess up the structure of the data and turning it into a mess in one of the other tables which controls the relationship.
+
+- A many to many association in Sequelize can be defined using the belongs to many method.
+
+```javascript
+const Company = sequelize.define(“Company”, <attributes>);
+const Project = sequelize.define(“Project”, <attributes>);
+const CompanyProjects = sequelize.define(“CompanyProjects”,{});
+
+Company.belongsToMany(Project, { through: CompanyProjects });
+Project.belongsToMany(Company, { through: CompanyProjects });
+```
+
+- Now we can define a User or a Project while creating one of the entities using the include option, or using the add relationship methods on any of the entities.
+
+```javascript
+const company = await Company.create({ // creating using the include option
+ companyName: “TalentLabs”, 
+ Projects: [{
+ title: “Backend CABE"
+ }, {
+ title: “JavaScript M1”
+ }]
+}, {
+ include: [Project]
+});
+const company = await Company.findByPk(companyId); // using add relation method
+const project = await Project.findByPk(projectId);
+
+company.addProject(project, { through: CompanyProjects });
+```
