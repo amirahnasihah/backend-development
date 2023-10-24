@@ -11,6 +11,8 @@ const db = new Sequelize({
   database: "sequelize"
 })
 
+// Model
+
 const run = async () => {
   try{
     await db.authenticate();
