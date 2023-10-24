@@ -12,7 +12,7 @@
 ```javascript
 // const { Sequelize, Op, Model, DataTypes } = require("sequelize");
 // const sequelize = new Sequelize("sqlite::memory:");
-const { Sequelize } = require('sequelize');
+const { Sequelize } = require("sequelize");
 
 // connect to the database, you must create a Sequelize instance
 const db = new Sequelize({
@@ -21,21 +21,20 @@ const db = new Sequelize({
   username: "root",
   password: "pass",
   port: 3306,
-  database: "sequelize"
-})
+  database: "sequelize",
+});
 
 const run = async () => {
-  try{
+  try {
     // .authenticate() function to test if the connection is OK
     await db.authenticate();
     // .sync() method to create or update database tables based on your defined models
     await db.sync();
-    console.log('Connection has been established successfully.');
+    console.log("Connection has been established successfully.");
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
   }
-  catch(error){
-    console.error('Unable to connect to the database:', error);
-  }
-}
+};
 run();
 ```
 
@@ -46,27 +45,33 @@ run();
 - A model in Sequelize has a name. This name does not have to be the same name of the table it represents in the database. Usually, models have singular names (such as `User`) while tables have pluralized names (such as `Users`), although this is fully configurable.
 
 Models can be defined in two equivalent ways in Sequelize:
+
 - Calling `sequelize.define(modelName, attributes, options)`
 - Extending `Model` and calling `init(attributes, options)`
 
 **Using `sequelize.define`**:
-```javascript
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:');
 
-const User = sequelize.define('User', {
-  // Model attributes are defined here
-  firstName: {
-    type: DataTypes.STRING,
-    allowNull: false
+```javascript
+const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = new Sequelize("sqlite::memory:");
+
+const User = sequelize.define(
+  "User",
+  {
+    // Model attributes are defined here
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      // allowNull defaults to true
+    },
   },
-  lastName: {
-    type: DataTypes.STRING
-    // allowNull defaults to true
+  {
+    // Other model options go here
   }
-}, {
-  // Other model options go here
-});
+);
 
 // `sequelize.define` also returns the model
 console.log(User === sequelize.models.User); // true
@@ -77,5 +82,16 @@ TalentLabs:
 ```javascript
 sequelize.define("<model_name>", attributes, options)
 
-
+sequelize.define(“User”, {
+ email: {
+ primaryKey: true,
+ allowNull: false,
+ unique: true,
+ type: DataTypes.STRING
+ },
+ name: {
+ type: DataTypes.STRING,
+ allowNull: false
+ }
+});
 ```
