@@ -107,3 +107,4 @@ const Company = sequelize.define(“Company”, <attributes>);
 User.hasOne(Company, { foreignKey: “owner” });
 Company.belongsTo(User, { foreignKey: “owner” });
 ```
+
