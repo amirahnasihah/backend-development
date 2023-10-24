@@ -48,3 +48,27 @@ run();
 Models can be defined in two equivalent ways in Sequelize:
 - Calling `sequelize.define(modelName, attributes, options)`
 - Extending `Model` and calling `init(attributes, options)`
+
+**Using `sequelize.define`**:
+
+```javascript
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('sqlite::memory:');
+
+const User = sequelize.define('User', {
+  // Model attributes are defined here
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  lastName: {
+    type: DataTypes.STRING
+    // allowNull defaults to true
+  }
+}, {
+  // Other model options go here
+});
+
+// `sequelize.define` also returns the model
+console.log(User === sequelize.models.User); // true
+```
