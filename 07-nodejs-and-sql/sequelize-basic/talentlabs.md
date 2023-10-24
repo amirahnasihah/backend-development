@@ -94,3 +94,16 @@ const user = await User.findByPk(email);
 await user.destroy();
 ```
 
+## One to One Relationship
+
+- Say we have a Users Table and a Company table, each company has exactly one admin, to define that relationship we can use the association syntax in sequelize. The syntax needs us to specify the relation ship in both the DBs where, we state that the company “belongs to” a user and the user can “have one” company.
+
+The foreign key option here is used to define the foreign key to be created in the table marked as the the table which will belong to the other.
+
+```javascript
+const User = sequelize.define(“User”, <attributes>);
+const Company = sequelize.define(“Company”, <attributes>);
+
+User.hasOne(Company, { foreignKey: “owner” });
+Company.belongsTo(User, { foreignKey: “owner” });
+```
