@@ -50,7 +50,6 @@ Models can be defined in two equivalent ways in Sequelize:
 - Extending `Model` and calling `init(attributes, options)`
 
 **Using `sequelize.define`**:
-
 ```javascript
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
@@ -71,4 +70,10 @@ const User = sequelize.define('User', {
 
 // `sequelize.define` also returns the model
 console.log(User === sequelize.models.User); // true
+```
+
+TalentLabs:
+
+```javascript
+sequelize.define("<model_name>", attributes, options)
 ```
