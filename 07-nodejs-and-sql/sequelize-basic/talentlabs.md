@@ -30,3 +30,25 @@ await sequelize.authenticate().catch((err) /> {
  console.error(“unable to connect to SQL\n”, err);
 });
 ```
+
+## Models
+
+• A model is the core essence of Sequelize, it’s the abstraction for a table in the database, it allows us to define and update tables straight from our application’s code. 
+• A model can be defined using the define method on sequelize:
+
+```javascript
+sequelize.define(“<model_name>”, attributes, options);
+
+sequelize.define(“User”, {
+ email: { 
+ primaryKey: true, 
+ allowNull: false, 
+ unique: true, 
+ type: DataTypes.STRING
+ }, 
+ name: { 
+ type: DataTypes.STRING, 
+ allowNull: false
+ }
+});
+```
