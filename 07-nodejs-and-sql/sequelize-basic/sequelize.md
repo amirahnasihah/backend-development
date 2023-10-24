@@ -32,7 +32,7 @@ const run = async () => {
     // .sync() method to create or update database tables based on your defined models
     await db.sync();
     // create entities (values)
-    
+    const user = await db.create
      // debug
   console.log(user, "\n", user.toJSON());
     console.log("Connection has been established successfully.");
