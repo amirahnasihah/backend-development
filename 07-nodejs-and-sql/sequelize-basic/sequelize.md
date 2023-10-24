@@ -7,6 +7,8 @@
 5. then, create a database `create database sequelize`. exit.
 6. add database options and set to sequelize.
 
+# Getting Started
+
 ```javascript
 // const { Sequelize, Op, Model, DataTypes } = require("sequelize");
 // const sequelize = new Sequelize("sqlite::memory:");
@@ -37,7 +39,6 @@ const run = async () => {
 run();
 ```
 
-# Getting Started
+# Model
 
-# Models
-
+Models are the essence of Sequelize. A model is an abstraction that represents a table in your database. 
