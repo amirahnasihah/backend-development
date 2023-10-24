@@ -110,3 +110,16 @@ User.hasOne(Company, { foreignKey: “owner” });
 Company.belongsTo(User, { foreignKey: “owner” });
 ```
 
+## One to Many Relationship
+
+- One to many relationship is when one model owns multiple entities of another type, let’s take the example where we have one user who can have multiple posts, and we define this relationship with the foreign key of “creator” in the posts table.
+
+
+```javascript
+const User = sequelize.define(“User”, <attributes>);
+const Post = sequelize.define(“Post”, <attributes>);
+
+User.hasMany(Post, { foreignKey: “creator” });
+Post.belongsTo(User, { foreignKey: “creator” });
+```
+
