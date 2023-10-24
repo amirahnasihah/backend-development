@@ -33,8 +33,8 @@ await sequelize.authenticate().catch((err) /> {
 
 ## Models
 
-• A model is the core essence of Sequelize, it’s the abstraction for a table in the database, it allows us to define and update tables straight from our application’s code. 
-• A model can be defined using the define method on sequelize:
+- A model is the core essence of Sequelize, it’s the abstraction for a table in the database, it allows us to define and update tables straight from our application’s code. 
+- A model can be defined using the define method on sequelize:
 
 ```javascript
 sequelize.define(“<model_name>”, attributes, options);
@@ -52,3 +52,21 @@ sequelize.define(“User”, {
  }
 });
 ```
+
+## Inserting and Reading Data
+
+- Data can be inserted into a table by using the “create” method on a model.
+
+```javascript
+<Model_Name>.create({
+ property1: value1,
+ property2: value2
+});
+```
+
+- We can use one of the many methods that exist on the Model to find the data 
+we need.
+
+1. `findAll`: returns all the entries which match the criteria.
+2. `findOne`: returns the first entry to match the criteria specified.
+3. `findByPk`: finds an entry by the primary key.
