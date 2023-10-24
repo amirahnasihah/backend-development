@@ -70,3 +70,27 @@ we need.
 1. `findAll`: returns all the entries which match the criteria.
 2. `findOne`: returns the first entry to match the criteria specified.
 3. `findByPk`: finds an entry by the primary key.
+
+## Updating and Deleting Data
+
+- An instance of the model can be updated either by manipulating the attribute directly or by bulk updating the attributes using the set method.
+
+```javascript
+const user = await User.findByPk(email);
+user.firstName = “Jane”; // by manipulating attribute
+user.set({ // by using set method
+ age: 32, 
+ salary: 72000
+});
+
+await user.save();
+```
+
+- An instance of a model can be deleted using the “destroy” method
+
+```javascript
+const user = await User.findByPk(email);
+
+await user.destroy();
+```
+
