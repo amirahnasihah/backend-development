@@ -124,3 +124,19 @@ You can use `sequelize.sync()` to automatically synchronize all models. Example:
 await sequelize.sync({ force: true });
 console.log("All models were synchronized successfully.");
 ```
+
+## Dropping tables
+
+To drop the table related to a model:
+
+````javascript
+await User.drop();
+console.log("User table dropped!");
+````
+
+To drop all tables:
+
+```javascript
+await sequelize.drop();
+console.log("All tables dropped!");
+```
