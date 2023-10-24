@@ -44,6 +44,8 @@ run();
 - The model tells Sequelize several things about the entity it represents, such as the name of the table in the database and which columns it has (and their data types).
 - A model in Sequelize has a name. This name does not have to be the same name of the table it represents in the database. Usually, models have singular names (such as `User`) while tables have pluralized names (such as `Users`), although this is fully configurable.
 
+## Model Definition
+
 Models can be defined in two equivalent ways in Sequelize:
 
 - Calling `sequelize.define(modelName, attributes, options)`
@@ -76,3 +78,6 @@ const User = sequelize.define(
 // `sequelize.define` also returns the model
 console.log(User === sequelize.models.User); // true
 ```
+
+## Table name inference
+
