@@ -123,3 +123,8 @@ User.hasMany(Post, { foreignKey: “creator” });
 Post.belongsTo(User, { foreignKey: “creator” });
 ```
 
+## Many to Many (M:N) Association
+
+- Let’s take the following case, we have a table of Projects and a Table of Employees, a Project can have many employees and an employee could be working on multiple projects at once. Or the case where one class can have many students and the student can be taking many classes, in such cases we have 2 tables which are associated to each other in a fashion know as M:N or Many to Many.
+
+In a Many to Many association we use a Junction Table, or a Join table to describe the relationship so as to not mess up the structure of the data and turning it into a mess in one of the other tables which controls the relationship.
