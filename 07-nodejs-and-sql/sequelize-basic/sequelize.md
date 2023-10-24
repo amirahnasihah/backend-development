@@ -76,22 +76,3 @@ const User = sequelize.define(
 // `sequelize.define` also returns the model
 console.log(User === sequelize.models.User); // true
 ```
-
-TalentLabs:
-
-```javascript
-sequelize.define("<model_name>", attributes, options)
-
-sequelize.define(“User”, {
- email: {
- primaryKey: true,
- allowNull: false,
- unique: true,
- type: DataTypes.STRING
- },
- name: {
- type: DataTypes.STRING,
- allowNull: false
- }
-});
-```
