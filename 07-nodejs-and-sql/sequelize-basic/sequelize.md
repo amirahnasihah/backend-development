@@ -5,7 +5,7 @@
 3. install sequelize and mysql2 `npm i sequelize mysql2`.
 4. connect with mysql monitor `mysql -u root -p` and enter password.
 5. then, create a database `create database sequelize`. exit.
-6.add database options and set to sequelize.
+6. add database options and set to sequelize.
 
 ```javascript
 // const { Sequelize, Op, Model, DataTypes } = require("sequelize");
@@ -35,3 +35,6 @@ run();
 ```
 
 # Getting Started
+
+# Models
+
