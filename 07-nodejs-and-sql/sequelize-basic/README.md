@@ -26,7 +26,7 @@ $ npm install --save oracledb # Oracle Database
 
 To connect to the database, you must create a Sequelize instance. This can be done by either passing the connection parameters separately to the Sequelize constructor or by passing a single connection URI:
 
-```shell
+```javascript
 const { Sequelize } = require('sequelize');
 
 // Option 1: Passing a connection URI
