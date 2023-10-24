@@ -10,6 +10,7 @@ $ npm install sequelize mysql2
 ```
 
 ## Initiating a Connection
+
 - A sequelize connection can be initiated using the Sequelize function imported from the package, you need to pass certain connection options and the connection is good to go.
 
 ```javascript
@@ -51,6 +52,15 @@ sequelize.define(“User”, {
  allowNull: false
  }
 });
+```
+
+1. in terminal to create a database, type `mysql -u root -p`. enter mysql password.
+2. then, `create database <db_name>`, example; `create database sequelize`. `exit` mysql.
+
+```javascript
+// ...
+  database: "sequelize" // database to use
+// ...
 ```
 
 ## Inserting and Reading Data
