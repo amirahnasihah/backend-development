@@ -115,3 +115,12 @@ Example:
 await User.sync({ force: true });
 console.log("The table for the User model was just (re)created!");
 ```
+
+**Synchronizing all models at once**
+
+You can use `sequelize.sync()` to automatically synchronize all models. Example:
+
+```javascript
+await sequelize.sync({ force: true });
+console.log("All models were synchronized successfully.");
+```
