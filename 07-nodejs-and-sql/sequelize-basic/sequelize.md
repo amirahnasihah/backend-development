@@ -153,3 +153,18 @@ To drop all tables:
 await sequelize.drop();
 console.log("All tables dropped!");
 ```
+
+# Model Instances
+
+As you already know, a model is an ES6 class. An instance of the class represents one object from that model (which maps to one row of the table in the database). This way, model instances are DAOs.
+
+## Creating an instance
+
+```javascript
+const jane = await User.create({ name: "Jane" });
+// Jane exists in the database now!
+console.log(jane instanceof User); // true
+console.log(jane.name); // "Jane"
+```
+
+> Note: logging instances
