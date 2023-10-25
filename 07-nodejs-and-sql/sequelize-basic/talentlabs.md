@@ -231,9 +231,11 @@ const run = async () => {
     
     const user = await User.findAll({ where: { id: 12  } })
     
-    const bob = await User.findByPk(1);
+    const bob = await User.findByPk(1); // by Primary Key
     
     const bob = await User.findOne({ where: { firstName: "Bob" } })
+    
+    const users = await User.findAll({ where: {email [Op.like]: "%smith.com" } })
      // 8) debug
   console.log(user, "\n", user.toJSON());
   console.log(bob.toJSON()),
