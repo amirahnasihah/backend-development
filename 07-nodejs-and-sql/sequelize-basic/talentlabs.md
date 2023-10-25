@@ -226,6 +226,14 @@ const run = async () => {
       lastName: "Smith",
       email: "jane@smith.com"
     })
+    
+    const user = await User.findAll({})
+    
+    const user = await User.findAll({
+      where: {
+        id: 12
+      }
+    })
      // 8) debug
   console.log(user, "\n", user.toJSON());
     console.log("Connection has been established successfully.");
