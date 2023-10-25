@@ -188,7 +188,7 @@ const db = new Sequelize({
 });
 
 // 5) Model define
-db.define('User', {
+const User = db.define('User', {
   // 6) Model attributes are defined here
   id: {
     // REQUIRED
