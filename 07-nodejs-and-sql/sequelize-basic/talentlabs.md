@@ -168,3 +168,39 @@ const project = await Project.findByPk(projectId);
 
 company.addProject(project, { through: CompanyProjects });
 ```
+
+# A dive into Models
+
+main.js
+```javascript
+// const { Sequelize, Op, Model, DataTypes } = require("sequelize");
+// const sequelize = new Sequelize("sqlite::memory:");
+const { Sequelize } = require("sequelize");
+
+// connect to the database, you must create a Sequelize instance
+const db = new Sequelize({
+  dialect: "mysql2",
+  host: "127.0.0.1",
+  username: "root",
+  password: "pass",
+  port: 3306,
+  database: "sequelize",
+});
+
+const run = async () => {
+  try {
+    // .authenticate() function to test if the connection is OK
+    await db.authenticate();
+    // .sync() method to create or update database tables based on your defined models
+    await db.sync();
+    // create entities (values)
+    const user = await db.create
+     // debug
+  console.log(user, "\n", user.toJSON());
+    console.log("Connection has been established successfully.");
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+  }
+};
+run();
+```
