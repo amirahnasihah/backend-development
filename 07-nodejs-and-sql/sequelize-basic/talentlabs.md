@@ -175,9 +175,9 @@ main.js
 ```javascript
 // const { Sequelize, Op, Model, DataTypes } = require("sequelize");
 // const sequelize = new Sequelize("sqlite::memory:");
-const { Sequelize } = require("sequelize"); // to  require Sequelize services
+const { Sequelize } = require("sequelize"); // 1) to  require Sequelize services
 
-// to connect to the database, you must create a Sequelize instance
+// 2) to connect to the database, you must create a Sequelize instance
 const db = new Sequelize({
   dialect: "mysql2",
   host: "127.0.0.1",
@@ -187,9 +187,9 @@ const db = new Sequelize({
   database: "sequelize", // database name
 });
 
-// Model define
+// 5) Model define
 db.define('User', {
-  // Model attributes are defined here
+  // 6) Model attributes are defined here
   id: {
     // REQUIRED
     type: DataTypes.INTEGER,
@@ -213,15 +213,16 @@ db.define('User', {
   }
 })
 
+// 3) test connection
 const run = async () => {
   try {
-    // .authenticate() function to test if the connection is OK
+    // 3) .authenticate() function to test if the connection is OK
     await db.authenticate();
-    // .sync() method to create or update database tables based on your defined models
+    // 4) .sync() method to create or update database tables based on your defined models
     await db.sync();
-    // Model Instances - we create entities (values)
+    // 7) Model Instances - we create entities (values)
     const user = await db.create
-     // debug
+     // 8) debug
   console.log(user, "\n", user.toJSON());
     console.log("Connection has been established successfully.");
   } catch (error) {
