@@ -196,3 +196,18 @@ console.log("All users:", JSON.stringify(users, null, 2));
 
 SELECT * FROM ...
 ```
+
+## Applying WHERE clauses
+
+The `where` option is used to filter the query. There are lots of operators to use for the `where` clause, available as Symbols from [`Op`](https://sequelize.org/api/v6/variable/index.html#static-variable-Op).
+
+**Basics**:
+
+```javascript
+tableName.findAll({
+  where: {
+    authorId: 2
+  }
+});
+// SELECT * FROM post WHERE authorId = 2;
+```
