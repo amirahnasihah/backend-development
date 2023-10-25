@@ -204,3 +204,13 @@ const run = async () => {
 };
 run();
 ```
+
+1. in terminal to create a database, type `mysql -u root -p` will enter mysql terminal. enter mysql password.
+2. then, `create database <db_name>`, example; `create database sequelize`. `exit` mysql.
+3. add database
+```javascript
+// ...
+  database: "sequelize" // database to use
+// ...
+```
+4. enter mysql terminal, `use sequelize` to use db. then, `desc users` shows db properties.
