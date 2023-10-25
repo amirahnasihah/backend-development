@@ -225,3 +225,15 @@ tableName.findAll({
 ```
 
 Observe that no operator (from `Op`) was explicitly passed, so Sequelize assumed an equality comparison by default. The above code is equivalent to:
+
+```javascript
+const { Op } = require("sequelize");
+Post.findAll({
+  where: {
+    authorId: {
+      [Op.eq]: 2
+    }
+  }
+});
+// SELECT * FROM post WHERE authorId = 2;
+```
