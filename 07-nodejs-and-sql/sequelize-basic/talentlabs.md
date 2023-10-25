@@ -229,16 +229,14 @@ const run = async () => {
     
     const user = await User.findAll({})
     
-    const user = await User.findAll({
-      where: {
-        id: 12
-      }
-    })
+    const user = await User.findAll({ where: { id: 12  } })
     
     const bob = await User.findByPk(1);
+    
+    const bob = await User.findOne({ where: { firstName: "Bob" } })
      // 8) debug
   console.log(user, "\n", user.toJSON());
-  console.log(bob),
+  console.log(bob.toJSON()),
     console.log("Connection has been established successfully.");
   } catch (error) {
     console.error("Unable to connect to the database:", error);
