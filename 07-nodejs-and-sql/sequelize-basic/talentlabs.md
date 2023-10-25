@@ -191,7 +191,9 @@ const db = new Sequelize({
 db.define('User', {
   // Model attributes are defined here
   id: {
+    // REQUIRED
     type: DataTypes.INTEGER,
+    // OPTIONAL
     
   }
 })
