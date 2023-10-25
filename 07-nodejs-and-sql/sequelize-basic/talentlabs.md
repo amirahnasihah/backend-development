@@ -187,13 +187,21 @@ const db = new Sequelize({
   database: "sequelize", // database name
 });
 
+// Model define
+db.define('User', {
+  id: {
+    type: DataTypes.INTEGER,
+    
+  }
+})
+
 const run = async () => {
   try {
     // .authenticate() function to test if the connection is OK
     await db.authenticate();
     // .sync() method to create or update database tables based on your defined models
     await db.sync();
-    // create entities (values)
+    // Model Instances - we create entities (values)
     const user = await db.create
      // debug
   console.log(user, "\n", user.toJSON());
