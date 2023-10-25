@@ -221,7 +221,11 @@ const run = async () => {
     // 4) .sync() method to create or update database tables based on your defined models
     await db.sync();
     // 7) Model Instances - we create entities (values)
-    const user = await db.create
+    const user = await User.create({
+      firstName: "Jane",
+      lastName: "Smith",
+      email: "jane@smith.com"
+    })
      // 8) debug
   console.log(user, "\n", user.toJSON());
     console.log("Connection has been established successfully.");
