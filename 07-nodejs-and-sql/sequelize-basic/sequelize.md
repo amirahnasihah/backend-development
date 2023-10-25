@@ -211,3 +211,15 @@ tableName.findAll({
 });
 // SELECT * FROM post WHERE authorId = 2;
 ```
+
+**Multiple checks can be passed**:
+
+```javascript
+tableName.findAll({
+  where: {
+    authorId: 12,
+    status: 'active'
+  }
+});
+// SELECT * FROM post WHERE authorId = 12 AND status = 'active';
+```
