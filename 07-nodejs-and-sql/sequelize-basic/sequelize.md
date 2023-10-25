@@ -224,7 +224,7 @@ tableName.findAll({
 // SELECT * FROM post WHERE authorId = 12 AND status = 'active';
 ```
 
-Observe that no operator (from `Op`) was explicitly passed, so Sequelize assumed an equality comparison by default. The above code is equivalent to:
+Observe that no operator (from `Op`) was explicitly passed, so Sequelize assumed an **equality comparison** by default. The above code is equivalent to:
 
 ```javascript
 const { Op } = require("sequelize");
@@ -236,4 +236,19 @@ Post.findAll({
   }
 });
 // SELECT * FROM post WHERE authorId = 2;
+```
+
+here Sequelize inferred that the caller wanted an `AND` for the **two checks**:
+
+```javascript
+const { Op } = require("sequelize");
+Post.findAll({
+  where: {
+    [Op.and]: [
+      { authorId: 12 },
+      { status: 'active' }
+    ]
+  }
+});
+// SELECT * FROM post WHERE authorId = 12 AND status = 'active';
 ```
