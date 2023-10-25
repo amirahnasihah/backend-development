@@ -194,6 +194,16 @@ db.define('User', {
     // REQUIRED
     type: DataTypes.INTEGER,
     // OPTIONAL
+    autoIncrement: true,
+    allowNull: false,
+    primaryKey: true,
+    unique: true,
+  },
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  lastName: {
     
   }
 })
