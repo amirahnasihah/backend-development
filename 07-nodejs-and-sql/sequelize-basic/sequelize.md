@@ -52,7 +52,7 @@ run();
 ## Model Definition
 
 ```javascript
-const ModelName = sequelize.define("tablename", {
+const ModelName = db_name.define("tablename", {
   // s will be appended automatically to the tablename
   firstColumn: Sequelize.INTEGER,
   secondColumn: Sequelize.STRING,
