@@ -51,6 +51,14 @@ run();
 
 ## Model Definition
 
+```javascript
+const ModelName = sequelize.define("tablename", {
+  // s will be appended automatically to the tablename
+  firstColumn: Sequelize.INTEGER,
+  secondColumn: Sequelize.STRING,
+});
+```
+
 Models can be defined in two equivalent ways in Sequelize:
 
 - Calling `sequelize.define(modelName, attributes, options)`
