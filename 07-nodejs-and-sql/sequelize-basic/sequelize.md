@@ -175,3 +175,22 @@ const jane = await User.create({ name: "Jane" });
 console.log(jane.toJSON()); // This is good!
 console.log(JSON.stringify(jane, null, 4)); // This is also good!
 ```
+
+# Basic Model Querying
+
+> Important notice: to perform production-ready queries with Sequelize, make sure you have read the Transactions guide as well. Transactions are important to ensure data integrity and to provide other benefits.
+
+This guide will show how to make the standard CRUD queries.
+
+## Simple SELECT queries
+
+You can read the whole table from the database with the `findAll` method:
+
+```javascript
+// Find all users
+const users = await User.findAll();
+console.log(users.every(user => user instanceof User)); // true
+console.log("All users:", JSON.stringify(users, null, 2));
+
+SELECT * FROM ...
+```
