@@ -267,3 +267,17 @@ modelName.findAll({
 });
 // SELECT * FROM post WHERE authorId = 12 OR authorId = 13;
 ```
+
+Since the above was an `OR` **involving the same field**, Sequelize allows you to use a slightly different structure which is more readable and generates the same behavior:
+
+```javascript
+const { Op } = require("sequelize");
+Post.destroy({
+  where: {
+    authorId: {
+      [Op.or]: [12, 13]
+    }
+  }
+});
+// DELETE FROM post WHERE authorId = 12 OR authorId = 13;
+```
