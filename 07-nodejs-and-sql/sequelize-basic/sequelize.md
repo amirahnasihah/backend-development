@@ -223,3 +223,5 @@ tableName.findAll({
 });
 // SELECT * FROM post WHERE authorId = 12 AND status = 'active';
 ```
+
+Observe that no operator (from `Op`) was explicitly passed, so Sequelize assumed an equality comparison by default. The above code is equivalent to:
