@@ -184,7 +184,7 @@ const db = new Sequelize({
   username: "root",
   password: "pass",
   port: 3306,
-  database: "sequelize",
+  database: "sequelize", // database name
 });
 
 const run = async () => {
