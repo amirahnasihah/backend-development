@@ -168,3 +168,10 @@ console.log(jane.name); // "Jane"
 ```
 
 > Note: logging instances
+
+```javascript
+const jane = await User.create({ name: "Jane" });
+// console.log(jane); // Don't do this
+console.log(jane.toJSON()); // This is good!
+console.log(JSON.stringify(jane, null, 4)); // This is also good!
+```
