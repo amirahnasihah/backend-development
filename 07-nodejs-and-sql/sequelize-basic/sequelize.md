@@ -272,7 +272,7 @@ Since the above was an `OR` **involving the same field**, Sequelize allows you t
 
 ```javascript
 const { Op } = require("sequelize");
-Post.destroy({
+modelName.destroy({
   where: {
     authorId: {
       [Op.or]: [12, 13]
