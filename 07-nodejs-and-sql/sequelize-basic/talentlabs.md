@@ -205,7 +205,7 @@ db.define('User', {
   lastName: {
     type: DataTypes.STRING,
     allowNull: true,
-    defaultValue: "Doe",
+    // defaultValue: "Doe",
   },
   email: {
     type: DataTypes.STRING,
