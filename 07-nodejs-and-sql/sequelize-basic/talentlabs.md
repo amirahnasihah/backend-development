@@ -177,7 +177,7 @@ main.js
 // const sequelize = new Sequelize("sqlite::memory:");
 const { Sequelize } = require("sequelize");
 
-// connect to the database, you must create a Sequelize instance
+// to connect to the database, you must create a Sequelize instance
 const db = new Sequelize({
   dialect: "mysql2",
   host: "127.0.0.1",
