@@ -208,7 +208,7 @@ db.define('User', {
     defaultValue: "Doe",
   },
   email: {
-    type: DataTypes.,
+    type: DataTypes.STRING,
     allowNull: false,
     unique: true,
   }
