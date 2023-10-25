@@ -204,7 +204,7 @@ The `where` option is used to filter the query. There are lots of operators to u
 **Basics**:
 
 ```javascript
-tableName.findAll({
+modelName.findAll({
   where: {
     authorId: 2
   }
@@ -215,7 +215,7 @@ tableName.findAll({
 **Multiple checks can be passed**:
 
 ```javascript
-tableName.findAll({
+modelName.findAll({
   where: {
     authorId: 12,
     status: 'active'
@@ -228,7 +228,7 @@ Observe that no operator (from `Op`) was explicitly passed, so Sequelize assumed
 
 ```javascript
 const { Op } = require("sequelize");
-Post.findAll({
+modelName.findAll({
   where: {
     authorId: {
       [Op.eq]: 2
@@ -242,7 +242,7 @@ here Sequelize inferred that the caller wanted an `AND` for the **two checks**:
 
 ```javascript
 const { Op } = require("sequelize");
-Post.findAll({
+modelName.findAll({
   where: {
     [Op.and]: [
       { authorId: 12 },
@@ -257,7 +257,7 @@ An `OR` can be easily performed in a similar way:
 
 ```javascript
 const { Op } = require("sequelize");
-Post.findAll({
+modelName.findAll({
   where: {
     [Op.or]: [
       { authorId: 12 },
