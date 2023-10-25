@@ -288,6 +288,7 @@ Several operators:
 
 ```javascript
 const { Op } = require("sequelize");
+
 modelName.findAll({
   where: {
     [Op.and]: [{ a: 5 }, { b: 6 }],            // (a = 5) AND (b = 6)
