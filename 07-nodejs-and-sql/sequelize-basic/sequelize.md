@@ -184,6 +184,8 @@ This guide will show how to make the standard CRUD queries.
 
 ## Simple SELECT queries
 
+> https://sequelize.org/docs/v6/core-concepts/model-querying-basics/
+
 You can read the whole table from the database with the `findAll` method:
 
 ```javascript
