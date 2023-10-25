@@ -252,3 +252,18 @@ Post.findAll({
 });
 // SELECT * FROM post WHERE authorId = 12 AND status = 'active';
 ```
+
+An `OR` can be easily performed in a similar way:
+
+```javascript
+const { Op } = require("sequelize");
+Post.findAll({
+  where: {
+    [Op.or]: [
+      { authorId: 12 },
+      { authorId: 13 }
+    ]
+  }
+});
+// SELECT * FROM post WHERE authorId = 12 OR authorId = 13;
+```
