@@ -195,7 +195,6 @@ db.define('User', {
     type: DataTypes.INTEGER,
     // OPTIONAL
     autoIncrement: true,
-    allowNull: false,
     primaryKey: true,
   },
   firstName: {
