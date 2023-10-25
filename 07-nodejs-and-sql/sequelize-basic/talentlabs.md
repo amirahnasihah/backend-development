@@ -197,14 +197,20 @@ db.define('User', {
     autoIncrement: true,
     allowNull: false,
     primaryKey: true,
-    unique: true,
   },
   firstName: {
     type: DataTypes.STRING,
     allowNull: false,
   },
   lastName: {
-    
+    type: DataTypes.STRING,
+    allowNull: true,
+    defaultValue: "Doe",
+  },
+  email: {
+    type: DataTypes.,
+    allowNull: false,
+    unique: true,
   }
 })
 
