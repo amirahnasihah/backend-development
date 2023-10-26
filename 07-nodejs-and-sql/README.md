@@ -15,3 +15,13 @@ So, if you're building a Node.js application and want to work with a MySQL datab
 Installing. Sequelize is available via [npm](https://www.npmjs.com/package/sequelize) (or [yarn](https://yarnpkg.com/package/sequelize)).
 
 `npm install --save sequelize`
+
+# MySQL Command Line
+
+> source: https://maheshwaghmare.com/mysql/how-to/not-recognized-as-an-internal-or-external-command/
+
+If the MySQL command line is shown as below, [go here](https://maheshwaghmare.com/mysql/how-to/not-recognized-as-an-internal-or-external-command/):
+
+```shell
+The term 'mysql' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+```
