@@ -1,3 +1,14 @@
+- [Node.JS and SQL - Section 5](#nodejs-and-sql---section-5)
+  - [An Introduction to Sequelize](#an-introduction-to-sequelize)
+  - [Initiating a Connection](#initiating-a-connection)
+  - [Models](#models)
+  - [Inserting and Reading Data](#inserting-and-reading-data)
+  - [Updating and Deleting Data](#updating-and-deleting-data)
+  - [One to One Relationship](#one-to-one-relationship)
+  - [One to Many Relationship](#one-to-many-relationship)
+  - [Many to Many (M:N) Association](#many-to-many-mn-association)
+- [A dive into Models](#a-dive-into-models)
+
 # Node.JS and SQL - Section 5
 
 ## An Introduction to Sequelize

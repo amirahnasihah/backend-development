@@ -1,3 +1,17 @@
+- [Install Dependencies](#install-dependencies)
+- [Getting Started](#getting-started)
+- [Model](#model)
+  - [Model Definition](#model-definition)
+  - [Table name inference](#table-name-inference)
+  - [Model synchronization](#model-synchronization)
+  - [Dropping tables](#dropping-tables)
+- [Model Instances](#model-instances)
+  - [Creating an instance](#creating-an-instance)
+- [Basic Model Querying](#basic-model-querying)
+  - [Simple SELECT queries](#simple-select-queries)
+  - [Applying WHERE clauses](#applying-where-clauses)
+  - [Operators (`Op`)](#operators-op)
+
 # Install Dependencies
 
 1. a new folder for our simple projects to initiate Sequelize connection with Node.js.

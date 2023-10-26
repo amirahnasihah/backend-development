@@ -135,3 +135,31 @@ console.log(User === sequelize.models.User); // true
 **Synchronize Models with Database**: Create or update the database tables based on your models using Sequelize's synchronization methods.
 
 `await sequelize.sync();`
+
+## Connecting to the MySQL Server with the mysql Client
+
+> 💡source: https://dev.mysql.com/doc/refman/8.0/en/mysql.html
+> source: https://dev.mysql.com/doc/mysql-getting-started/en/
+> **in terminal to create a database, type `mysql -u root -p` will enter the MySQL Command-Line Client terminal. enter mysql password: password1**
+
+Once your MySQL server is up and running, you can connect to it as the superuser root with the mysql client.
+
+On Windows, click **Start, All Programs, MySQL, MySQL 5.7 Command Line Client** (or **MySQL 8.0 Command Line Client**, respectively). If you did not install MySQL with the MySQL Installer, open a command prompt, go to the `bin` folder under the base directory of your MySQL installation, and issue the following command:
+
+```shell
+C:\> mysql -u root -p
+```
+
+You are then asked for the `root` password, which was assigned in different manners according to the way you installed MySQL.
+
+If you have forgotten the root password you have chosen or have problems finding the temporary root password generated for you, see [How to Reset the Root Password](https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html).
+
+```sql
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+```
+
+To disconnect from the MySQL server, type QUIT or \q at the client:
+
+```sql
+mysql> QUIT
+```
