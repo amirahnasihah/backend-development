@@ -236,7 +236,7 @@ const run = async () => {
     
     const bob = await User.findOne({ where: { firstName: "Bob" } })
     
-    const users = await User.findAll({ where: {email [Op.like]: "%smith.com" } })
+    const users = await User.findAll({ where: {email: { [Op.like]: "%doe.com" } } })
      // 8) debug
   console.log(user, "\n", user.toJSON());
   console.log(bob.toJSON()),
@@ -251,15 +251,29 @@ run();
 > Methods of changing the current working directory: `cd ..` or `cd ~`
 
 1. install dependencies: `npm i sequelize mysql2 nodemon`.
-2. to run in integrated terminal: `nodemon main.js`.
-3. in terminal to create a database, type `mysql -u root -p` will enter mysql terminal. enter mysql password.
-4. then, `create database <db_name>`, example; `create database sequelize`. `exit` mysql.
+2. run the main.js in integrated terminal: `nodemon main.js`.
+3. in terminal to create a database, type `mysql -u root -p` will enter mysql terminal. enter mysql password. if term 'mysql' is not recognized shown, [go here](https://maheshwaghmare.com/mysql/how-to/not-recognized-as-an-internal-or-external-command/).
+4. then, `create database <db_name>;`, example; `create database sequelize;`. `exit` mysql. tip: `;` put semicolon symbol.
 5. add database
 ```javascript
 // ...
   database: "sequelize" // database to use
 // ...
 ```
-6. enter mysql terminal, `use sequelize` to use db. then, `desc users` shows db properties.
+6. enter mysql terminal, `use sequelize;` to use db. then, `desc users;` will show db properties.
+```sql
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| id        | int          | NO   | PRI | NULL    | auto_increment |
+| firstName | varchar(255) | YES  |     | NULL    |                |
+| lastName  | varchar(255) | NO   |     | NULL    |                |
+| email     | varchar(255) | NO   | UNI | NULL    |                |
+| createdAt | datetime     | NO   |     | NULL    |                |
+| updatedAt | datetime     | NO   |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+6 rows in set (0.01 sec)
+```
+7. in main.js, add new user by using `create` method from sequelize. `User.create({ ... })`
 
 > The term 'mysql' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.

@@ -1,6 +1,6 @@
 // const { Sequelize, Op, Model, DataTypes } = require("sequelize");
 // const sequelize = new Sequelize("sqlite::memory:");
-const { Sequelize, DataTypes } = require("sequelize");
+const { Sequelize, DataTypes, Op } = require("sequelize");
 
 const db = new Sequelize({
   dialect: "mysql",
@@ -12,7 +12,7 @@ const db = new Sequelize({
 });
 
 // Model
-db.define("User", {
+const User = db.define("User", {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -20,11 +20,11 @@ db.define("User", {
   },
   firstName: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
   },
   lastName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   email: {
     type: DataTypes.STRING,
@@ -37,6 +37,13 @@ const run = async () => {
   try {
     await db.authenticate();
     await db.sync();
+
+    const findUsers = await User.findAll({});
+    console.log("findusers", findUsers);
+
+    const doe = await User.findAll({
+      where: { email: { [Op.like]: "%doe.com" } },
+    });
 
     console.log("Connection has been established successfully.");
   } catch (error) {
