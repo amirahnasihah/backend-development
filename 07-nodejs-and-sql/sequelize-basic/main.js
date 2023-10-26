@@ -1,26 +1,46 @@
 // const { Sequelize, Op, Model, DataTypes } = require("sequelize");
 // const sequelize = new Sequelize("sqlite::memory:");
-const { Sequelize } = require('sequelize');
+const { Sequelize, DataTypes } = require("sequelize");
 
 const db = new Sequelize({
-  dialect: "mysql2",
+  dialect: "mysql",
   host: "127.0.0.1",
   username: "root",
-  password: "pass",
+  password: "password1",
   port: 3306,
-  database: "sequelize"
-})
+  database: "test_sequelize",
+});
 
 // Model
+db.define("User", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  lastName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+});
 
 const run = async () => {
-  try{
+  try {
     await db.authenticate();
     await db.sync();
-    console.log('Connection has been established successfully.');
+
+    console.log("Connection has been established successfully.");
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
   }
-  catch(error){
-    console.error('Unable to connect to the database:', error);
-  }
-}
+};
 run();

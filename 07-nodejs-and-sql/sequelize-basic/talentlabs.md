@@ -65,16 +65,6 @@ sequelize.define(“User”, {
 });
 ```
 
-1. in terminal to create a database, type `mysql -u root -p` will enter mysql terminal. enter mysql password.
-2. then, `create database <db_name>`, example; `create database sequelize`. `exit` mysql.
-3. add database
-```javascript
-// ...
-  database: "sequelize" // database to use
-// ...
-```
-4. enter mysql terminal, `use sequelize` to use db. then, `desc users` shows db properties.
-
 ## Inserting and Reading Data
 
 - Data can be inserted into a table by using the “create” method on a model.
@@ -258,12 +248,16 @@ const run = async () => {
 run();
 ```
 
-1. in terminal to create a database, type `mysql -u root -p` will enter mysql terminal. enter mysql password.
-2. then, `create database <db_name>`, example; `create database sequelize`. `exit` mysql.
-3. add database
+> Methods of changing the current working directory: `cd ..` or `cd ~`
+
+1. install dependencies: `npm i sequelize mysql2 nodemon`.
+2. to run in integrated terminal: `nodemon main.js`.
+3. in terminal to create a database, type `mysql -u root -p` will enter mysql terminal. enter mysql password.
+4. then, `create database <db_name>`, example; `create database sequelize`. `exit` mysql.
+5. add database
 ```javascript
 // ...
   database: "sequelize" // database to use
 // ...
 ```
-4. enter mysql terminal, `use sequelize` to use db. then, `desc users` shows db properties.
+1. enter mysql terminal, `use sequelize` to use db. then, `desc users` shows db properties.
