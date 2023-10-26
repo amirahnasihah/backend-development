@@ -260,4 +260,6 @@ run();
   database: "sequelize" // database to use
 // ...
 ```
-1. enter mysql terminal, `use sequelize` to use db. then, `desc users` shows db properties.
+6. enter mysql terminal, `use sequelize` to use db. then, `desc users` shows db properties.
+
+> The term 'mysql' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
