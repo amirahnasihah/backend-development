@@ -14,7 +14,7 @@
 ## An Introduction to Sequelize
 
 - ORM stands for Object Relationship Mapping, it’s a piece of software that abstracts away the complexity of having to write queries and makes interacting with databases as natural as possible for us as developers.
-- Sequelize is a really popular ORM that is widely used to interact with MySQL and can be installed using:
+- Sequelize is a really popular ORM that is widely used to interact with MySQL and can be installed using
 
 ```shell
 $ npm install sequelize mysql2
