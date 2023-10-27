@@ -278,3 +278,5 @@ run();
 7. in main.js, add new user by using `create` method from sequelize. `User.create({ ... })`
 
 > The term 'mysql' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+## Create and findAll
