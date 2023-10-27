@@ -281,4 +281,25 @@ run();
 
 ## Create and findAll
 
+```javascript
+const user = await User.create({
+      firstName: "Jane",
+      lastName: "Smith",
+      email: "jane@smith.com"
+    })
+    
+    const user = await User.findAll({})
+    
+    const user = await User.findAll({ where: { id: 12  } })
+    
+    const bob = await User.findByPk(1); // by Primary Key
+    
+    const bob = await User.findOne({ where: { firstName: "Bob" } })
+    
+    const users = await User.findAll({ where: {email: { [Op.like]: "%doe.com" } } })
+     // 8) debug
+  console.log(user, "\n", user.toJSON());
+  console.log(bob.toJSON()),
+```
+
 ## Update and Delete
