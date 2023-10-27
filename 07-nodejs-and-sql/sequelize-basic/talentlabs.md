@@ -173,6 +173,7 @@ company.addProject(project, { through: CompanyProjects });
 # A dive into Models (Tutorial)
 
 main.js
+
 ```javascript
 // const { Sequelize, Op, Model, DataTypes } = require("sequelize");
 // const sequelize = new Sequelize("sqlite::memory:");
