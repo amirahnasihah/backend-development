@@ -170,7 +170,7 @@ const project = await Project.findByPk(projectId);
 company.addProject(project, { through: CompanyProjects });
 ```
 
-# A dive into Models
+# A dive into Models (Tutorial)
 
 main.js
 ```javascript
