@@ -172,7 +172,7 @@ company.addProject(project, { through: CompanyProjects });
 
 # A dive into Models (Tutorial)
 
-main.js
+main.js:
 
 ```javascript
 // const { Sequelize, Op, Model, DataTypes } = require("sequelize");
