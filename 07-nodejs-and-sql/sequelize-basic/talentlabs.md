@@ -254,7 +254,7 @@ run();
 1. install dependencies: `npm i sequelize mysql2 nodemon`.
 2. run the main.js in integrated terminal: `nodemon main.js`.
 3. in terminal to create a database, type `mysql -u root -p` will enter mysql terminal. enter mysql password. if term 'mysql' is not recognized shown, [go here](https://maheshwaghmare.com/mysql/how-to/not-recognized-as-an-internal-or-external-command/).
-4. then, `create database <db_name>;`, example; `create database sequelize;`. `exit` mysql. tip: `;` put semicolon symbol.
+4. then, `create database <db_name>;`, example; `create database sequelize;`. `exit` mysql to quit. tip: `;` put semicolon symbol.
 5. add database
 ```javascript
 // ...
