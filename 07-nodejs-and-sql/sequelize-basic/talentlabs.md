@@ -282,7 +282,7 @@ run();
 ## Create and findAll
 
 ```javascript
-	const user = await User.create({
+const user = await User.create({
       firstName: "Jane",
       lastName: "Smith",
       email: "jane@smith.com"
