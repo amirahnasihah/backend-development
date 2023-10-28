@@ -307,6 +307,8 @@ const user = await User.create({
 1. update: directly manipulate property attributes or using `set`.
 2. delete: `destroy`.
 
+```javascript
+const jane = await User.findAll({ where: {id: 2} })
 ```
 
-```
+1. grab the data that wants to update.
