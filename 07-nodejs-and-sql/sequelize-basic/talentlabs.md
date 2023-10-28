@@ -302,5 +302,5 @@ const user = await User.create({
   console.log(bob.toJSON()),
 ```
 
-## Update and Delete
+## Update and Delete Data
 
