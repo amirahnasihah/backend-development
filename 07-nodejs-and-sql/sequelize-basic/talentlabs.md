@@ -322,3 +322,7 @@ console.log(jane.toJSON())
 ```
 
 2. delete: `destroy`
+
+```javascript
+
+```
