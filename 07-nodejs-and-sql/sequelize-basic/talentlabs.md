@@ -304,6 +304,9 @@ const user = await User.create({
 
 ## Update and Delete Data
 
+1. update: `set`.
+2. delete: `destroy`.
+
 ```
 
 ```
