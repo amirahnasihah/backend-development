@@ -315,6 +315,9 @@ jane.set({
   lastName: "Smith",
   email: "jane@smith.com",
 });
+await jane.save()
+
+console.log(jane.toJSON())
 ```
 
 1. grab the data that wants to update.
