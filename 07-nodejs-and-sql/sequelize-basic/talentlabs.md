@@ -321,7 +321,7 @@ await jane.save()
 console.log(jane.toJSON())
 ```
 
-2. delete: `destroy`
+2. delete: `destroy`. we find the entity and then destroy them
 
 ```javascript
 const john = await User.findByPk(1);
