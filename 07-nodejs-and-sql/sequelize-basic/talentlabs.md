@@ -240,7 +240,7 @@ const run = async () => {
     const users = await User.findAll({ where: {email: { [Op.like]: "%doe.com" } } })
      // 8) debug
   console.log(user, "\n", user.toJSON());
-  console.log(bob.toJSON()),
+  console.log(bob.toJSON());
     console.log("Connection has been established successfully.");
   } catch (error) {
     console.error("Unable to connect to the database:", error);
