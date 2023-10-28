@@ -324,5 +324,6 @@ console.log(jane.toJSON())
 2. delete: `destroy`
 
 ```javascript
-
+const john = await User.findByPk(1);
+await john.destroy();
 ```
