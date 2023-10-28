@@ -308,9 +308,13 @@ const user = await User.create({
 2. delete: `destroy`.
 
 ```javascript
+// edit jane's lastName and email:
 const jane = await User.findByPk(2);
 
-
+jane.set({
+  lastName: "Smith",
+  email: "jane@smith.com",
+})
 ```
 
 1. grab the data that wants to update.
