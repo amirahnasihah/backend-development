@@ -44,6 +44,7 @@ const run = async () => {
     const doe = await User.findAll({
       where: { email: { [Op.like]: "%doe.com" } },
     });
+    console.log(doe.toJSON());
 
     console.log("Connection has been established successfully.");
   } catch (error) {
