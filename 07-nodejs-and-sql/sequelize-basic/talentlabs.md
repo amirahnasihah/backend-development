@@ -327,3 +327,5 @@ console.log(jane.toJSON())
 const john = await User.findByPk(1);
 await john.destroy();
 ```
+
+en
