@@ -304,8 +304,9 @@ const user = await User.create({
 
 ## Update and Delete Data
 
-1. update: directly manipulate property attributes or using `set`.
-2. delete: `destroy`.
+- to update either directly manipulate property attributes or using `set`. to delete using `destroy`.
+
+1. update: `set`. 
 
 ```javascript
 // edit jane's lastName and email:
@@ -320,4 +321,3 @@ await jane.save()
 console.log(jane.toJSON())
 ```
 
-1. grab the data that wants to update.
