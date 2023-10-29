@@ -443,3 +443,26 @@ User.hasOne(Company, { foreignKey: “owner” });
 Company.belongsTo(User, { foreignKey: “owner” });
 ```
 
+```javascript
+User.hasOne(Company, { foreignKey: “owner” });
+Company.belongsTo(User, { foreignKey: “owner” });
+
+const run = async () => {
+  // ...
+    // ex; Foo Company belongs to Bob with id 1
+    const fooCompany = await Company.create({
+      name: "Foo Company",
+      owner: 1,
+    });
+    const user = await User.findByPk(1, { include: Company });
+    
+    console.log(user.toJSON());
+  // ...
+};
+```
+
+#### One-To-Many (most common)
+
+```javascript
+
+```
