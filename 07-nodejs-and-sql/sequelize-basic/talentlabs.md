@@ -355,14 +355,15 @@ const Company = db.define("Company", {
 });
 
 // now, have 2 models defined: User and Company
-
-User.hasOne(Company, { foreignKey: “owner” }); // This states that a One-to-One relationship exists between User and Company with foreign key defined in Company.
-Company.belongsTo(User, { foreignKey: “owner” }); // This states that a One-to-One or One-to-Many relationship exists between Company and User with foreign key defined in Company.
 ```
 
 1. open terminal, `mysql -u root -p`. then, `desc users` and `desc companies` will have owner field in companies db.
 
 ```javascript
+// One-to-One
+User.hasOne(Company, { foreignKey: “owner” }); // This states that a One-to-One relationship exists between User and Company with foreign key defined in Company.
+Company.belongsTo(User, { foreignKey: “owner” }); // This states that a One-to-One or One-to-Many relationship exists between Company and User with foreign key defined in Company.
+
 const run = async () => {
   // ...
   // One-to-One
@@ -375,7 +376,7 @@ const run = async () => {
     
     console.log(user.toJSON());
     
-  // One-to-Many
+  // One-to-Many (most common)
     // ex;
   // ...
 };
@@ -432,7 +433,7 @@ These three calls will cause Sequelize to automatically add foreign keys to the 
 - To create a **Many-To-Many** relationship, two `belongsToMany` calls are used together.
   - Note: there is also a Super Many-To-Many relationship, which uses six associations at once, and will be discussed in the [Advanced Many-to-Many relationships guide](https://sequelize.org/docs/v6/advanced-association-concepts/advanced-many-to-many/).
 
-#### `hasOne`
+#### One-To-One
 
 ```javascript
 const User = sequelize.define(“User”, <attributes>);
