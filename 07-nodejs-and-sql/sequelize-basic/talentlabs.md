@@ -328,7 +328,7 @@ const john = await User.findByPk(1);
 await john.destroy();
 ```
 
-## Association
+## Association (Relationship)
 
 > https://sequelize.org/api/v6/class/src/associations/base.js~association
 > https://dev.to/projectescape/the-comprehensive-sequelize-cheatsheet-3m1m#associations
