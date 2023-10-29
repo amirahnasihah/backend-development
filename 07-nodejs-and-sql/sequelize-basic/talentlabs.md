@@ -343,3 +343,11 @@ Creating associations in sequelize is done by calling one of the belongsTo / has
 4. `belongsToMany` - creates an N:M association with a join table and adds plural association mixins to the source. The junction table is created with sourceId and targetId.
 
 ### `hasOne`
+
+```javascript
+const User = sequelize.define(“User”, <attributes>);
+const Company = sequelize.define(“Company”, <attributes>);
+
+User.hasOne(Company, { foreignKey: “owner” });
+Company.belongsTo(User, { foreignKey: “owner” });
+```
