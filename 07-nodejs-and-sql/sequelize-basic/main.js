@@ -11,7 +11,7 @@ const db = new Sequelize({
   database: "test_sequelize",
 });
 
-// Model
+// Models
 const User = db.define("User", {
   id: {
     type: DataTypes.INTEGER,
