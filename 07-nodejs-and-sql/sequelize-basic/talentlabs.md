@@ -376,6 +376,16 @@ Sequelize provides **four** types of associations:
 3. `hasMany` - adds a foreign key to target and plural association mixins to the source.
 4. `belongsToMany` - creates an N:M association with a join table and adds plural association mixins to the source. The junction table is created with sourceId and targetId.
 
+```javascript
+const A = sequelize.define('A', /* ... */);
+const B = sequelize.define('B', /* ... */);
+
+A.hasOne(B, { /* options */ }); // A HasOne B
+A.belongsTo(B, { /* options */ }); // A BelongsTo B
+A.hasMany(B, { /* options */ }); // A HasMany B
+A.belongsToMany(B, { through: 'C', /* options */ }); // A BelongsToMany B through the junction table C
+```
+
 #### `hasOne`
 
 ```javascript
