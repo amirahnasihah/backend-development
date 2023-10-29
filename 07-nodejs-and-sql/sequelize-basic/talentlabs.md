@@ -358,9 +358,14 @@ const Company = db.define("Company", {
 
 User.hasOne(Company, { foreignKey: “owner” }); // This states that a One-to-One relationship exists between User and Company with foreign key defined in Company.
 Company.belongsTo(User, { foreignKey: “owner” }); // This states that a One-to-One or One-to-Many relationship exists between Company and User with foreign key defined in Company.
+```
 
+1. open terminal, `mysql -u root -p`. then, `desc users` and `desc companies` will have owner field in companies db.
+
+```javascript
 const run = async () => {
   // ...
+  // One-to-One
     // ex; Foo Company belongs to Bob with id 1
     const fooCompany = await Company.create({
       name: "Foo Company",
@@ -369,11 +374,12 @@ const run = async () => {
     const user = await User.findByPk(1, { include: Company });
     
     console.log(user.toJSON());
+    
+  // One-to-Many
+    // ex;
   // ...
 };
 ```
-
-1. open terminal, `mysql -u root -p`. then, `desc users` and `desc companies` will have owner field in companies db.
 
 ### Association
 
