@@ -333,6 +333,10 @@ await john.destroy();
 > https://sequelize.org/api/v6/class/src/associations/base.js~association
 > https://dev.to/projectescape/the-comprehensive-sequelize-cheatsheet-3m1m#associations
 
+Creating associations in sequelize is done by calling one of the belongsTo / hasOne / hasMany / belongsToMany functions on a model (the source), and providing another model as the first argument to the function (the target).
+
+**The model whose function we will be calling is called the source model, and the model which is passed as a parameter is called the target model.**
+
 1. `hasOne` - adds a foreign key to the target and singular association mixins to the source.
 2. `belongsTo` - add a foreign key and singular association mixins to the source.
 3. `hasMany` - adds a foreign key to target and plural association mixins to the source.
