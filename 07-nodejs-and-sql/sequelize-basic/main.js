@@ -98,6 +98,13 @@ const run = async () => {
     await delJane.destroy();
     
     // Relationship
+      // One-To-One
+    const fooCompany = await Company.create({
+      name: "Foo Company",
+      owner: 1,
+    });
+    
+      // One-To-Many
     for (let i = 0; i < 5; i++) {
         const post = await Post.create({
           description: `Hello World ${i}`,
