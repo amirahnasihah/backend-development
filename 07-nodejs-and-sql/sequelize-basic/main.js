@@ -33,6 +33,18 @@ const User = db.define("User", {
   },
 });
 
+const Company = db.define("Company", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
+
 const run = async () => {
   try {
     await db.authenticate();
