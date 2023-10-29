@@ -114,7 +114,6 @@ const run = async () => {
       console.log(post);
     }
     const userAssoc = await User.findByPk(1, { include: [Company, Post] });
-    
     console.log(userAssoc.toJSON());
     
     console.log("Connection has been established successfully.");
