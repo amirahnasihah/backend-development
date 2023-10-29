@@ -497,12 +497,17 @@ Post.belongsTo(User, { foreignKey: “creatorId” });
 
 const run = async () => {
   // ...
-    // ex; Foo Company belongs to Bob with id 1
-    const fooCompany = await Company.create({
-      name: "Foo Company",
-      owner: 1,
-    });
-    const user = await User.findByPk(1, { include: Company });
+    // ex; Bob create post
+    for (let i = 0; i < 5; i++) {
+        const post = await Post.create({
+          description: `Hello World ${i}`,
+          media: `https://foo.com/${i}.png`,
+          creatorId: 1,
+      });
+      console.log(post);
+    }
+    
+    const user = await User.findByPk(1, { include: Post });
     
     console.log(user.toJSON());
   // ...
