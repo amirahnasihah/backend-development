@@ -333,9 +333,9 @@ await john.destroy();
 > https://sequelize.org/api/v6/class/src/associations/base.js~association
 > https://dev.to/projectescape/the-comprehensive-sequelize-cheatsheet-3m1m#associations
 
-1. hasOne - adds a foreign key to the target and singular association mixins to the source.
-2. belongsTo - add a foreign key and singular association mixins to the source.
-3. hasMany - adds a foreign key to target and plural association mixins to the source.
-4. belongsToMany - creates an N:M association with a join table and adds plural association mixins to the source. The junction table is created with sourceId and targetId.
+1. `hasOne` - adds a foreign key to the target and singular association mixins to the source.
+2. `belongsTo` - add a foreign key and singular association mixins to the source.
+3. `hasMany` - adds a foreign key to target and plural association mixins to the source.
+4. `belongsToMany` - creates an N:M association with a join table and adds plural association mixins to the source. The junction table is created with sourceId and targetId.
 
 ### `hasOne`
