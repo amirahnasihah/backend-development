@@ -357,8 +357,6 @@ const Company = db.define("Company", {
 // now, have 2 models defined: User and Company
 ```
 
-1. open terminal, `mysql -u root -p`. then, `desc users` and `desc companies` will have owner field in companies db.
-
 ```javascript
 // One-to-One
 User.hasOne(Company, { foreignKey: “owner” }); // This states that a One-to-One relationship exists between User and Company with foreign key defined in Company.
@@ -442,6 +440,8 @@ const Company = sequelize.define(“Company”, <attributes>);
 User.hasOne(Company, { foreignKey: “owner” });
 Company.belongsTo(User, { foreignKey: “owner” });
 ```
+
+1. open terminal, `mysql -u root -p`. then, `desc users` and `desc companies` will have `owner` field in companies db.
 
 ```javascript
 User.hasOne(Company, { foreignKey: “owner” });
