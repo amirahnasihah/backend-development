@@ -347,14 +347,16 @@ const Company = db.define("Company", {
 });
 
 // now, have 2 models defined: User and Company
-// sourceModel.association(targetModel, {foreignKey: "fkName"});
+
 User.hasOne(Company, { foreignKey: “owner” });
+Company.belongsTo(User, { foreignKey: “owner” });
 ```
 
 > foreign key always exist on the child. so, parent is the User model. a user has one company and the foreignKey is owner. so, a foreignKey is created inside of Company model called owner.
 
 ```javascript
 sourceModel.association(targetModel, {foreignKey: "fkName"});
+targetModel.association(sourceModel, {foreignKey: "fkName"});
 ```
 
 Creating associations in sequelize is done by calling one of the `belongsTo` / `hasOne` / `hasMany` / `belongsToMany` functions on a model (the source), and providing another model as the first argument to the function (the target).
