@@ -37,7 +37,15 @@ const run = async () => {
   try {
     await db.authenticate();
     await db.sync();
-
+    
+    // CREATE
+    const user = await User.create({
+      firstName: "Baek",
+      lastName: "Ji Young",
+      email: "baek@young.com",
+    })
+    
+    // READ
     const findUsers = await User.findAll({});
     console.log("findusers", findUsers);
 
@@ -45,6 +53,8 @@ const run = async () => {
       where: { email: { [Op.like]: "%doe.com" } },
     });
     console.log(doe.toJSON());
+    
+    // UPDATE
 
     console.log("Connection has been established successfully.");
   } catch (error) {
