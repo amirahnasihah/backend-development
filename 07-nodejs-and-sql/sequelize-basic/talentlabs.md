@@ -364,6 +364,7 @@ Company.belongsTo(User, { foreignKey: “owner” }); // This states that a One-
 
 Creating associations in sequelize is done by calling one of the `belongsTo` / `hasOne` / `hasMany` / `belongsToMany` functions on a model (the source), and providing another model as the first argument to the function (the target).
 
+> https://sequelize.org/docs/v6/core-concepts/assocs/
 > https://sequelize.org/api/v6/class/src/associations/base.js~association
 > https://dev.to/projectescape/the-comprehensive-sequelize-cheatsheet-3m1m#associations
 
