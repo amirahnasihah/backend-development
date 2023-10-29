@@ -369,6 +369,8 @@ Creating associations in sequelize is done by calling one of the `belongsTo` / `
 
 **The model whose function we will be calling is called the source model, and the model which is passed as a parameter is called the target model.**
 
+Sequelize provides **four** types of associations:
+
 1. `hasOne` - adds a foreign key to the target and singular association mixins to the source.
 2. `belongsTo` - add a foreign key and singular association mixins to the source.
 3. `hasMany` - adds a foreign key to target and plural association mixins to the source.
