@@ -464,5 +464,30 @@ const run = async () => {
 #### One-To-Many (most common)
 
 ```javascript
+const Company = sequelize.define(“Company”, <attributes>);
+const Project = sequelize.define(“Project”, <attributes>);
+const CompanyProjects = sequelize.define(“CompanyProjects”,{});
 
+Company.belongsToMany(Project, { through: CompanyProjects });
+Project.belongsToMany(Company, { through: CompanyProjects });
+```
+
+Example:
+
+```javascript
+User.hasMany(Company, { foreignKey: “owner” });
+Company.belongsTo(User, { foreignKey: “owner” });
+
+const run = async () => {
+  // ...
+    // ex; Foo Company belongs to Bob with id 1
+    const fooCompany = await Company.create({
+      name: "Foo Company",
+      owner: 1,
+    });
+    const user = await User.findByPk(1, { include: Company });
+    
+    console.log(user.toJSON());
+  // ...
+};
 ```
