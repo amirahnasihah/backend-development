@@ -347,10 +347,12 @@ const Company = db.define("Company", {
 // now, have 2 models defined: User and Company
 ```
 
-> https://sequelize.org/api/v6/class/src/associations/base.js~association
-> https://dev.to/projectescape/the-comprehensive-sequelize-cheatsheet-3m1m#associations
+> foreign key always exist on the child.
 
 Creating associations in sequelize is done by calling one of the `belongsTo` / `hasOne` / `hasMany` / `belongsToMany` functions on a model (the source), and providing another model as the first argument to the function (the target).
+
+> https://sequelize.org/api/v6/class/src/associations/base.js~association
+> https://dev.to/projectescape/the-comprehensive-sequelize-cheatsheet-3m1m#associations
 
 **The model whose function we will be calling is called the source model, and the model which is passed as a parameter is called the target model.**
 
