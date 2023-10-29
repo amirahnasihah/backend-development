@@ -331,7 +331,7 @@ await john.destroy();
 ## Association (Relationship)
 
 ```javascript
-const User = sequelize.define(“User”, "<attributes>");
+// const User = sequelize.define(“User”, <attributes>);
 
 // create another database called Company
 const Company = db.define("Company", {
