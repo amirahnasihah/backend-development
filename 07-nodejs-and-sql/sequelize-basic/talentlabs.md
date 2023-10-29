@@ -472,7 +472,7 @@ Company.belongsToMany(Project, { through: CompanyProjects });
 Project.belongsToMany(Company, { through: CompanyProjects });
 ```
 
-Example:
+Example, a user can has multiple posts uploaded:
 
 ```javascript
 User.hasMany(Company, { foreignKey: “owner” });
