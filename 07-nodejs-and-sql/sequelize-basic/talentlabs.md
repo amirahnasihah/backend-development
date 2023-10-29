@@ -404,7 +404,12 @@ These three calls will cause Sequelize to automatically add foreign keys to the 
 
 > Note: In the examples above for `belongsToMany`, a string (`'C'`) was passed to the through option. In this case, Sequelize automatically generates a model with this name. However, you can also pass a model directly, if you have already defined it.
 
+**In summary**:
 
+- To create a **One-To-One** relationship, the `hasOne` and `belongsTo` associations are used together;
+- To create a **One-To-Many** relationship, the `hasMany` and `belongsTo` associations are used together;
+- To create a **Many-To-Many** relationship, two `belongsToMany` calls are used together.
+  - Note: there is also a Super Many-To-Many relationship, which uses six associations at once, and will be discussed in the [Advanced Many-to-Many relationships guide](https://sequelize.org/docs/v6/advanced-association-concepts/advanced-many-to-many/).
 
 #### `hasOne`
 
