@@ -344,7 +344,7 @@ const Company = db.define("Company", {
   },
 })
 
-// no, have 2 models defined: User and Company
+// now, have 2 models defined: User and Company
 ```
 
 > https://sequelize.org/api/v6/class/src/associations/base.js~association
