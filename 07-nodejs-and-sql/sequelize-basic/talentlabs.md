@@ -475,6 +475,23 @@ Project.belongsToMany(Company, { through: CompanyProjects });
 Example, a user can has multiple posts uploaded:
 
 ```javascript
+// define another Model called Post
+const Post = db.define("Post", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  description: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  media: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
+})
+
 User.hasMany(Company, { foreignKey: “owner” });
 Company.belongsTo(User, { foreignKey: “owner” });
 
