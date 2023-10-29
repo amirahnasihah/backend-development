@@ -331,6 +331,8 @@ await john.destroy();
 ## Association (Relationship)
 
 ```javascript
+const User = sequelize.define(“User”, "<attributes>");
+
 // create another database called Company
 const Company = db.define("Company", {
   id: {
@@ -345,6 +347,8 @@ const Company = db.define("Company", {
 });
 
 // now, have 2 models defined: User and Company
+
+User.hasOne(Company, { foreignKey: “owner” });
 ```
 
 > foreign key always exist on the child. so, parent is the User model. a user has one company and the foreignKey is owner. so, a foreignKey is created inside of Company model called owner.
