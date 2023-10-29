@@ -361,11 +361,14 @@ Company.belongsTo(User, { foreignKey: “owner” }); // This states that a One-
 
 const run = async () => {
   // ...
-    // ex; Company belongs to Bob id 1
+    // ex; Foo Company belongs to Bob with id 1
     const fooCompany = await Company.create({
       name: "Foo Company",
       owner: 1,
-    })
+    });
+    const user = await User.findByPk(1, { include: Company });
+    
+    console.log(user.toJSON());
   // ...
 };
 ```
