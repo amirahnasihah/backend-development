@@ -492,8 +492,8 @@ const Post = db.define("Post", {
   }
 })
 
-User.hasMany(Company, { foreignKey: “owner” });
-Company.belongsTo(User, { foreignKey: “owner” });
+User.hasMany(Post, { foreignKey: “creatorId” });
+Post.belongsTo(User, { foreignKey: “creatorId” });
 
 const run = async () => {
   // ...
