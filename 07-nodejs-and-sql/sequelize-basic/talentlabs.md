@@ -338,18 +338,9 @@ const Company = db.define("Company", {
     autoIncrement: true,
     primaryKey: true,
   },
-  firstName: {
+  name: {
     type: DataTypes.STRING,
     allowNull: false,
-  },
-  lastName: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
   },
 })
 ```
