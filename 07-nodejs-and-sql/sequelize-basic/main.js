@@ -45,6 +45,28 @@ const Company = db.define("Company", {
   },
 });
 
+const Post = db.define("Post", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  description: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  media: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
+})
+
+User.hasOne(Company, { foreignKey: "owner" });
+Company.belongsTo(User, { foreignKey: "owner" });
+
+User.hasMany(Post, { foreignKey: "creatorId" });
+Post.belongsTo(User, { foreignKey: "creatorId" });
+
 const run = async () => {
   try {
     await db.authenticate();
@@ -74,6 +96,20 @@ const run = async () => {
     // DELETE
     const delJane = await User.findByPk(2);
     await delJane.destroy();
+    
+    // Relationship
+    for (let i = 0; i < 5; i++) {
+        const post = await Post.create({
+          description: `Hello World ${i}`,
+          media: `https://foo.com/${i}.png`,
+          creatorId: 1,
+      });
+      console.log(post);
+    }
+    
+    const user = await User.findByPk(1, [ include: Company, Post ]);
+    
+    console.log(user.toJSON());
     
     console.log("Connection has been established successfully.");
   } catch (error) {
