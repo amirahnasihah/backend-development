@@ -342,7 +342,7 @@ const Company = db.define("Company", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-})
+});
 
 // now, have 2 models defined: User and Company
 ```
