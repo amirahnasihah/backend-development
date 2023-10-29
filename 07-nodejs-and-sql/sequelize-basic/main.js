@@ -69,7 +69,7 @@ const run = async () => {
     // UPDATE
     const baek = await User.findByPk(3);
     baek.lastName = "Pak Gu";
-    await baek.save()
+    await baek.save();
     
     // DELETE
     const delJane = await User.findByPk(2);
