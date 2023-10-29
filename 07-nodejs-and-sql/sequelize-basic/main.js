@@ -43,7 +43,7 @@ const run = async () => {
       firstName: "Baek",
       lastName: "Ji Young",
       email: "baek@young.com",
-    })
+    });
     
     // READ
     const findUsers = await User.findAll({});
@@ -55,7 +55,14 @@ const run = async () => {
     console.log(doe.toJSON());
     
     // UPDATE
-
+    const baek = await User.findByPk(3);
+    baek.lastName = "Pak Gu";
+    await baek.save()
+    
+    // DELETE
+    const delJane = await User.findByPk(2);
+    await delJane.destroy();
+    
     console.log("Connection has been established successfully.");
   } catch (error) {
     console.error("Unable to connect to the database:", error);
