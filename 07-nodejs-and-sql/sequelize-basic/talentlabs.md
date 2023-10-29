@@ -330,6 +330,30 @@ await john.destroy();
 
 ## Association (Relationship)
 
+```javascript
+// create another database called Company
+const Company = db.define("Company", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  lastName: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+})
+```
+
 > https://sequelize.org/api/v6/class/src/associations/base.js~association
 > https://dev.to/projectescape/the-comprehensive-sequelize-cheatsheet-3m1m#associations
 
