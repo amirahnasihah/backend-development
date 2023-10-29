@@ -328,8 +328,16 @@ const john = await User.findByPk(1);
 await john.destroy();
 ```
 
-## Association (Relationship)
+## Relationship
 
+> foreign key always exist on the child. so, parent is the User model. a user has one company and the foreignKey is owner. so, a foreignKey is created inside of Company model called owner.
+
+```javascript
+sourceModel.association(targetModel, {foreignKey: "fkName"});
+targetModel.association(sourceModel, {foreignKey: "fkName"});
+```
+
+main.js
 ```javascript
 // const User = sequelize.define(“User”, <attributes>);
 
@@ -348,16 +356,11 @@ const Company = db.define("Company", {
 
 // now, have 2 models defined: User and Company
 
-User.hasOne(Company, { foreignKey: “owner” });
-Company.belongsTo(User, { foreignKey: “owner” });
+User.hasOne(Company, { foreignKey: “owner” }); // This states that a One-to-One relationship exists between User and Company with foreign key defined in Company.
+Company.belongsTo(User, { foreignKey: “owner” }); // This states that a One-to-One or One-to-Many relationship exists between Company and User with foreign key defined in Company.
 ```
 
-> foreign key always exist on the child. so, parent is the User model. a user has one company and the foreignKey is owner. so, a foreignKey is created inside of Company model called owner.
-
-```javascript
-sourceModel.association(targetModel, {foreignKey: "fkName"});
-targetModel.association(sourceModel, {foreignKey: "fkName"});
-```
+### Association
 
 Creating associations in sequelize is done by calling one of the `belongsTo` / `hasOne` / `hasMany` / `belongsToMany` functions on a model (the source), and providing another model as the first argument to the function (the target).
 
@@ -371,7 +374,7 @@ Creating associations in sequelize is done by calling one of the `belongsTo` / `
 3. `hasMany` - adds a foreign key to target and plural association mixins to the source.
 4. `belongsToMany` - creates an N:M association with a join table and adds plural association mixins to the source. The junction table is created with sourceId and targetId.
 
-### `hasOne`
+#### `hasOne`
 
 ```javascript
 const User = sequelize.define(“User”, <attributes>);
