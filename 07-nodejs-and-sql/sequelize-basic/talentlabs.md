@@ -582,10 +582,12 @@ const Project = db.define("Project", {
   }
 });
 
-// define joint table or junction table
+// define Model @ join table or junction table
 const CompanyProjects = db.define("CompanyProject", {});
 
+// define associations
 Company.belongsToMany(Project, { through: CompanyProjects });
+Project.belongsToMany(Company, { through: CompanyProjects });
 
 const run = async () => {
   // ...
