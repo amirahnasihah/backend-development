@@ -514,7 +514,7 @@ const run = async () => {
 };
 ```
 
-#### Many-to-Many (tricky)
+#### Many-to-Many (M:N - tricky)
 
 ```javascript
 const Company = sequelize.define(“Company”, <attributes>);
@@ -525,7 +525,7 @@ Company.belongsToMany(Project, { through: CompanyProjects });
 Project.belongsToMany(Company, { through: CompanyProjects });
 ```
 
-Example; an actor can have many movies, and movies can have many actors. a company can have many projects, and projects can have many companies contractors.
+Example; an actor can have many movies, and movies can have many actors. a company can have many projects, and projects can have many companies contractors. M:N use a Junction Table, or a Join table to describe the relationshi
 
 ```javascript
 
