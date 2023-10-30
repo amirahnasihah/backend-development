@@ -513,3 +513,19 @@ const run = async () => {
   // ...
 };
 ```
+
+#### Many-to-Many
+
+```javascript
+const Company = sequelize.define(“Company”, <attributes>);
+const Project = sequelize.define(“Project”, <attributes>);
+const CompanyProjects = sequelize.define(“CompanyProjects”,{});
+
+Company.belongsToMany(Project, { through: CompanyProjects });
+Project.belongsToMany(Company, { through: CompanyProjects });
+```
+
+main.js
+```javascript
+
+```
