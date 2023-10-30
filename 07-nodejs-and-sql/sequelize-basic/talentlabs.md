@@ -516,7 +516,7 @@ const run = async () => {
 
 #### Many-to-Many (M:N - tricky)
 
-> Many-to-Many: https://sequelize.org/docs/v6/core-concepts/assocs/
+> Many-to-Many: https://sequelize.org/docs/v6/core-concepts/assocs/#many-to-many-relationships
 
 The concept of a Junction Model is used. This will be an extra model (and extra table in the database) which will have two foreign key columns and will keep track of the associations. The junction table is also sometimes called join table or through table.
 
