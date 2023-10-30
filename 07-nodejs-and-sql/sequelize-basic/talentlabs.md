@@ -596,11 +596,34 @@ const run = async () => {
     // project 2 -> company 3
     // project 3 -> company 2, 3
     
-    const project = await Project.create()
+    // first method
+    const project1 = await Project.create(
+      {
+      name: "Project One",
+      Companies: [
+          {
+            name: "Company 1",
+          },
+          {
+            name: "Company 2",
+          }
+        ]
+      },
+      {
+        include: Company,
+      }
+    );
     
+    // second method @ special method -> fooInstance.createBar()
+    const project2 = await Project.create({ name: "Project Two" });
+    const company3 = await 
+    
+    console.log(project1.toJSON())
   // ...
 };
 ```
+
+> second method (or Special methods/mixins added to instances): https://sequelize.org/docs/v6/core-concepts/assocs/#foobelongstomanybar--through-baz-
 
 1. start fresh, in mysql terminal `delete from companies;`.
 2. 
