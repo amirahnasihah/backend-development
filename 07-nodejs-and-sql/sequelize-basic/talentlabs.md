@@ -527,7 +527,7 @@ Company.belongsToMany(Project, { through: CompanyProjects });
 Project.belongsToMany(Company, { through: CompanyProjects });
 ```
 
-Example; an actor can have many movies, and movies can have many actors. a company can have many projects, and projects can have many companies contractors. M:N use a Junction Table, or a Join table to describe the relationshi
+Example; one actor can have many movies, and one movie can have many actors. a company can have many projects, and projects can have many companies contractors. M:N use a Junction Table, or a Join table to describe the relationshi
 
 ```javascript
 // define another Model called Post
