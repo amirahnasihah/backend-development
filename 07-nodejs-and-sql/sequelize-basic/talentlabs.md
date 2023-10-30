@@ -591,19 +591,11 @@ Project.belongsToMany(Company, { through: CompanyProjects });
 
 const run = async () => {
   // ...
-    // ex; Bob create post
-    for (let i = 0; i < 5; i++) {
-        const post = await Post.create({
-          description: `Hello World ${i}`,
-          media: `https://foo.com/${i}.png`,
-          creatorId: 1,
-      });
-      console.log(post);
-    }
+    // ex; 2 companies and 3 projects
     
-    const user = await User.findByPk(1, { include: Post });
-    
-    console.log(user.toJSON());
   // ...
 };
 ```
+
+1. start fresh, in mysql terminal `delete from companies;`.
+2. 
