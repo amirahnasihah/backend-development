@@ -525,7 +525,9 @@ Company.belongsToMany(Project, { through: CompanyProjects });
 Project.belongsToMany(Company, { through: CompanyProjects });
 ```
 
-main.js
+Example; an actor can have many movies, and movies can have many actors.
+
+
 ```javascript
 
 ```
