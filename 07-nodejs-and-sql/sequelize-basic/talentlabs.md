@@ -589,9 +589,14 @@ const CompanyProjects = db.define("CompanyProject", {});
 Company.belongsToMany(Project, { through: CompanyProjects });
 Project.belongsToMany(Company, { through: CompanyProjects });
 
+// ex; 2 companies and 3 projects
 const run = async () => {
   // ...
-    // ex; 2 companies and 3 projects
+    // project 1 -> company 1, 2
+    // project 2 -> company 3
+    // project 3 -> company 2, 3
+    
+    const project = await Project.create()
     
   // ...
 };
