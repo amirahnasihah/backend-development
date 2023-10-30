@@ -528,5 +528,51 @@ Project.belongsToMany(Company, { through: CompanyProjects });
 Example; an actor can have many movies, and movies can have many actors. a company can have many projects, and projects can have many companies contractors. M:N use a Junction Table, or a Join table to describe the relationshi
 
 ```javascript
+// define another Model called Post
+const Company = db.define("Company", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
 
+const Project = db.define("Project", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
+});
+
+// define joint table or junction table
+const CompanyProjects = db.define("CompanyProject", {});
+
+Company.belongsToMany(Project, { through: CompanyProjects });
+
+const run = async () => {
+  // ...
+    // ex; Bob create post
+    for (let i = 0; i < 5; i++) {
+        const post = await Post.create({
+          description: `Hello World ${i}`,
+          media: `https://foo.com/${i}.png`,
+          creatorId: 1,
+      });
+      console.log(post);
+    }
+    
+    const user = await User.findByPk(1, { include: Post });
+    
+    console.log(user.toJSON());
+  // ...
+};
 ```
