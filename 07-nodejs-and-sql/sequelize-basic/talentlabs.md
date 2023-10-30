@@ -514,7 +514,7 @@ const run = async () => {
 };
 ```
 
-#### Many-to-Many
+#### Many-to-Many (tricky)
 
 ```javascript
 const Company = sequelize.define(“Company”, <attributes>);
@@ -525,8 +525,7 @@ Company.belongsToMany(Project, { through: CompanyProjects });
 Project.belongsToMany(Company, { through: CompanyProjects });
 ```
 
-Example; an actor can have many movies, and movies can have many actors.
-
+Example; an actor can have many movies, and movies can have many actors. a company can have many projects, and projects can have many companies contractors.
 
 ```javascript
 
