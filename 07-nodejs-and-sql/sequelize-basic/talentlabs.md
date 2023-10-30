@@ -518,6 +518,31 @@ const run = async () => {
 
 The concept of a Junction Model is used. This will be an extra model (and extra table in the database) which will have two foreign key columns and will keep track of the associations. The junction table is also sometimes called join table or through table.
 
+Instead of a string, passing a model directly is also supported, and in that case the given model will be used as the junction model (and no model will be created automatically). For example:
+
+```javascript
+const Movie = sequelize.define('Movie', { name: DataTypes.STRING });
+const Actor = sequelize.define('Actor', { name: DataTypes.STRING });
+const ActorMovies = sequelize.define('ActorMovies', {
+  MovieId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: Movie, // 'Movies' would also work
+      key: 'id'
+    }
+  },
+  ActorId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: Actor, // 'Actors' would also work
+      key: 'id'
+    }
+  }
+});
+Movie.belongsToMany(Actor, { through: ActorMovies });
+Actor.belongsToMany(Movie, { through: ActorMovies });
+```
+
 ```javascript
 const Company = sequelize.define(“Company”, <attributes>);
 const Project = sequelize.define(“Project”, <attributes>);
@@ -527,7 +552,7 @@ Company.belongsToMany(Project, { through: CompanyProjects });
 Project.belongsToMany(Company, { through: CompanyProjects });
 ```
 
-Example; one actor can have many movies, and one movie can have many actors. a company can have many projects, and projects can have many companies contractors. M:N use a Junction Table, or a Join table to describe the relationshi
+Example; one actor can have many movies, and one movie can have many actors. a company can have many projects, and projects can have many companies contractors. M:N use a Junction Table, or a Join table to describe the relationship.
 
 ```javascript
 // define another Model called Post
