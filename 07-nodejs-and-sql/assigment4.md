@@ -13,3 +13,9 @@ Write JavaScript code with Sequelize which would:
 | User (email and username) are strings and not null        | 20     |
 | Post (title and body) are strings and not null            | 20     |
 | User and Post have proper one to many relationship setup with Posts being a child to user | 20     |
+
+# One-To-Many
+
+```javascript
+
+```
