@@ -653,4 +653,4 @@ The same ones from `Foo.hasMany(Bar)`:
 - `fooInstance.createBar()`
 
 1. start fresh, in mysql terminal `delete from companies;`.
-2. 
+2. `select * from CompanyProjects;`
