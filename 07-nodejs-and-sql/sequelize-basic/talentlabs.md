@@ -617,7 +617,7 @@ const run = async () => {
     
     // second method @ special method -> fooInstance.createBar()
     const project2 = await Project.create({ name: "Project Two" });
-    const company3 = await 
+    const company3 = await Company.create({ name: "Company Three"})
     
     console.log(project1.toJSON())
   // ...
