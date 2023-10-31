@@ -583,7 +583,7 @@ const Project = db.define("Project", {
   }
 });
 
-// define Model @ join table or junction table
+// define model also as join table or junction table
 const CompanyProjects = db.define("CompanyProject", {});
 
 // define associations
