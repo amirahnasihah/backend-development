@@ -620,7 +620,7 @@ const run = async () => {
     const company3 = await Company.create({ name: "Company Three"});
     await project2.addCompany(company3, { through: CompanyProjects });
     
-    // project 3 -> company 2, 3
+    // project 3 -> company 2, 3 with special method
     const project3 = await Project.create({ name: "Project Three" });
     const findCompany2 = await Company.findByPk(9);
     const findCompany3 = await Company.findByPk(10);
