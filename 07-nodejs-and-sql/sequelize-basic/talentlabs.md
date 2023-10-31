@@ -626,5 +626,20 @@ const run = async () => {
 
 > second method (or Special methods/mixins added to instances): https://sequelize.org/docs/v6/core-concepts/assocs/#foobelongstomanybar--through-baz-
 
+- `Foo.belongsToMany(Bar, { through: Baz })`
+  
+The same ones from `Foo.hasMany(Bar)`:
+
+- `fooInstance.getBars()`
+- `fooInstance.countBars()`
+- `fooInstance.hasBar()`
+- `fooInstance.hasBars()`
+- `fooInstance.setBars()`
+- `fooInstance.addBar()`
+- `fooInstance.addBars()`
+- `fooInstance.removeBar()`
+- `fooInstance.removeBars()`
+- `fooInstance.createBar()`
+
 1. start fresh, in mysql terminal `delete from companies;`.
 2. 
