@@ -636,7 +636,7 @@ const run = async () => {
     const findCompany = await Company.findByPk(9, { include: Project });
     console.log(findCompany.toJSON());
     
-    // from project's perspective (project3 has company2 and company3)
+    // from project's perspective (project3, id 4 has company2 and company3)
     const findProject = await Project.findByPk(4, { include: Company });
     console.log(findProject.toJSON());
   // ...
