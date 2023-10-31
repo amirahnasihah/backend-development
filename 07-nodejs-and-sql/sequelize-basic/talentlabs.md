@@ -632,6 +632,8 @@ const run = async () => {
     console.log(project2.toJSON());
     console.log(project3.toJSON());
     
+    // ...................................................... //
+    
     // looking all projects for one company, from company's perspective (company2 has project1 and project3)
     const findCompany = await Company.findByPk(9, { include: Project });
     console.log(findCompany.toJSON());
