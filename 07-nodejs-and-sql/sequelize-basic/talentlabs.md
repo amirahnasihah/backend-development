@@ -632,9 +632,13 @@ const run = async () => {
     console.log(project2.toJSON());
     console.log(project3.toJSON());
     
-    // looking all projects for one company, from company's perspective (company 2 has project1 and project3)
+    // looking all projects for one company, from company's perspective (company2 has project1 and project3)
     const findCompany = await Company.findByPk(9, { include: Project });
     console.log(findCompany.toJSON());
+    
+    // from project's perspective (project3 has company2 and company3)
+    const findProject = await Project.findByPk(4, { include: Company });
+    console.log(findProject.toJSON());
   // ...
 };
 ```
