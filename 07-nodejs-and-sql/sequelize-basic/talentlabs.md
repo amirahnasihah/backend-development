@@ -631,6 +631,10 @@ const run = async () => {
     console.log(project1.toJSON());
     console.log(project2.toJSON());
     console.log(project3.toJSON());
+    
+    // looking all projects for one company
+    const findCompany = await Company.findByPk(9, { include: Project });
+    console.log(findCompany.toJSON());
   // ...
 };
 ```
