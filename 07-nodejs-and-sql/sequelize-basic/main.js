@@ -139,6 +139,9 @@ const run = async () => {
     await project.addCompany(company, { through: "CompanyProjects" });
     console.log(project.toJSON());
     
+    const findProject = await Project.findByPk(2, { include: Company });
+    console.log(findProject.toJSON());
+    
     console.log("Connection has been established successfully.");
   } catch (error) {
     console.error("Unable to connect to the database:", error);
