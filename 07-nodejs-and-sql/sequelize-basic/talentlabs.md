@@ -184,7 +184,7 @@ main.js:
 ```javascript
 // const { Sequelize, Op, Model, DataTypes } = require("sequelize");
 // const sequelize = new Sequelize("sqlite::memory:");
-const { Sequelize } = require("sequelize"); // 1) to  require Sequelize services
+const { Sequelize } = require("sequelize"); // 1) enable Sequelize services
 
 // 2) to connect to the database, you must create a Sequelize instance
 const db = new Sequelize({
@@ -238,10 +238,9 @@ const Post = db.define("Post", {
   }
 })
 
-// 7) 
+// 7) create associations
 User.hasMany(Post, { foreignKey: “creatorId” });
 Post.belongsTo(User, { foreignKey: “creatorId” });
-
 
 // 3) test connection
 const run = async () => {
