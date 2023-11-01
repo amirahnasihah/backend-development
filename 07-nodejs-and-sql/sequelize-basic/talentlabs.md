@@ -618,15 +618,15 @@ const run = async () => {
     // second method @ special method, no `include` -> fooInstance.addBar()
     const project2 = await Project.create({ name: "Project Two" });
     const company3 = await Company.create({ name: "Company Three"});
-    await project2.addCompany(company3, { through: CompanyProjects });
+    await project2.addCompany3(company3, { through: CompanyProjects });
     
     // project 3 -> company 2, 3 with special method
     const project3 = await Project.create({ name: "Project Three" });
     const findCompany2 = await Company.findByPk(9);
     const findCompany3 = await Company.findByPk(10);
     
-    await project3.addCompany(company2, { through: CompanyProjects });
-    await project3.addCompany(company3, { through: CompanyProjects });
+    await project3.addCompany2(company2, { through: CompanyProjects });
+    await project3.addCompany3(company3, { through: CompanyProjects });
     
   // debug
     console.log(project1.toJSON());
