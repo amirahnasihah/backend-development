@@ -1,7 +1,6 @@
-// 0. enable Sequelize service
+// 0.
 const { Sequelize, DataTypes, Op } = require("sequelize");
 
-// 1. initiate connection with sql
 const db = new Sequelize({
   dialect: "mysql",
   host: "127.0.0.1",
