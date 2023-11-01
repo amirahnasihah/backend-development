@@ -238,7 +238,7 @@ const Post = db.define("Post", {
   }
 })
 
-// 8) create associations
+// 9) create associations (based on type of relation)
 User.hasMany(Post, { foreignKey: “creatorId” });
 Post.belongsTo(User, { foreignKey: “creatorId” });
 
@@ -265,6 +265,7 @@ const run = async () => {
     const bob = await User.findOne({ where: { firstName: "Bob" } })
     
     const users = await User.findAll({ where: {email: { [Op.like]: "%doe.com" } } })
+    
      // 8) debug
   console.log(user, "\n", user.toJSON());
   console.log(bob.toJSON());
