@@ -628,6 +628,7 @@ const run = async () => {
     await project3.addCompany(company2, { through: CompanyProjects });
     await project3.addCompany(company3, { through: CompanyProjects });
     
+  // debug
     console.log(project1.toJSON());
     console.log(project2.toJSON());
     console.log(project3.toJSON());
