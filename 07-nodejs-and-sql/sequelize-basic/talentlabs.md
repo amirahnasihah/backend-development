@@ -254,17 +254,17 @@ const run = async () => {
       firstName: "Jane",
       lastName: "Smith",
       email: "jane@smith.com"
-    })
+    });
     
-    const user = await User.findAll({})
+    const user = await User.findAll({});
     
-    const user = await User.findAll({ where: { id: 12  } })
+    const user = await User.findAll({ where: { id: 12  } });
     
     const bob = await User.findByPk(1); // by Primary Key
     
-    const bob = await User.findOne({ where: { firstName: "Bob" } })
+    const bob = await User.findOne({ where: { firstName: "Bob" } });
     
-    const users = await User.findAll({ where: {email: { [Op.like]: "%doe.com" } } })
+    const users = await User.findAll({ where: {email: { [Op.like]: "%doe.com" } } });
     
     // with associations (O:O, O:M, M:M)
     // ex; O:M special method
