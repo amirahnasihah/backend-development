@@ -61,11 +61,28 @@ const Post = db.define("Post", {
   }
 })
 
+const Project = db.define("Project", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
+});
+
+const CompanyProjects = db.define({}); // for junction table
+
 User.hasOne(Company, { foreignKey: "owner" });
 Company.belongsTo(User, { foreignKey: "owner" });
 
 User.hasMany(Post, { foreignKey: "creatorId" });
 Post.belongsTo(User, { foreignKey: "creatorId" });
+
+Company.belongsToMany(Project, { through: CompanyProjects });
+Project.belongsToMany(Company, { through: CompanyProjects });
 
 const run = async () => {
   try {
@@ -115,6 +132,9 @@ const run = async () => {
     }
     const userAssoc = await User.findByPk(1, { include: [Company, Post] });
     console.log(userAssoc.toJSON());
+    
+      // Many-To-Many
+    
     
     console.log("Connection has been established successfully.");
   } catch (error) {
