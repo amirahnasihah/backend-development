@@ -196,7 +196,7 @@ const db = new Sequelize({
   database: "sequelize", // database name
 });
 
-// 5) Model define
+// 5) define Models
 const User = db.define('User', {
   // 6) Model attributes are defined here
   id: {
