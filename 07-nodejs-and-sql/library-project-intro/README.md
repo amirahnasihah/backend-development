@@ -6,6 +6,8 @@ Introduction to upcoming project, Library Management from TalentLabs
 
 # Writing the Books service
 
+> Service is an interface between the DataBase and a Controller
+
 # Connecting the Books routes
 
 # Error Handling
