@@ -7,7 +7,14 @@
   - [One to One Relationship](#one-to-one-relationship)
   - [One to Many Relationship](#one-to-many-relationship)
   - [Many to Many (M:N) Association](#many-to-many-mn-association)
-- [A dive into Models](#a-dive-into-models)
+- [A dive into Models (Tutorial)](#a-dive-into-models-tutorial)
+  - [Create and findAll](#create-and-findall)
+  - [Update and Delete Data](#update-and-delete-data)
+  - [Relationship](#relationship)
+    - [Association](#association)
+      - [One-To-One](#one-to-one)
+      - [One-To-Many (most common)](#one-to-many-most-common)
+      - [Many-to-Many (M:N - tricky)](#many-to-many-mn---tricky)
 
 # Node.JS and SQL - Section 5
 
@@ -466,13 +473,13 @@ const run = async () => {
 ```javascript
 const Company = sequelize.define(“Company”, <attributes>);
 const Project = sequelize.define(“Project”, <attributes>);
-const CompanyProjects = sequelize.define(“CompanyProjects”,{});
+const CompanyProjects = sequelize.define(“CompanyProjects”, {});
 
 Company.belongsToMany(Project, { through: CompanyProjects });
 Project.belongsToMany(Company, { through: CompanyProjects });
 ```
 
-Example, a user can has multiple posts uploaded:
+Example, one user can has multiple posts uploaded:
 
 ```javascript
 // define another Model called Post

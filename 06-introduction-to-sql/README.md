@@ -1,10 +1,61 @@
-# Backend Development
+> MySQL tutorial (robust): https://www.mysqltutorial.org/
 
-Web Backend Development With ExpressJS (Beta version)
+# Getting Started
+
+> https://www.mysqltutorial.org/mysql-select-database/
+
+1. First, log in to MySQL using the `root` user account and Enter your password:
+
+```sql
+mysql -u root -p
+```
+
+2. To find which databases are available on server by using the show databases statement:
+
+```sql
+SHOW DATABASES;
+```
+
+The output may look like the following:
+
+```sql
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.02 sec)
+```
+
+3. To select a database to work with, you use the USE statement:
+
+```sql
+USE database_name;
+```
 
 # Basic SQL Command
 
 > Example of create a db named Comp A
+
+0. Check current database and to verify it
+
+```sql
+SELECT database();
+```
+
+MySQL server will set the current database to NULL if the current database is not set.
+
+```sql
++---------------+
+| database()    |
++---------------+
+| classicmodels |
++---------------+
+1 row in set (0.00 sec)
+```
 
 1. To create a database
 
