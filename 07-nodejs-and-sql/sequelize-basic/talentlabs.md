@@ -238,7 +238,7 @@ const Post = db.define("Post", {
   }
 })
 
-// 9) create associations (based on type of relation)
+// 9) create associations (based on type of db relation)
 User.hasMany(Post, { foreignKey: “creatorId” });
 Post.belongsTo(User, { foreignKey: “creatorId” });
 
