@@ -266,6 +266,8 @@ const run = async () => {
     
     const users = await User.findAll({ where: {email: { [Op.like]: "%doe.com" } } })
     
+    // with associations (O:O, O:M, M:M)
+    
      // 8) debug
   console.log(user, "\n", user.toJSON());
   console.log(bob.toJSON());
