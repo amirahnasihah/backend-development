@@ -1,4 +1,17 @@
-> MySQL tutorial (robust): https://www.mysqltutorial.org/
+> MySQL tutorial (a -> z): https://www.mysqltutorial.org/
+
+```sql
+name:
+description:
+cover:
+deployUrl:
+githubUrl:
+hashtag: [...]
+```
+
+- [Getting Started](#getting-started)
+- [Basic SQL Command](#basic-sql-command)
+  - [Database and Tables](#database-and-tables)
 
 # Getting Started
 
@@ -36,11 +49,7 @@ The output may look like the following:
 USE database_name;
 ```
 
-# Basic SQL Command
-
-> Example of create a db named Comp A
-
-0. Check current database and to verify it
+4. Check current database and to verify it
 
 ```sql
 SELECT database();
@@ -57,13 +66,28 @@ MySQL server will set the current database to NULL if the current database is no
 1 row in set (0.00 sec)
 ```
 
+# Basic SQL Command
+
+> Example of create a db named Comp A
+
+0. Show tables in the database
+
+```sql
+-- Show all tables in the database
+SHOW TABLES;
+
+-- Describe the structure of a specific table
+DESCRIBE your_table_name;
+
+```
+
 1. To create a database
 
 CREATE DATABASE <db_name>
 
 Example;
 ```sql
-CREATE DATABASE comp-A
+CREATE DATABASE test_db;
 ```
 
 2. To use a database
@@ -72,7 +96,7 @@ USE <db_name>
 
 Example;
 ```sql
-USE comp-A
+USE test_db;
 ```
 
 3. Create a table
@@ -86,8 +110,8 @@ CREATE TABLE <table_name> (
 Example;
 ```sql
 CREATE TABLE users {
-column-1 string NOT NULL
-}
+column_1 string NOT NULL,
+};
 ```
 
 4. Insert data and Read Data from a Table
@@ -101,7 +125,7 @@ values(<value1>, <value2>);
 Example;
 ```sql
 INSERT INTO users
-values(Mozart, 31, musician)
+values(Mozart, 31, musician);
 ```
 
 ** custom order */
@@ -125,9 +149,9 @@ SELECT * FROM <table_name>;
 
 Example;
 ```sql
-SELECT (Name, Age) FROM users
+SELECT (Name, Age) FROM users;
 
-SELECT * FROM users
+SELECT * FROM users;
 ```
 
 5. Updating and Deleting Data
@@ -156,13 +180,84 @@ DELETE FROM users
 WHERE id is 2
 ```
 
-# My Projects
+## Database and Tables
+
+To create a new database:
 
 ```sql
-name:
-description:
-cover:
-deployUrl:
-githubUrl:
-hashtag: [...]
+CREATE DATABASE your_database_name;
+
+-- to review the created database
+SHOW CREATE DATABASE your_database_name;
+```
+
+To find which databases are available on server:
+
+```sql
+SHOW DATABASES;
+```
+
+The output may look like the following:
+
+```sql
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.02 sec)
+```
+
+To select a database to work with:
+
+```sql
+USE your_database_name;
+```
+
+Check current database and verify it:
+
+```sql
+SELECT database();
+```
+
+List all the tables in the current database:
+
+```sql
+-- Show all tables in the database
+SHOW TABLES;
+
+-- Describe the structure of a specific table
+DESCRIBE your_table_name;
+```
+
+Retrieve all the fields from a table:
+
+```sql
+SELECT * FROM your_table_name;
+```
+
+To delete table:
+
+```sql
+-- To delete a table
+DROP TABLE your_table_name;
+
+-- To delete multiple tables at once
+DROP TABLE table1, table2, table3;
+
+-- IF EXISTS to avoid errors
+DROP TABLE IF EXISTS your_table_name;
+```
+
+To delete database:
+
+```sql
+-- To delete a database
+DROP DATABASE your_database_name;
+
+-- IF EXISTS to avoid errors
+DROP DATABASE IF EXISTS your_database_name;
 ```
