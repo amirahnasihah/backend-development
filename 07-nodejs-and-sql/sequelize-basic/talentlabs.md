@@ -268,7 +268,7 @@ const run = async () => {
     
     // with associations (O:O, O:M, M:M)
     // ex; O:M special method
-    const post 
+    const post = await Post.create("Post", )
     
      // 8) debug
   console.log(user, "\n", user.toJSON());
