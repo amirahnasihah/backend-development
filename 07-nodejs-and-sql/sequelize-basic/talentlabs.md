@@ -268,11 +268,14 @@ const run = async () => {
     
     // with associations (O:O, O:M, M:M)
     // ex; O:M special method
-    const post = await Post.create("Post", )
+    const post = await Post.create({
+    	
+    });
     
      // 8) debug
-  console.log(user, "\n", user.toJSON());
-  console.log(bob.toJSON());
+	console.log(user, "\n", user.toJSON());
+	console.log(bob.toJSON());
+  
     console.log("Connection has been established successfully.");
   } catch (error) {
     console.error("Unable to connect to the database:", error);
