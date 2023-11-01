@@ -133,8 +133,11 @@ const run = async () => {
     const userAssoc = await User.findByPk(1, { include: [Company, Post] });
     console.log(userAssoc.toJSON());
     
-      // Many-To-Many
-    
+      // Many-To-Many (special method)
+    const project = await Project.create({ name: "Project 1" });
+    const company = await Company.create({ name: "Company 3" });
+    await project.addCompany(company, { through: "CompanyProjects" });
+    console.log(project.toJSON());
     
     console.log("Connection has been established successfully.");
   } catch (error) {
