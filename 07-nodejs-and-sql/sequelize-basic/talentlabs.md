@@ -269,7 +269,8 @@ const run = async () => {
     // with associations (O:O, O:M, M:M)
     // ex; O:M special method
     const post = await Post.create({
-    	
+    	description: "Article One",
+    	media: "https://www.random.com",
     });
     
      // 8) debug
