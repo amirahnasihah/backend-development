@@ -222,6 +222,27 @@ const User = db.define('User', {
   }
 })
 
+const Post = db.define("Post", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  description: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  media: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
+})
+
+// 7) 
+User.hasMany(Post, { foreignKey: “creatorId” });
+Post.belongsTo(User, { foreignKey: “creatorId” });
+
+
 // 3) test connection
 const run = async () => {
   try {
