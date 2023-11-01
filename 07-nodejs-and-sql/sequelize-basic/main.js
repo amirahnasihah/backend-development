@@ -73,7 +73,7 @@ const Project = db.define("Project", {
   }
 });
 
-const CompanyProjects = db.define({}); // for junction table
+const CompanyProjects = db.define("CompanyProject", {}); // for junction table
 
 User.hasOne(Company, { foreignKey: "owner" });
 Company.belongsTo(User, { foreignKey: "owner" });
