@@ -1,4 +1,4 @@
-// 0. 
+// 0. enable Sequelize service
 const { Sequelize, DataTypes, Op } = require("sequelize");
 
 // 1. initiate connection with sql
