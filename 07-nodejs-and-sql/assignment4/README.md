@@ -18,7 +18,7 @@ Write JavaScript code with Sequelize which would:
 
 1. have access to Sequelize
 2. connect to database with Sequelize using instances
-3. define model or s
+3. define model or database schema for tables User and Post
 
 ```javascript
 const { Sequelize } = require('sequelize');
@@ -31,5 +31,6 @@ const sequelize = new Sequelize({
 	database: "assignment4",
 });
 
-
+const User = sequelize.define(
+	)
 ```
