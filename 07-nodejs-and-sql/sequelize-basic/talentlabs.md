@@ -270,7 +270,8 @@ const run = async () => {
     // ex; O:M (want to show multiple post -> loop)
     for (let i = 0; i < 5; i++) {
     	const post = await Post.create({
-    		description: `Hello world `
+    		description: `Hello world ${i}`,
+    		media: `https://foo.com/${i}.png`
     	})
     }
     const userPosts = await User.findByPk(2, { include: Post });
