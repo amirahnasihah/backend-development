@@ -23,6 +23,8 @@ Write JavaScript code with Sequelize which would:
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize({
-	
+	dialect: mysql,
+	host: "root",
+	password: ,
 })
 ```
