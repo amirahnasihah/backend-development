@@ -32,6 +32,14 @@ const sequelize = new Sequelize({
 });
 
 const User = sequelize.define("User", {
-	
+	id: {
+		type: DataTypes.UUID,
+		allowNull: false,
+		primaryKey: true,
+		unique: true,
+	},
+	username: {
+		type: 
+	}
 })
 ```
