@@ -46,7 +46,22 @@ const User = sequelize.define("User", {
 		type: DataTypes.STRING,
 		allowNull: false,
 	}
-})
+});
 
-const Post 
+const Post = sequelize.define("Post", {
+	id: {
+		type: DataTypes.UUID,
+		allowNull: false,
+		primaryKey: true,
+		unique: true,
+	},
+	title: {
+		type: DataTypes.STRING,
+		allowNull: false,
+	},
+	body: {
+		type: DataTypes.STRING,
+		allowNull: false,
+	}
+});
 ```
