@@ -39,7 +39,14 @@ const User = sequelize.define("User", {
 		unique: true,
 	},
 	username: {
-		type: 
+		type: DataTypes.STRING,
+		allowNull: false,
+	},
+	email: {
+		type: DataTypes.STRING,
+		allowNull: false,
 	}
 })
+
+const Post 
 ```
