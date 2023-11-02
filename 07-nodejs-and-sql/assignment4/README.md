@@ -18,13 +18,18 @@ Write JavaScript code with Sequelize which would:
 
 1. have access to Sequelize
 2. connect to database with Sequelize using instances
+3. define model or s
 
 ```javascript
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize({
-	dialect: mysql,
+	dialect: "mysql",
 	host: "root",
-	password: ,
-})
+	password: "password1",
+	port: 3306,
+	database: "assignment4",
+});
+
+
 ```
