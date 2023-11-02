@@ -31,19 +31,7 @@ const sequelize = new Sequelize({
 	database: "assignment4",
 });
 
-const User = sequelize.define(
-	{
-		id: {
-			type: DATATYPES.uuid,
-			allowNull: false,
-			primaryKey: true,
-			unique: true,
-		}
-	},
-	{
-		username: {
-			
-		}
-	}
-	)
+const User = sequelize.define("User", {
+	
+})
 ```
