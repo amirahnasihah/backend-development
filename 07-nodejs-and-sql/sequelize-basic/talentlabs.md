@@ -267,12 +267,13 @@ const run = async () => {
     const users = await User.findAll({ where: {email: { [Op.like]: "%doe.com" } } });
     
     // with associations (O:O, O:M, M:M)
-    // ex; O:M
+    // ex; O:M (want to show multiple post -> loop)
     const post = await Post.create({
     	description: "Article One",
     	media: "https://www.random.com",
     });
     const userPosts = await User.findByPk(2, { include: Post });
+    console.log(userPosts.toJSON());
     
      // 8) debug
 	console.log(user, "\n", user.toJSON());
