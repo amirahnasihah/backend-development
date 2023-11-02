@@ -266,7 +266,7 @@ const run = async () => {
     
     const users = await User.findAll({ where: {email: { [Op.like]: "%doe.com" } } });
     
-    // with associations (O:O, O:M, M:M)
+    // 10) with associations (O:O, O:M, M:M)
     // ex; O:M (want to show multiple post -> loop)
     for (let i = 0; i < 5; i++) {
     	const post = await Post.create({
