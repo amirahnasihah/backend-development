@@ -239,8 +239,8 @@ const Post = db.define("Post", {
 })
 
 // 9) create associations (based on type of db relation)
-User.hasMany(Post, { foreignKey: “creatorId” });
-Post.belongsTo(User, { foreignKey: “creatorId” });
+	// > one user can have many posts (O:M)
+User.hasMany(Post, )
 
 // 3) test connection
 const run = async () => {
