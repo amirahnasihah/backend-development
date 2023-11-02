@@ -271,8 +271,10 @@ const run = async () => {
     for (let i = 0; i < 5; i++) {
     	const post = await Post.create({
     		description: `Hello world ${i}`,
-    		media: `https://foo.com/${i}.png`
+    		media: `https://foo.com/${i}.png`,
+    		creatorId: i,
     	})
+    	console.log("User's posts:-", post)
     }
     const userPosts = await User.findByPk(2, { include: Post });
     console.log(userPosts.toJSON());
