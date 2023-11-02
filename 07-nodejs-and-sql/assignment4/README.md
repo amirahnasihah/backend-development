@@ -16,6 +16,11 @@ Write JavaScript code with Sequelize which would:
 
 # One-To-Many
 
+1. have access to Sequelize
+2. connect to database with Sequelize
+
 ```javascript
  const { Sequelize } = require('sequelize');
+ 
+
 ```
