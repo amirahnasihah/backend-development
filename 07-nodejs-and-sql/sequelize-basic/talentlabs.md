@@ -535,8 +535,9 @@ const Post = db.define("Post", {
   }
 })
 
-User.hasMany(Post, { foreignKey: “creatorId” });
-Post.belongsTo(User, { foreignKey: “creatorId” });
+// create associations
+User.hasMany(Post, { foreignKey: “creatorId” }); // type of association function
+Post.belongsTo(User, { foreignKey: “creatorId” }); // Post is child to User
 
 const run = async () => {
   // ...
