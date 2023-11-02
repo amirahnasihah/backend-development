@@ -17,5 +17,5 @@ Write JavaScript code with Sequelize which would:
 # One-To-Many
 
 ```javascript
-
+ const { Sequelize } = require('sequelize');
 ```
