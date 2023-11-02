@@ -66,5 +66,12 @@ const Post = sequelize.define("Post", {
 	}
 });
 
-const run = async () => 
+const run = async () => {
+	try {
+		
+	}
+	catch(error) {
+		console.log(error.m)
+	}
+}
 ```
