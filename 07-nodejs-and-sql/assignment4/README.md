@@ -71,6 +71,8 @@ const run = async () => {
 		await sequelize.authenticate();
 		await sequelize.sync();
 		console.log("database connection succeed!")
+		
+		// sql queries
 	}
 	catch(error) {
 		console.log(error.message)
