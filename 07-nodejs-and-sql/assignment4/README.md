@@ -19,6 +19,7 @@ Write JavaScript code with Sequelize which would:
 1. have access to Sequelize
 2. connect to database with Sequelize using instances
 3. define model or database schema for tables User and Post
+4. check the connection
 
 ```javascript
 const { Sequelize } = require('sequelize');
@@ -64,4 +65,6 @@ const Post = sequelize.define("Post", {
 		allowNull: false,
 	}
 });
+
+const run = async () => 
 ```
