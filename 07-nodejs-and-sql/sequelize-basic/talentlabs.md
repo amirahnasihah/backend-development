@@ -269,7 +269,9 @@ const run = async () => {
     // with associations (O:O, O:M, M:M)
     // ex; O:M (want to show multiple post -> loop)
     for (let i = 0; i < 5; i++) {
-    	c
+    	const post = await Post.create({
+    		description: `Hello world `
+    	})
     }
     const userPosts = await User.findByPk(2, { include: Post });
     console.log(userPosts.toJSON());
