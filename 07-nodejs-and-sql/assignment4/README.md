@@ -68,7 +68,9 @@ const Post = sequelize.define("Post", {
 
 const run = async () => {
 	try {
-		sequelize.authenticate("connection")
+		sequelize.authenticate();
+		sequelize.sync();
+		con
 	}
 	catch(error) {
 		console.log(error.message)
