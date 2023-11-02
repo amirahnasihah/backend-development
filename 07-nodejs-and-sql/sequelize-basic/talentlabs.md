@@ -267,11 +267,12 @@ const run = async () => {
     const users = await User.findAll({ where: {email: { [Op.like]: "%doe.com" } } });
     
     // with associations (O:O, O:M, M:M)
-    // ex; O:M special method
+    // ex; O:M
     const post = await Post.create({
     	description: "Article One",
     	media: "https://www.random.com",
     });
+   
     
      // 8) debug
 	console.log(user, "\n", user.toJSON());
