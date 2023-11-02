@@ -70,7 +70,7 @@ const run = async () => {
 	try {
 		sequelize.authenticate();
 		sequelize.sync();
-		con
+		console.log("database connection succeed!")
 	}
 	catch(error) {
 		console.log(error.message)
