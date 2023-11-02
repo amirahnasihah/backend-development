@@ -33,9 +33,12 @@ const sequelize = new Sequelize({
 
 const User = sequelize.define(
 	{
-		id: uuidv4,
-		primaryKey: true,
-		allowNull: false
+		id: {
+			type: DATAT
+		}
+	},
+	{
+		
 	}
 	)
 ```
