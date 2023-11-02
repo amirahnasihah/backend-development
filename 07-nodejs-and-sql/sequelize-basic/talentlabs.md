@@ -272,7 +272,7 @@ const run = async () => {
     	description: "Article One",
     	media: "https://www.random.com",
     });
-   
+    const userPosts = await User.findByPk(2, { include: Post });
     
      // 8) debug
 	console.log(user, "\n", user.toJSON());
