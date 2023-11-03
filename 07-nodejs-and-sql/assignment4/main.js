@@ -8,6 +8,36 @@ const sequelize = new Sequelize({
 	database: "assignment4",
 });
 
+const User = sequelize.define("User", {
+	id: {
+		type: DataTypes.UUID,
+		allowNull: false,
+		primaryKey: true,
+		unique: true,
+	},
+	username: {
+		type: DataTypes.STRING,
+		allowNull: false,
+	},
+	email: {
+		type: DataTypes.STRING,
+		allowNull: false,
+	}
+});
+
+const Post = sequelize.define("Post", {
+	title: {
+		type: DataTypes.STRING,
+		allowNull: false,
+	},
+	body: {
+		type: DataTypes.STRING,
+		allowNull: false,
+	}
+});
+
+
+
 const run = async () => {
 	try {
 		await sequelize.authenticate();
