@@ -63,7 +63,7 @@ const Post = sequelize.define("Post", {
 });
 
 User.hasMany(Post, { foreignKey: "creatorId" });
-
+Post.belongsTo(User, { foreignKey: "creatorId" });
 
 const run = async () => {
 	try {
