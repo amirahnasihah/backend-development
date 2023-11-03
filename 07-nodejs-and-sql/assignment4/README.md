@@ -24,7 +24,7 @@ Write JavaScript code with Sequelize which would:
 6. sql queries
 
 ```javascript
-const { Sequelize } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize({
 	dialect: "mysql",
@@ -71,7 +71,6 @@ const run = async () => {
 		await sequelize.sync();
 		console.log("database connection succeed!")
 		
-		// sql queries
 	}
 	catch(error) {
 		console.log(error.message)
