@@ -18,7 +18,7 @@ Write JavaScript code with Sequelize which would:
 
 1. have access to Sequelize
 2. connect to database with Sequelize using instances
-3. define model or database schema for tables User and Post
+3. define models or database schemas for tables User and Post
 4. check the connection using authenticate() and sync() database
 5. sql queries
 
