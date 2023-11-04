@@ -17,11 +17,22 @@ Dependecies:
 
 > express-async-handler: https://www.npmjs.com/package/express-async-handler
 
+- setup depencies and directories structure: controllers, routes
+
 # Defining the Book model
+
+- ER Diagram Model (Tables: Book, User, Role)
+- setup directories: models, services
+- './models/index.js' for connection with the database which contains Sequelize configuration.
+- declare database 'libraryApi' in MySQL Workbench. `CREATE DATABASE libraryapi;`
+- define Book Model in another file './models/book.model.js'
+- mysql `use libraryapi;` then, `SHOW TABLES;` will show "books" table. let's `DESC books;` to see fields detail.
 
 # Writing the Books service
 
 > Service is an interface between the DataBase and a Controller
+
+- create a new folder named './services/'.
 
 # Connecting the Books routes
 
