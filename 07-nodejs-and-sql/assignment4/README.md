@@ -16,7 +16,7 @@ Write JavaScript code with Sequelize which would:
 
 # One-To-Many
 
-1. have access to Sequelize
+1. have access to Sequelize and DataTypes
 2. connect to database with Sequelize using instances
 3. define models or database schemas for tables: User and Post
 4. create association: One-To-Many association and foreign key
