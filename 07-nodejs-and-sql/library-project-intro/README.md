@@ -67,7 +67,22 @@ const findBookByIdAndUpdate = async (id, body) => {
 # Connecting the Books routes
 
 - test the libraryapi of Books, go to Postman.
-- method POST, "localhost/api/books", JSON body `{ "title": "Book", "author": "Arthur" }`, SEND POST request will display the data of that new book.
+
+POST:
+- method POST, "localhost/api/books", inside JSON body put `{ "title": "Book", "author": "Arthur" }`, SEND POST request will display the data of that new book.
+```javascript
+const createBookHandler = asyncHandler(async (req, res) => {
+  try {
+    console.log("create new book");
+    const { title, author } = req.body;
+    const book = await createNewBook({ title, author });
+    res.status(201).json(book);
+  } catch (error) {
+    res.status(500);
+    throw new Error(error.message);
+  }
+});
+```
 
 GET:
 - method GET, "localhost/api/books?title=Book&author=Arthur", Send GET request will display the list of all books info searched based on query given.
@@ -80,7 +95,7 @@ const getManyBooksHandler = asyncHandler(async (req, res) => {
 ```
 
 UPDATE:
-- method PATCH, "localhost/api/books/:id", copy ID from any books data and paste into `:id` ,Send PATCH request will display the list of all books info searched based on query given.
+- method PATCH, "localhost/api/books/:id", copy ID from any books data and paste into `:id`, inside JSON body put `{ "title": "Book Two", "author": "Author Two" }`, Send PATCH request will display the list of all books info searched based on query given.
 ```javascript
 const updateBookHandler = asyncHandler(async (req, res) => {
   // extract title and author from req.body
