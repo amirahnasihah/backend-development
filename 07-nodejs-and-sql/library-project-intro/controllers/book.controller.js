@@ -21,7 +21,8 @@ const createBookHandler = asyncHandler(async (req, res) => {
 });
 
 const getManyBooksHandler = asyncHandler(async (req, res) => {
-  const books = await 
+  const books = await findManyBooks({ ...req.query });
+  res.json(books);
 });
 
-module.exports = { createBookHandler };
+module.exports = { createBookHandler, getManyBooksHandler };
