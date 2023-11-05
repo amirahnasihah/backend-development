@@ -1,8 +1,10 @@
 const { Router } = require("express");
-const { getIndex } = require("../controllers");
+const bookRouter = require("./book.router");
 
+// const { getIndex } = require("../controllers"); // test
 const router = Router();
 
-router.use("/index", getIndex);
+router.use("/books", bookRouter);
 
+// router.use("/index", getIndex); // test
 module.exports = { router };
