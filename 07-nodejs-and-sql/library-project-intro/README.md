@@ -73,7 +73,7 @@ GET:
 - method GET, "localhost/api/books?title=Book&author=Arthur", Send GET request will display the list of all books info searched based on query given.
 ```javascript
 const getManyBooksHandler = asyncHandler(async (req, res) => {
-  // we spread `...req.query` to search for query string
+  // we spread `...req.query` to search for query string "localhost/api/books?title=Book&author=Arthur"
   const books = await findManyBooks({ ...req.query });
   res.json(books);
 });
