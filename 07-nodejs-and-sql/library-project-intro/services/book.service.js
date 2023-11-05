@@ -37,7 +37,7 @@ const findBookByIdAndUpdate = async (id, body) => {
   return book;
 };
 
-const findBookAndDeleteBookById = async (id) => {
+const findBookByIdAndDelete = async (id) => {
   const book = await findBookById(id);
   await book.destroy();
   return book;
@@ -49,5 +49,5 @@ module.exports = {
   findBookById,
   findOneBook,
   findBookByIdAndUpdate,
-  findBookAndDeleteBookById
+  findBookByIdAndDelete
 };
