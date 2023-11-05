@@ -10,5 +10,5 @@
 // createNewBook() function takes the bosy of the book as its parameter
 // spread the body and return the promise of it
 const createNewBook = (body) => {
-  return Book.create{...body};
+  return Book.create({ ...body });
 };
