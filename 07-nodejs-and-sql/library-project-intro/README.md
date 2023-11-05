@@ -66,6 +66,7 @@ const findBookByIdAndUpdate = async (id, body) => {
 
 # Connecting the Books routes
 
-
+- test the libraryapi of Books, go to Postman.
+- method POST, "localhost/api/books"
 
 # Error Handling
