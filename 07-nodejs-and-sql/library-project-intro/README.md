@@ -44,6 +44,22 @@ Dependecies:
 
 ```
 
+```javascript
+// findBookByIdAndUpdate(id, body) is async function that takes id and body.
+// book variable is equal to await findBookById.
+// loop thru the new body and then set all of the properties on this book. `const key of Object.keys(body)` will gives an array of all the keys of the object which contained in body.
+// then, set book. like the on book to bodies value and if it doesnt exist we just use book[key]. `??` is nullidge coalescence operator. (ex; if the body )
+const findBookByIdAndUpdate = async (id, body) => {
+  const book = await findBookById(id);
+  
+  for (const key of Object.keys(body)) {
+    book[key] = body[key] ?? book[key];
+  };
+  await book.save();
+  return book;
+};
+```
+
 - create a new folder named './services/'.
 
 # Connecting the Books routes
