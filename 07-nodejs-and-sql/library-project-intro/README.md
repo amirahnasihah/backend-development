@@ -80,7 +80,7 @@ const getManyBooksHandler = asyncHandler(async (req, res) => {
 ```
 
 UPDATE:
-- 
+- method PATCH, "localhost/api/books/:id", copy ID from any books data and paste into `:id` ,Send PATCH request will display the list of all books info searched based on query given.
 ```javascript
 const updateBookHandler = asyncHandler(async (req, res) => {
   // extract title and author from req.body
