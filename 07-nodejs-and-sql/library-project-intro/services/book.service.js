@@ -36,3 +36,9 @@ const findBookByIdAndUpdate = async (id, body) => {
   await book.save();
   return book;
 };
+
+const deleteBookById = async (id) => {
+  const book = await findBookById(id);
+  await book.destroy();
+  return book;
+};
