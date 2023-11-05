@@ -36,4 +36,4 @@ const updateBookHandler = asyncHandler(async (req, res) => {
   res.status(202).json(book);
 });
 
-module.exports = { createBookHandler, getManyBooksHandler };
+module.exports = { createBookHandler, getManyBooksHandler, deleteBookHandler, updateBookHandler };
