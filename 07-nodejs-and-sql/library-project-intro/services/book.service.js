@@ -27,3 +27,9 @@ const findOneBook = (searchParam) => {
   return Book.findOne({ where: { ...searchParam }});
 };
 
+const findBookByIdAndUpdate = async (id, body) => {
+  const book = await findBookById(id);
+  for (const key of Object.keys(body)) {
+    book[key] = body[key] ?? book[key];
+  };
+};
