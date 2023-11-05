@@ -23,5 +23,7 @@ const findBookById = (id) => {
 };
 
 const findOneBook = (searchParam) => {
+  // all these `return` just returning promises. so, doesnt need `await` since its just directly returning.
   return Book.findOne({ where: { ...searchParam }});
 };
+
