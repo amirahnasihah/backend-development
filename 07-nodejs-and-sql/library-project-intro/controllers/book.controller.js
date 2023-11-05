@@ -27,7 +27,7 @@ const getManyBooksHandler = asyncHandler(async (req, res) => {
 
 const deleteBookHandler = asyncHandler(async (req, res) => {
   const book = await findBookByIdAndUpdate(req.params.id);
-  res.status(200).json(book);
+  res.status(202).json(book);
 });
 
 module.exports = { createBookHandler, getManyBooksHandler };
