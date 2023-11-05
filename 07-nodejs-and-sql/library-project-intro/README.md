@@ -33,7 +33,16 @@ Dependecies:
 > Service is an interface between the DataBase and a Controller.
 > All of database related logics goes to a Service.
 
+```javascript
+// operations that wants to perform in books:
+// find books
+// find book by id
+// handle borrowing logic
+// create a new book
+// CRUD operations
 
+
+```
 
 - create a new folder named './services/'.
 
