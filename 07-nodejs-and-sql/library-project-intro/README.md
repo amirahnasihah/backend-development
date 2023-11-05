@@ -107,7 +107,7 @@ const updateBookHandler = asyncHandler(async (req, res) => {
 ```
 
 DELETE:
-- method DELETE, "localhost/api/books/:id", copy ID from any books data and paste into `:id`, inside JSON body put `{ "title": "Book Two", "author": "Author Two" }` to change the book info, Send PATCH request will display the list of updated book info searched based on ID query provided.
+- method DELETE, "localhost/api/books/:id", copy ID from any books data and paste into `:id`, inside JSON body put `{ "title": "Book Two", "author": "Author Two" }` to delete that book, Send DELETE request will display the deleted book info searched based on ID query.
 ```javascript
 const deleteBookHandler = asyncHandler(async (req, res) => {
   const book = await findBookByIdAndDelete(req.params.id);
