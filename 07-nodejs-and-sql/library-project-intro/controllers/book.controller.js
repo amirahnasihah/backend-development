@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler");
 
-const getInfo = asyncHandler(async (req, res) => {
+const createBookHandler = asyncHandler(async (req, res) => {
   try {
     console.log("get data list");
     res.json({ msg: "hi" });
@@ -11,4 +11,4 @@ const getInfo = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { getInfo };
+module.exports = { createBookHandler };
