@@ -79,4 +79,16 @@ const getManyBooksHandler = asyncHandler(async (req, res) => {
 });
 ```
 
+UPDATE:
+- 
+```javascript
+const updateBookHandler = asyncHandler(async (req, res) => {
+  // extract title and author from req.body
+  const { title, author } = req.body;
+  // pass id and title & author
+  const book = await findBookByIdAndUpdate(req.params.id, { title, author });
+  res.status(202).json(book);
+});
+```
+
 # Error Handling
