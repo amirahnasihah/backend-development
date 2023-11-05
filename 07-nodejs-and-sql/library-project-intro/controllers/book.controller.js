@@ -1,4 +1,12 @@
 const asyncHandler = require("express-async-handler");
+const {
+  createNewBook,
+  findManyBooks,
+  findBookById,
+  findOneBook,
+  findBookByIdAndUpdate,
+  findBookByIdAndDelete
+} = require("../services/book.service");
 
 const createBookHandler = asyncHandler(async (req, res) => {
   try {
@@ -10,6 +18,10 @@ const createBookHandler = asyncHandler(async (req, res) => {
     res.status(500);
     throw new Error(error.message);
   }
+});
+
+const getManyBooksHandler = asyncHandler(async (req, res) => {
+  const books = await 
 });
 
 module.exports = { createBookHandler };
