@@ -13,3 +13,15 @@ const { Book } = require("../models");
 const createNewBook = (body) => {
   return Book.create({ ...body });
 };
+
+const findManyBooks = (searchParam) => {
+  return Book.findAll({ where: { ...searchParam }});
+};
+
+const findBookById = (id) => {
+  return Book.findByPk(id);
+};
+
+const findOneBook = (searchParam) => {
+  return Book.findOne({ where: { ...searchParam }});
+};
