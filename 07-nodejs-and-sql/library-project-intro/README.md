@@ -30,7 +30,10 @@ Dependecies:
 
 # Writing the Books service
 
-> Service is an interface between the DataBase and a Controller
+> Service is an interface between the DataBase and a Controller.
+> All of database related logics goes to a Service.
+
+
 
 - create a new folder named './services/'.
 
