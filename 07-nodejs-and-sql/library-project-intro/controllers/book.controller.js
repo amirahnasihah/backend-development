@@ -26,7 +26,13 @@ const getManyBooksHandler = asyncHandler(async (req, res) => {
 });
 
 const deleteBookHandler = asyncHandler(async (req, res) => {
-  const book = await findBookByIdAndUpdate(req.params.id);
+  const book = await findBookByIdAndDelete(req.params.id);
+  res.status(202).json(book);
+});
+
+const updateBookHandler = asyncHandler(async (req, res) => {
+  const { title, author } = req.body;
+  const book = await findBookByIdAndUpdate(req.params.id, { title, author });
   res.status(202).json(book);
 });
 
