@@ -67,6 +67,6 @@ const findBookByIdAndUpdate = async (id, body) => {
 # Connecting the Books routes
 
 - test the libraryapi of Books, go to Postman.
-- method POST, "localhost/api/books"
+- method POST, "localhost/api/books", JSON body `{ "title": "Cinderella", "author": "Walt Disney" }`, SEND POST requeat will get the data of that new book.
 
 # Error Handling
