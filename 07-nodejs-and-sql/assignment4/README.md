@@ -21,7 +21,7 @@ Write JavaScript code with Sequelize which would:
 3. define models or database schemas for tables: User and Post.
 4. create association: One-To-Many association and foreign key.
 5. check the connection using authenticate() and sync() database.
-6. sql queries.
+6. sql queries
 
 ```javascript
 const { Sequelize, DataTypes } = require('sequelize');
