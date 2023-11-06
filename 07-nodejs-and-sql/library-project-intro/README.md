@@ -116,3 +116,24 @@ const deleteBookHandler = asyncHandler(async (req, res) => {
 ```
 
 # Error Handling
+
+> when `throw Error` inside data controller with `async` method it doesn't work, because the problem is `async`'s function. when we have async function, we need to use Express Async Handler to solve this problem.
+> > use `express-async-handler`, `throw new Error()`, additional json response (`stack`)
+
+```javascript
+// server.js //
+const errorMiddleware = require("./middleware/errorMiddleware");
+
+// throw error on root route, *localhost:3000/*
+app.get("/", (req, res, next) => {
+  throw new Error("fake error!");
+  res.send("Hi fella!");
+});
+
+// use custom error middleware
+app.use(errorMiddleware);
+```
+
+- handling nasty crash.
+- 
+
