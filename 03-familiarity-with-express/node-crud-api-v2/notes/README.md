@@ -225,7 +225,7 @@ app.use(errorMiddleware);
 9. Then, we have to respond back is *status codes*.
 10. `const statusCode = res.statusCode ? res.statusCode : 500;`: I access to respond and then I get status code. if you get a status that code, just show the status code but, if we don't get a stateus code just show 500 as a status code. `res.status(statusCode);`
 
-> everytime changed ENV, have to run again the server
+> everytime ENV changed, have to run again the server
 
 ## Express Async Handler
 
