@@ -134,6 +134,7 @@ app.get("/", (req, res, next) => {
 app.use(errorMiddleware);
 ```
 
-- handling nasty crash.
-- 
-
+- to handling nasty crash.
+- first, create new folder named "middleware".
+- the reason we used express-async-handler in all Controllers is to have something which is able to gracefully pass the errors. so that Express would not crash and panic when encounters error and shut down the API. also want to convey to the front-end.
+- inside middleware folder, create file `error.middleware.js`.
