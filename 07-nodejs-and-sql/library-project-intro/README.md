@@ -160,6 +160,7 @@ app.use(errorMiddleware);
 - inside middleware folder, create file `error.middleware.js` and create `errorHandler()` function. exports.
 - import `errorHandler()` into `server.js` file. here, the **positioning** actually matters.
 - go to Postman, make same request for a deleted data.
+- then, inside "services" we can throw errors and they would be gracefully handled.
 
 ```javascript
 // error.middleware.js
