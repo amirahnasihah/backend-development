@@ -18,8 +18,10 @@ const findManyBooks = (searchParam) => {
   return Book.findAll({ where: { ...searchParam }});
 };
 
-const findBookById = (id) => {
-  return Book.findByPk(id);
+const findBookById = async (id) => {
+  const book = await Book.findByPk(id);
+  if (!book) throw new Error(`Product not found with ID ${id}`);
+  return book;
 };
 
 const findOneBook = (searchParam) => {
@@ -30,7 +32,6 @@ const findOneBook = (searchParam) => {
 const findBookByIdAndUpdate = async (id, body) => {
   const book = await findBookById(id);
   
-  if (!book) throw new Error(`Product not found with ID ${id}`);
   for (const key of Object.keys(body)) {
     book[key] = body[key] ?? book[key];
   };
@@ -40,10 +41,6 @@ const findBookByIdAndUpdate = async (id, body) => {
 
 const findBookByIdAndDelete = async (id) => {
   const book = await findBookById(id);
-  if (!book) {
-    res.status(404);
-    throw new Error(`Product not found with ID ${id}`);
-  };
   
   await book.destroy();
   return book;
