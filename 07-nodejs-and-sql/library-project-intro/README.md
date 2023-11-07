@@ -118,7 +118,23 @@ const deleteBookHandler = asyncHandler(async (req, res) => {
 # Error Handling
 
 > when `throw Error` inside data controller with `async` method it doesn't work, because the problem is `async`'s function. when we have async function, we need to use Express Async Handler to solve this problem.
-> > use `express-async-handler`, `throw new Error()`, additional json response (`stack`)
+> use `express-async-handler`, `throw new Error()`, additional json response (`stack`)
+
+```javascript
+// errorMiddleware.js
+const errorMiddleware = (err, req, res, next) => {
+  console.log(`here is an error middleware`);
+  const statusCode = res.statusCode ? res.statusCode : 500;
+  res.status(statusCode);
+  res.json({
+    msg: err.message,
+    stack: process.env.NODE_ENV === "development" ? err.stack : null,
+  });
+};
+
+module.exports = { errorMiddleware }; // ????
+// module.exports = errorMiddleware;  ????
+```
 
 ```javascript
 // server.js //
@@ -140,17 +156,17 @@ app.use(errorMiddleware);
 - inside middleware folder, create file `error.middleware.js`.
 
 ```javascript
-// errorMiddleware.js
-const errorMiddleware = (err, req, res, next) => {
-  console.log(`here is an error middleware`);
-  const statusCode = res.statusCode ? res.statusCode : 500;
-  res.status(statusCode);
-  res.json({
-    msg: err.message,
-    stack: process.env.NODE_ENV === "development" ? err.stack : null,
+// error.middleware.js
+const errorHandler = (err, req, res, next) => {
+  console.log(`this is an error middleware`);
+  res.status(500).json({
+    error: {
+      code: 500,
+      message: err.message
+    };
   });
 };
 
-module.exports = { errorMiddleware }; // ????
+module.exports = { errorHandler };
 // module.exports = errorMiddleware;  ????
 ```
