@@ -194,8 +194,24 @@ app.use(errorHandler);
 
 // ...
 
+const findBookByIdAndUpdate = async (id, body) => {
+  const book = await findBookById(id);
+  
+  if (!book) throw new Error(`Product not found with ID ${id}`);
+  for (const key of Object.keys(body)) {
+    book[key] = body[key] ?? book[key];
+  };
+  await book.save();
+  return book;
+};
+
 const findBookByIdAndDelete = async (id) => {
   const book = await findBookById(id);
+  if (!book) {
+    res.status(404);
+    throw new Error(`Product not found with ID ${id}`);
+  };
+  
   await book.destroy();
   return book;
 };
