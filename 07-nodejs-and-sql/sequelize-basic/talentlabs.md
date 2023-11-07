@@ -16,7 +16,7 @@
       - [One-To-Many (most common)](#one-to-many-most-common)
       - [Many-to-Many (M:N - tricky)](#many-to-many-mn---tricky)
 
-# Node.JS and SQL - Section 5
+# Node.JS and SQL - Section 5 (Notes)
 
 ## An Introduction to Sequelize
 
