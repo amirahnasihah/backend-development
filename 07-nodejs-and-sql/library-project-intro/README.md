@@ -33,16 +33,56 @@ Dependecies:
 > Service is an interface between the DataBase and a Controller.
 > All of database related logics goes to a Service.
 
+First phase of book.service.js:
+
 ```javascript
+// book.service.js //
+const { Book } = require("../models");
 // operations that wants to perform in books:
 // find books
 // find book by id
 // handle borrowing logic
-// create a new book
-// CRUD operations
-```
+// update
+// delete
+// create a new book■
 
-book.service.js:
+// CRUD operations
+// createNewBook() function takes the bosy of the book as its parameter
+// spread the body and return the promise of it
+const createNewBook = (body) => {
+  return Book.create({ ...body });
+};
+
+const findManyBooks = (searchParam) => {
+  return Book.findAll({ where: { ...searchParam }});
+};
+
+const findBookById = async (id) => {
+  return Book.findByPk(id);
+};
+
+const findOneBook = (searchParam) => {
+  // all these `return` just returning promises. so, doesnt need `await` since its just directly returning.
+  return Book.findOne({ where: { ...searchParam }});
+};
+
+const findBookByIdAndUpdate = async (id, body) => {
+  const book = await findBookById(id);
+  
+  for (const key of Object.keys(body)) {
+    book[key] = body[key] ?? book[key];
+  };
+  await book.save();
+  return book;
+};
+
+const findBookByIdAndDelete = async (id) => {
+  const book = await findBookById(id);
+  
+  await book.destroy();
+  return book;
+};
+```
 
 ```javascript
 // book.service.js //
@@ -188,6 +228,8 @@ const errorHandler = require("./middleware/error.middleware");
 // use custom error middleware
 app.use(errorHandler);
 ```
+
+Second phase of book.service.js:
 
 ```javascript
 // book.service.js //
