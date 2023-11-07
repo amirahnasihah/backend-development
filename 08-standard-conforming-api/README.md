@@ -15,6 +15,7 @@
 ## THE OPEN API SPECIFICATION
 
 > OpenAPI: https://www.openapis.org/
+> The OpenAPI Specification, previously known as the Swagger Specification, is a specification for a machine-readable interface definition language for describing, producing, consuming and visualizing web services.
 
 - The OpenAPI Spec is a specification put forth by swagger, which is a language agnostic interface for RESTful APIs.
 - It allows software and people to identify the capabilities of the API without really taking a look at the documentation or the studying the source code. 
