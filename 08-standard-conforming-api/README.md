@@ -1,2 +1,2 @@
-# Standard Conforming APIs Section 6 (Notes)
+# Standard Conforming APIs - Section 6 (Notes)
 
