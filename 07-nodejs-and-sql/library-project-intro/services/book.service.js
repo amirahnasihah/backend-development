@@ -30,6 +30,7 @@ const findOneBook = (searchParam) => {
 const findBookByIdAndUpdate = async (id, body) => {
   const book = await findBookById(id);
   
+  if (!book) throw new Error(`Product not found with ID ${id}`);
   for (const key of Object.keys(body)) {
     book[key] = body[key] ?? book[key];
   };
