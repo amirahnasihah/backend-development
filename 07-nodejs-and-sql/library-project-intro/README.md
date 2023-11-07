@@ -40,9 +40,9 @@ Dependecies:
 // handle borrowing logic
 // create a new book
 // CRUD operations
-
-
 ```
+
+book.service.js:
 
 ```javascript
 // findBookByIdAndUpdate(id, body) is async function that takes id and body.
