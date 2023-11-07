@@ -45,6 +45,7 @@ Dependecies:
 book.service.js:
 
 ```javascript
+// book.service.js //
 // findBookByIdAndUpdate(id, body) is async function that takes id and body.
 // book variable is equal to await findBookById.
 // loop thru the new body and then set all of the properties on this book. `const key of Object.keys(body)` will gives an array of all the keys of the object which contained in body.
@@ -186,4 +187,18 @@ const errorHandler = require("./middleware/error.middleware");
 
 // use custom error middleware
 app.use(errorHandler);
+```
+
+```javascript
+// book.service.js //
+
+// ...
+
+const findBookByIdAndDelete = async (id) => {
+  const book = await findBookById(id);
+  await book.destroy();
+  return book;
+};
+
+// ...
 ```
