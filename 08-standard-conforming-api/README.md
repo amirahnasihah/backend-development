@@ -41,3 +41,18 @@ const swaggerOptions = {
   apis: ["./src/routers/*.ts", "./src/models/*.ts"],
 };
 ```
+
+## BINDING SWAGGER TO ROUTER
+
+Now in “./routers/index.js” we can bind the route where the docs will be served by importing our 
+swaggerOptions from “./config/swagger.config.js” and swaggerUi from “swagger-ui-express”.
+
+```javascript
+import { swaggerSpecification } from "../config/swagger.config.js";
+import swaggerUi from "swagger-ui-express";
+…
+router.use("/docs", swaggerUi.serve);
+router.use("/docs", swaggerUi.setup(swaggerOptions));
+```
+
+After this has been done our documentation shall be available on the route “/api/docs”
