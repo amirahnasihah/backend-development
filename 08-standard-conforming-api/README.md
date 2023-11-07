@@ -92,25 +92,25 @@ Models follow a similar documentation style to how we documented our API Paths
 ```javascript
 /**
  * @openapi
- * components: 
- * schemas: 
- * UserSchema:
- * type: object
- * properties:
- * id:
- * type: string
- * email:
- * type: string
- * createdAt:
- * type: string
- * format: date
- * updatedAt:
- * type: string 
- * format: date
- * required: 
- * - email 
- * - id 
- * - createdAt
- * - updatedAt
+ * components:
+ *   schemas:
+ *     UserSchema:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *         email:
+ *           type: string
+ *         createdAt:
+ *           type: string
+ *           format: date
+ *         updatedAt:
+ *           type: string
+ *           format: date
+ *       required:
+ *         - email
+ *         - id
+ *         - createdAt
+ *         - updatedAt
  */
 ```
