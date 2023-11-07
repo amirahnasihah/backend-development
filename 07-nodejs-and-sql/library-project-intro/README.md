@@ -158,7 +158,7 @@ app.use(errorMiddleware);
 - first, create new folder named "middleware".
 - the reason we used express-async-handler in all Controllers is to have something which is able to gracefully pass the errors. so that Express would not crash and panic when encounters error and shut down the API. also want to convey to the front-end.
 - inside middleware folder, create file `error.middleware.js` and create `errorHandler()` function. exports.
-- import errorHandler() into server.js file.
+- import `errorHandler()` into `server.js` file. here, the **positioning** actually matters.
 
 ```javascript
 // error.middleware.js
