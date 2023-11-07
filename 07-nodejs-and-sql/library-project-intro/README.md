@@ -57,7 +57,7 @@ const findManyBooks = (searchParam) => {
   return Book.findAll({ where: { ...searchParam }});
 };
 
-const findBookById = async (id) => {
+const findBookById = (id) => {
   return Book.findByPk(id);
 };
 
