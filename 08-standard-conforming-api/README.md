@@ -1,3 +1,2 @@
-# Backend Development
+# Standard Conforming APIs Section 6 (Notes)
 
-Web Backend Development With ExpressJS (Beta version)
