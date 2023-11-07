@@ -44,8 +44,7 @@ const swaggerOptions = {
 
 ## BINDING SWAGGER TO ROUTER
 
-Now in “./routers/index.js” we can bind the route where the docs will be served by importing our 
-swaggerOptions from “./config/swagger.config.js” and swaggerUi from “swagger-ui-express”.
+Now in “./routers/index.js” we can bind the route where the docs will be served by importing our swaggerOptions from “./config/swagger.config.js” and swaggerUi from “swagger-ui-express”.
 
 ```javascript
 import { swaggerSpecification } from "../config/swagger.config.js";
@@ -55,4 +54,28 @@ router.use("/docs", swaggerUi.serve);
 router.use("/docs", swaggerUi.setup(swaggerOptions));
 ```
 
-After this has been done our documentation shall be available on the route “/api/docs”
+After this has been done our documentation shall be available on the route “/api/docs”.
+
+## WRITING ROUTE DOCUMENTATION
+
+We can now actually start writing comments which would create our swagger documentation
+
+- Each documentation comment must start with ”/**” and end with “*/” the first line of the comment must have the “@openapi” tag.
+- The documentation of a Route begins with the route declared for example “/api/books”, any methods belonging to the route can be declared in one indentation level in with the method specifiers get, post, put, patch, delete etc.
+- The route must have some responses where each response type starts with a status code and the details are mentioned one indentation level deep on the documentation. 
+
+```javascript
+/** 
+ * @openapi 
+ * ”/api/books/”
+ *  get:
+ *    tags:
+ *      - Books
+ *    summary: get all the books
+ *    responses:
+ *      200:
+ *        description: Success, returns array of all the books
+ *      500:
+ *        description: Internal server error occurred
+ */
+```
