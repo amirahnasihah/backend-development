@@ -66,17 +66,17 @@ We can now actually start writing comments which would create our swagger docume
 
 ```javascript
 /**
- * @openapi 
- * ”/api/books/”
- *  get:
- *    tags:
- *      - Books
- *    summary: get all the books
- *    responses:
- *      200:
- *        description: Success, returns array of all the books
- *      500:
- *        description: Internal server error occurred
+ * @openapi
+ * "/api/books/":
+ *   get:
+ *     tags:
+ *       - Books
+ *     summary: Get all the books
+ *     responses:
+ *       200:
+ *         description: Success, returns an array of all the books
+ *       500:
+ *         description: Internal server error occurred
  */
 ```
 
