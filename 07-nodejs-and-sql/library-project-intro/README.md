@@ -150,6 +150,7 @@ app.use(errorMiddleware);
 ---
 
 > express-async-handler: https://www.npmjs.com/package/express-async-handler
+> error handling: https://expressjs.com/en/guide/error-handling.html
 > when `throw Error` inside data controller with `async` method it doesn't work, because the problem is `async`'s function. when we have async function, we need to use Express Async Handler to solve this problem.
 > use `express-async-handler`, `throw new Error()`, additional json response (`stack`).
 
