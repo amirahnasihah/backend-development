@@ -231,6 +231,7 @@ app.use(errorHandler);
 
 Second phase of book.service.js:
 - why now use async function?
+- 
 
 ```javascript
 // book.service.js //
@@ -240,7 +241,7 @@ Second phase of book.service.js:
 const findBookByIdAndUpdate = async (id, body) => {
   const book = await findBookById(id);
   
-  if (!book) throw new Error(`Product not found with ID ${id}`);
+  if (!book) throw new Error(`Product not found with ID ${id}`); // can remove this bcs it actually depends on findBookById(id) already.
   for (const key of Object.keys(body)) {
     book[key] = body[key] ?? book[key];
   };
@@ -252,7 +253,7 @@ const findBookByIdAndDelete = async (id) => {
   const book = await findBookById(id);
   if (!book) {
     res.status(404);
-    throw new Error(`Product not found with ID ${id}`);
+    throw new Error(`Product not found with ID ${id}`); // can remove this bcs it actually depends on findBookById(id) already.
   };
   
   await book.destroy();
