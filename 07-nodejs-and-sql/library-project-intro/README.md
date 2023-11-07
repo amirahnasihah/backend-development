@@ -170,3 +170,17 @@ const errorHandler = (err, req, res, next) => {
 module.exports = { errorHandler };
 // module.exports = errorMiddleware;  ????
 ```
+
+```javascript
+// server.js //
+const errorHandler = require("./middleware/error.middleware");
+
+// throw error on root route, *localhost:3000/*
+app.get("/", (req, res, next) => {
+  throw new Error("fake error!");
+  res.send("Hi fella!");
+});
+
+// use custom error middleware
+app.use(errorHandler);
+```
