@@ -39,6 +39,11 @@ const findBookByIdAndUpdate = async (id, body) => {
 
 const findBookByIdAndDelete = async (id) => {
   const book = await findBookById(id);
+  if (!book) {
+    res.status(404);
+    throw new Error(`Product not found with ID ${id}`);
+  };
+  
   await book.destroy();
   return book;
 };
