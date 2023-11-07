@@ -173,7 +173,7 @@ const errorHandler = (err, req, res, next) => {
 };
 
 module.exports = { errorHandler };
-// module.exports = errorMiddleware;  ????
+// module.exports = errorMiddleware;  ???? curly bracket or not?
 ```
 
 ```javascript
