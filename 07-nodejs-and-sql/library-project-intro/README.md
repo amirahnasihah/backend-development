@@ -7,7 +7,7 @@
 
 # Introduction to upcoming project, Library Management from TalentLabs
 
-Dependecies:
+Dependencies:
 
 > express, mysql2, sequelize, nodemon dev dependency, express async handler, dotenv
 
