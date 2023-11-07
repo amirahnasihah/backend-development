@@ -14,6 +14,8 @@
 
 ## THE OPEN API SPECIFICATION
 
+> OpenAPI: https://www.openapis.org/
+
 - The OpenAPI Spec is a specification put forth by swagger, which is a language agnostic interface for RESTful APIs.
 - It allows software and people to identify the capabilities of the API without really taking a look at the documentation or the studying the source code. 
 - The OpenAPI document can be declared in both YAML and JSON, we will use a few packages to dynamically generate the document on our API by using comments in our routes.
