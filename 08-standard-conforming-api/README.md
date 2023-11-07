@@ -65,7 +65,7 @@ We can now actually start writing comments which would create our swagger docume
 - The route must have some responses where each response type starts with a status code and the details are mentioned one indentation level deep on the documentation. 
 
 ```javascript
-/** 
+/**
  * @openapi 
  * ”/api/books/”
  *  get:
@@ -77,5 +77,40 @@ We can now actually start writing comments which would create our swagger docume
  *        description: Success, returns array of all the books
  *      500:
  *        description: Internal server error occurred
+ */
+```
+
+## WRITING MODEL DOCUMENTATION
+
+Models follow a similar documentation style to how we documented our API Paths
+
+- Each documentation comment must start with ”/**” and end with “*/” the first line of the comment must have the “@openapi” tag.
+- The Model documentation begins first with defining a components and schemas indentation block.
+- Inside of these we can start defining our models.
+- Each of the properties of the model can be declared in the properties block and all the mandatory properties can be declared in the required block.
+
+```javascript
+/**
+ * @openapi
+ * components: 
+ * schemas: 
+ * UserSchema:
+ * type: object
+ * properties:
+ * id:
+ * type: string
+ * email:
+ * type: string
+ * createdAt:
+ * type: string
+ * format: date
+ * updatedAt:
+ * type: string 
+ * format: date
+ * required: 
+ * - email 
+ * - id 
+ * - createdAt
+ * - updatedAt
  */
 ```
