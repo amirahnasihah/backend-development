@@ -31,13 +31,13 @@ Any paths we provide in the ”apis” will be used to look for our comments whi
 
 ```javascript
 const swaggerOptions = {
- definition: {
- openapi: "3.0.0",
- info: {
- title: name,
- version: "0.1.0",
- }
- },
- apis: ["./src/routers/*.ts", "./src/models/*.ts"],
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: name,
+      version: "0.1.0",
+    },
+  },
+  apis: ["./src/routers/*.ts", "./src/models/*.ts"],
 };
 ```
