@@ -230,6 +230,7 @@ app.use(errorHandler);
 ```
 
 Second phase of book.service.js:
+- why now use async function?
 
 ```javascript
 // book.service.js //
