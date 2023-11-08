@@ -1,6 +1,9 @@
 > Products CRUD API
 > [replit assignment03-complex-api-Q1](https://replit.com/@amirahnasihah/assignment03-complex-api-Q1)
 
+- [Products API](#products-api)
+- [Pyramid Route Shape](#pyramid-route-shape)
+
 Create an express application. Then build APIs based on the requirements below:
 
 # Products API
@@ -9,13 +12,13 @@ Q1. Create an Express API for Products, containing a basic array for products an
 
 (70 points)
 
-| Method |      Path     |                         Result                         |
-|:------:|:-------------:|:------------------------------------------------------:|
-|   GET  |   /products   |                    Get all products                    |
+| Method |     Path      |                         Result                         |
+| :----: | :-----------: | :----------------------------------------------------: |
+|  GET   |   /products   |                    Get all products                    |
 |  POST  |   /products   |                  Create a new product                  |
-|   GET  | /products/:id | Get a specific product by the id supplied in parameter |
-| PATCH  | /products/:id | Update the specific product by id                      |
-| DELETE | /products/:id | Delete the product specified in the id                 |
+|  GET   | /products/:id | Get a specific product by the id supplied in parameter |
+| PATCH  | /products/:id |           Update the specific product by id            |
+| DELETE | /products/:id |         Delete the product specified in the id         |
 
 # Pyramid Route Shape
 

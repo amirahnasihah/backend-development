@@ -7,6 +7,8 @@
 
 # Tell me more about HTTP methods.
 
+> CRUD
+
 HTTP (Hypertext Transfer Protocol) defines a set of methods or verbs that specify the action to be performed on a resource identified by a URL. These methods are an essential part of the HTTP request/response cycle and determine how clients (typically browsers or other software) interact with web servers to retrieve, create, update, or delete resources. Here are some of the most commonly used HTTP methods:
 
 1. **GET**:
@@ -56,7 +58,7 @@ These HTTP methods provide a standardized way for clients to interact with web s
    - It is idempotent, meaning multiple identical PUT requests should have the same effect as a single request. If you send the same PUT request multiple times, it won't result in unintended changes or side effects.
 
    Example:
-   ```
+   ```bash
    PUT /api/users/123
    Content-Type: application/json
 
@@ -72,7 +74,7 @@ These HTTP methods provide a standardized way for clients to interact with web s
    - PATCH requests are useful when you want to update specific fields or properties of a resource without affecting the others.
 
    Example:
-   ```
+   ```bash
    PATCH /api/users/123
    Content-Type: application/json
 
@@ -170,4 +172,3 @@ If I pass a body to this route:
 This body will be available in `req.body`.
 
 If I pass some query parameters to `http://myserver.com/api/user?name="josh"`, `req.query` will be `{ name: 'josh' }`.
-```

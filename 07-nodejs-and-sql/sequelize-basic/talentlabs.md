@@ -1,4 +1,4 @@
-- [Node.JS and SQL - Section 5](#nodejs-and-sql---section-5)
+- [Node.JS and SQL - Section 5 (Notes)](#nodejs-and-sql---section-5-notes)
   - [An Introduction to Sequelize](#an-introduction-to-sequelize)
   - [Initiating a Connection](#initiating-a-connection)
   - [Models](#models)

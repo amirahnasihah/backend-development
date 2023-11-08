@@ -1,3 +1,7 @@
+- [Project 1 - Weather App](#project-1---weather-app)
+  - [Guide](#guide)
+  - [Specifications of the Project:](#specifications-of-the-project)
+
 # Project 1 - Weather App
 
 Weather app is a simple project which touches on a few fundamentals that we have developed so far in the course and enforce the learnings further.

@@ -1,11 +1,15 @@
 - [ES6 Quiz](#es6-quiz)
-  - [Questions](#questions)
+  - [1. What is the use of the map method on an array?](#1-what-is-the-use-of-the-map-method-on-an-array)
+  - [2. What would be the output of](#2-what-would-be-the-output-of)
+  - [3. What is an async function?](#3-what-is-an-async-function)
+  - [4. What would be the output of](#4-what-would-be-the-output-of)
+  - [5. What does the find method return from an array](#5-what-does-the-find-method-return-from-an-array)
 
 # ES6 Quiz
 
-## Questions
+**Questions:**
 
-1. What is the use of the map method on an array?
+## 1. What is the use of the map method on an array?
 
 Multiple-choice options (select one):
 
@@ -19,7 +23,7 @@ D. To map array’s elements in key-value pairs
 
 > The `map` method on an array is used to iterate over each element of the array and apply a function to transform it into another value. The result is a new array with the same length as the original, but with each element transformed according to the function provided.
 
-2. What would be the output of
+## 2. What would be the output of
 
 ```javascript
 const result = [54, 43, 10, 76, 23, 75].filter((e) => e % 2 === 0).sort((a, b) => b - a);
@@ -47,7 +51,7 @@ The `.sort()` method is then used to sort the remaining elements in descending o
 
 Therefore, the final result is `[76, 54, 10]`, which is logged to the console.
 
-3. What is an async function?
+## 3. What is an async function?
 
 Multiple-choice options (select one):
 
@@ -67,7 +71,7 @@ By using the `async` keyword before a function declaration or expression, we tel
 
 So, option B is the correct answer as an async function is a wrapper for creating promises.
 
-4. What would be the output of
+## 4. What would be the output of
 
 ```javascript
 let person = { name: “John”, age: 30 };
@@ -94,7 +98,7 @@ Then the code creates a new object with a `name` property set to "Jake" and uses
 
 Finally, the code logs the value of `person.name` to the console, which is now "Jake" because the `name` property of the `person` object was overwritten with that value during the object creation.
 
-5. What does the find method return from an array
+## 5. What does the find method return from an array
 
 Multiple-choice options (select one):
 

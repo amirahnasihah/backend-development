@@ -1,263 +1,156 @@
-> MySQL tutorial (a -> z): https://www.mysqltutorial.org/
+- [An Introduction to SQL - Section 4 (Notes)](#an-introduction-to-sql---section-4-notes)
+  - [Basics of a Database](#basics-of-a-database)
+  - [Why do we need to use Databases?](#why-do-we-need-to-use-databases)
+  - [The ACID Test in Relational Databases](#the-acid-test-in-relational-databases)
+  - [DB Terminologies](#db-terminologies)
+  - [What is SQL](#what-is-sql)
+  - [SQL Types](#sql-types)
+  - [Creating a Database and Table](#creating-a-database-and-table)
+  - [SQL Constraints](#sql-constraints)
+  - [Inserting and Reading Data from a Table](#inserting-and-reading-data-from-a-table)
+  - [Updating and Deleting Data](#updating-and-deleting-data)
 
-```sql
-name:
-description:
-cover:
-deployUrl:
-githubUrl:
-hashtag: [...]
+# An Introduction to SQL - Section 4 (Notes)
+
+## Basics of a Database
+
+- A database can be defined as a set of related pieces of information stored somewhere, a database can be physical or virtual.
+- A relational database is a type of database in which entities can be linked using some relationships with their keys.
+- Database need to be written to and read from disk as we can’t save objects to disk so data goes through a process called serialization and deserialization, serialization is when an object is converted to a buffer that can be written to disk, deserialization is the process of taking the buffer and converting it into an object.
+
+## Why do we need to use Databases?
+
+- Why not just use variables you might ask? Why do we really even need these databases? The overarching problem with variables is that they are stored in volatile memory, and the data is gone the moment the process is killed, thus wherever we need persistent data we need to store it in databases.
+- Stored data in an application is also known as “state”, most backend API designs are stateful meaning that the application relies on a persistent store of data in form of some database.
+- Databases offer a solution to this and provide a reliable and scalable solution to storage of data.
+
+## The ACID Test in Relational Databases
+
+```markdown
+**A:** Atomicity
+**C:** Consistency
+**I:** Isolation
+**D:** Durability
 ```
 
-- [Getting Started](#getting-started)
-- [Basic SQL Command](#basic-sql-command)
-  - [Database and Tables](#database-and-tables)
+- A transaction is a singular action that takes place in a database and in order to make sure that the data stays consistent all relational databases have “ACID” properties.
+- **Atomicity**: A whole transaction takes place, or it doesn’t occur at all.
+- **Consistency**: Data stored in a database is supposed to maintain integrity, pre and post the transaction.
+- **Isolation**: Multiple transactions can occur independently.
+- **Durability**: Modifications caused by a successful operation sustain even after system breakdown
+- Most of the ACID mechanism is something that we do not need to worry about as programmers apart
 
-# Getting Started
+## DB Terminologies
 
-> https://www.mysqltutorial.org/mysql-select-database/
+- A table is a collection of similar type of data, for example we can have a table of orders a table of users, a table of students etc.
+- A column defines a field in the table, for example a column for all the id(s), e-mails, order_id(s) and so on.
+- A row defines an entry in the table, so a row in a table of users will contain all the data about a specific user.
 
-1. First, log in to MySQL using the `root` user account and Enter your password:
+→ Row ——————————————————————>
 
-```sql
-mysql -u root -p
-```
+| id   | name   | email            |
+| ---- | ------ | ---------------- |
+| 1003 | Arthur | arthur@gmail.com |
+| 1004 | Mike   | mike@yahoo.com   |
+| 1005 | Janice | janice@gmail.com |
+| 1006 | Bob    | bob@gmail.com    |
 
-2. To find which databases are available on server by using the show databases statement:
+↓ Column
 
-```sql
-SHOW DATABASES;
-```
+## What is SQL
 
-The output may look like the following:
+- SQL (Structured Query Language) is a query language to interact with relational databases SQL is actually composed of 3 languages
+  - **Data Definition Language**: used to define new databases and schemas for tables.
+  - **Data Manipulation Language**: used to update existing entities and add data to tables.
+  - **Data Control Language**: used to control levels of access users have on a specific database.
 
-```sql
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-| sys                |
-+--------------------+
-4 rows in set (0.02 sec)
-```
+## SQL Types
 
-3. To select a database to work with, you use the USE statement:
+| Type        | Use                                                                                    |
+| ----------- | -------------------------------------------------------------------------------------- |
+| char(n)     | Fixed size string of n characters, max size 255 characters                             |
+| varchar(n)  | Variable length string with a maximum of n characters, max size of 64KB                |
+| text(n)     | String with a maximum size of 65KB                                                     |
+| tinyint(n)  | Signed number between -128 and 127, or unsigned between 0 and 255                      |
+| smallint(n) | Signed number between -32768 and 32767, or unsigned between 0 and 65535                |
+| int(n)      | Signed number between -2147483648 and 2147483647, or unsigned between 0 and 4294967295 |
+| float(p)    | A floating point number of precision "p"                                               |
+| boolean     | A value which is either true or false                                                  |
+| date        | Date formatted in "YYYY-MM-DD"                                                         |
+| datetime    | Date and time formatted in "YYYY-MM-DD hh:mm:ss"                                       |
 
-```sql
-USE database_name;
-```
+## Creating a Database and Table
 
-4. Check current database and to verify it
-
-```sql
-SELECT database();
-```
-
-MySQL server will set the current database to NULL if the current database is not set.
-
-```sql
-+---------------+
-| database()    |
-+---------------+
-| classicmodels |
-+---------------+
-1 row in set (0.00 sec)
-```
-
-# Basic SQL Command
-
-> Example of create a db named Comp A
-
-0. Show tables in the database
+- To create a database we can use “create” and specify the type of entity we want to create and give the database a name
 
 ```sql
--- Show all tables in the database
-SHOW TABLES;
-
--- Describe the structure of a specific table
-DESCRIBE your_table_name;
-
+CREATE DATABASE <name>;
 ```
 
-1. To create a database
+- To use the database we need to use the “use” query
 
-CREATE DATABASE <db_name>
-
-Example;
 ```sql
-CREATE DATABASE test_db;
+USE <name>;
 ```
 
-2. To use a database
+- Now that we have a database chosen to create a table in we can create a table using the “create table query"
 
-USE <db_name>
-
-Example;
 ```sql
-USE test_db;
-```
-
-3. Create a table
-
 CREATE TABLE <table_name> (
  <column_name> <data_type> <…constraints>,
  <column_name> <data_type> <…constraints>,
  <column_name> <data_type> <…constraints>,
 );
-
-Example;
-```sql
-CREATE TABLE users {
-column_1 string NOT NULL,
-};
 ```
 
-4. Insert data and Read Data from a Table
+## SQL Constraints
 
-• To insert / add data
-** order as defined in schema */
+- **NOT NULL**: makes sure that the field is not nullable
+- **UNIQUE**: makes sure that no two rows have the same value for the column it’s applied to
+- **PRIMARY KEY**: Used to mark a column as the way to uniquely identify a row
+- **FOREIGN KEY**: Used to link two tables together and link the data
+- **CHECK**: used to validate if the data validates a condition
+- **DEFAULT**: used to set the default value of a row
 
+## Inserting and Reading Data from a Table
+
+- Data can be inserted into a table using the “INSERT INTO” query by either specifying the order in which to insert values by column or just following the same order as the schema definition
+
+```sql
+/* order as defined in schema */
 INSERT INTO <table_name>
 values(<value1>, <value2>);
 
-Example;
-```sql
-INSERT INTO users
-values(Mozart, 31, musician);
-```
-
-** custom order */
-
-INSERT INTO <table_name> (<column2_name>, <column1_name>) 
+/* custom order */
+INSERT INTO <table_name> (<column2_name>, <column1_name>)
 values(<value2>, <value1>);
-
-Example;
-```sql
-INSERT INTO users(Name, Age, Job)
-values(Bach, 25, pianist)
 ```
 
-• To retrieve / get data
+- Data can be retrieved from a table using the “SELECT” query
 
+```sql
 SELECT <column1_name>,<column2_name> FROM <table_name>;
-
-or retrieve all the fields using:
-
-SELECT * FROM <table_name>;
-
-Example;
-```sql
-SELECT (Name, Age) FROM users;
-
-SELECT * FROM users;
 ```
 
-5. Updating and Deleting Data
+or retrieve all the fields using
 
-• To Update
+```sql
+SELECT * FROM <table_name>;
+```
 
+## Updating and Deleting Data
+
+- To update data stored we can use the “UPDATE” query, the update query will modify the values stored in the database in all the cases where the “WHERE” clause matches the condition
+
+```sql
 UPDATE <table_name>
 SET <column1_name> = <value1>, <column2_name> = <value2>
 WHERE <condition>;
-
-Example;
-```sql
-UPDATE users
-SET Name = Liszt, Age = 47, Job = violinist
-WHERE ...
 ```
 
-• To delete data 
+- To delete data, we can use the delete query, it needs just a condition and it will delete all the entries which match the criteria specified
 
+```sql
 DELETE FROM <table_name>
 WHERE <condition>;
-
-Example;
-```sql
-DELETE FROM users
-WHERE id is 2
-```
-
-## Database and Tables
-
-To create a new database:
-
-```sql
-CREATE DATABASE your_database_name;
-
--- to review the created database
-SHOW CREATE DATABASE your_database_name;
-```
-
-To find which databases are available on server:
-
-```sql
-SHOW DATABASES;
-```
-
-The output may look like the following:
-
-```sql
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-| sys                |
-+--------------------+
-4 rows in set (0.02 sec)
-```
-
-To select a database to work with:
-
-```sql
-USE your_database_name;
-```
-
-Check current database and verify it:
-
-```sql
-SELECT database();
-```
-
-List all the tables in the current database:
-
-```sql
--- Show all tables in the database
-SHOW TABLES;
-
--- Describe the structure of a specific table
-DESCRIBE your_table_name;
-```
-
-Retrieve all the fields from a table:
-
-```sql
-SELECT * FROM your_table_name;
-```
-
-To delete table:
-
-```sql
--- To delete a table
-DROP TABLE your_table_name;
-
--- To delete multiple tables at once
-DROP TABLE table1, table2, table3;
-
--- IF EXISTS to avoid errors
-DROP TABLE IF EXISTS your_table_name;
-```
-
-To delete database:
-
-```sql
--- To delete a database
-DROP DATABASE your_database_name;
-
--- IF EXISTS to avoid errors
-DROP DATABASE IF EXISTS your_database_name;
 ```

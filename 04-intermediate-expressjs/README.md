@@ -1,30 +1,26 @@
-- [Intermediate Express.JS](#intermediate-expressjs)
-  - [Section 3 Notes](#section-3-notes)
-    - [Separation of Concerns](#separation-of-concerns)
-    - [A standard express app](#a-standard-express-app)
-    - [Using Routers](#using-routers)
-    - [Using Controllers](#using-controllers)
-    - [Templating with EJS](#templating-with-ejs)
-    - [Setting up express for EJS](#setting-up-express-for-ejs)
-    - [Handing Secrets](#handing-secrets)
-  - [Project 1: Weather app](#project-1-weather-app)
-- [Assignment 3 - Creating Complex APIs](#assignment-3---creating-complex-apis)
+- [Intermediate Express.JS - Section 3 (Notes)](#intermediate-expressjs---section-3-notes)
+  - [Separation of Concerns](#separation-of-concerns)
+  - [A standard express app](#a-standard-express-app)
+  - [Using Routers](#using-routers)
+  - [Using Controllers](#using-controllers)
+  - [Templating with EJS](#templating-with-ejs)
+  - [Setting up express for EJS](#setting-up-express-for-ejs)
+  - [Handling Secrets](#handling-secrets)
+- [Project 1: Weather app](#project-1-weather-app)
 
-# Intermediate Express.JS
+# Intermediate Express.JS - Section 3 (Notes)
 
-## Section 3 Notes
-
-### Separation of Concerns
+## Separation of Concerns
 
 - Separation of concerns is a software architecture principle which states that one area of a project shall only be responsible for a singular task.
 
 - Following this we will look at splitting our express project into 2 main components for now, “controllers” and “routers”.
 
-| Routers  | Controllers  |
-|:-:|:-:|
+|                                   Routers                                    |                                                             Controllers                                                             |
+| :--------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
 | Routers will dictate what functions are executed when a certain route is hit | Controllers are the functions which are called when a route is hit, this is what actually contains the functionality and core logic |
 
-### A standard express app
+## A standard express app
 
 - Get started with `npm init —y`
 - Install the required packages: `npm i express`
@@ -46,7 +42,7 @@ app.listen(3000, () => {
 });
 ```
 
-### Using Routers
+## Using Routers
 
 - Let’s take the original app and make it follow separation of concerns, to start off create a folder called “routes”, this folder would contain all the files pertaining to the routing logic in our express apps.
 - Create a file called “`index.js`” in it.
@@ -72,7 +68,7 @@ const { router } = require(“./routes”);
 app.use("/", router);
 ```
 
-### Using Controllers
+## Using Controllers
 
 - Let’s now separate the logic of what happens when the route is triggered into a controller, create a folder called “controllers” and create a file called `index.js` in it.
 
@@ -98,7 +94,7 @@ router.route("/").get(getRoot);
 module.exports = { router };
 ```
 
-### Templating with EJS
+## Templating with EJS
 
 > **Angle brackets**, sometimes known as chevrons, are a pair of punctuation marks that take the form of `<` and `>`
 
@@ -110,7 +106,7 @@ module.exports = { router };
 
 4. `<%= %>` is used to house JS logic or variables that you want to render/show on the page.
 
-### Setting up express for EJS
+## Setting up express for EJS
 
 - To add EJS template support to express we need to install the “ejs” package, `npm i ejs`.
 
@@ -139,7 +135,7 @@ app.listen(3000, () => {
 res.render(“templateName”, { …variables });
 ```
 
-### Handing Secrets
+## Handling Secrets
 
 > handle secrets like API_KEY where store in ".env" file
 
@@ -166,12 +162,12 @@ dotenv.config({ path: path.resolve(__dirname, "../" )});
 module.exports = { ...process.env };
 ```
 
-## Project 1: Weather app
+# Project 1: Weather app
+
+> learn: express CRUD operations without database connection, express with 2 APIs endpoint
 
 **Weather app**
 
 - Using the OpenMeto and OpenCage API create an app that takes a location and gives the weather forecast the app will have the following paths
 - “/“ - landing page for the app
 - “/forecast“ weather forecast for the location passed in query string “q”.
-
-# Assignment 3 - Creating Complex APIs

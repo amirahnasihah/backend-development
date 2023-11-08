@@ -1,21 +1,18 @@
-- [Acquainting yourself with Express](#acquainting-yourself-with-express)
-  - [Section 2 Notes](#section-2-notes)
-    - [What is a REST API?](#what-is-a-rest-api)
-    - [What is Express.JS?](#what-is-expressjs)
-    - [The components of an Express App](#the-components-of-an-express-app)
-    - [Express Request-Response LifeCycle](#express-request-response-lifecycle)
-    - [Writing our first express app](#writing-our-first-express-app)
-    - [Creating our first Route](#creating-our-first-route)
-- [ExpressJS Basics Quiz](#expressjs-basics-quiz)
+- [Acquainting yourself with Express - Section 2 (Notes)](#acquainting-yourself-with-express---section-2-notes)
+  - [What is a REST API?](#what-is-a-rest-api)
+  - [What is Express.JS?](#what-is-expressjs)
+  - [The components of an Express App](#the-components-of-an-express-app)
+  - [Express Request-Response LifeCycle](#express-request-response-lifecycle)
+  - [Writing our first express app](#writing-our-first-express-app)
+  - [Creating our first Route](#creating-our-first-route)
 - [Assignment 2 - Creating Simple APIs](#assignment-2---creating-simple-apis)
     - [ExpressJS how to](#expressjs-how-to)
 
-# Acquainting yourself with Express
+# Acquainting yourself with Express - Section 2 (Notes)
 
-Acquainting = get familiar with Express
-## Section 2 Notes
+> Acquainting = get familiar with ...
 
-### What is a REST API?
+## What is a REST API?
 
 - API or Application Program Interface is a piece of software that allows two or more softwares to communicate with each other. Interface is a term which means that it acts as a coupling mechanism between two software.
 
@@ -25,7 +22,7 @@ Acquainting = get familiar with Express
 
 - Further reading: https://en.wikipedia.org/wiki/API
 
-### What is Express.JS?
+## What is Express.JS?
 
 - Express.JS is a fast, minimal and un-opinionated framework to write reliable and scalable BackEnds.
 
@@ -40,7 +37,7 @@ $ npm init —y
 $ npm install express
 ```
 
-### The components of an Express App
+## The components of an Express App
 
 > Routers, Middle, Controllers, Services
 
@@ -96,13 +93,13 @@ Session management: You can use the Express-session middleware to implement sess
 Security: You can use middleware to implement security measures like CSRF protection and XSS protection. For example, you could use the csurf middleware to protect against CSRF attacks, and the helmet middleware to set various security-related HTTP headers.
 ```
 
-### Express Request-Response LifeCycle
+## Express Request-Response LifeCycle
 
 In a good express application everything is split according to separation of concerns, a request first hits the router where it is decided according to which route was triggered which controller and middleware would be put to use, the middleware validate the request before the controller is triggered, the controller hosts the logic about what needs to be done with the information but the controller never interacts with the database directly, any requests to be made to the persistent data are directed to a service which in turn makes transactions on the database.
 
 After the controller has made requests to the service the response is prepared and it goes through an interceptor which sanitizes the response before sending it back to the user.
 
-### Writing our first express app
+## Writing our first express app
 
 Given below is an example for an express application which creates a basic express server and logs when the server is live. The express function imported from express is used to instantiate a server and the listen method on the app is used to get the server to listen on a specific port.
 
@@ -119,7 +116,7 @@ app.listen(3000, () => {
 });
 ```
 
-### Creating our first Route
+## Creating our first Route
 
 - We can use the route method to register a route on the express application.
 
@@ -143,107 +140,9 @@ app.listen(3000, () => {
 });
 ```
 
-# ExpressJS Basics Quiz
-
-> ℹ️ This is an online material. Please download and read the [online exercise guide](https://prod-public-lms-sg.s3.amazonaws.com/Online+Exercise+Guide.pdf) before starting.
-
-Progress: DONE ✅️
-
-Section 2 - ExpressJS Basics Quiz
-
-1. Which of these is an example of an API?
-
-Multiple-choice options (select one):
-
-️A. A restful api hosted at https://foo.bar/api/v1
-
-B. An OS framework exposing bindings to a language
-
-C. Interface for interacting with an app
-
-D. All of the above✅
-
-**EXPLAINATION**
-
-```markdown
-The correct answer is option A. A restful API hosted at https://foo.bar/api/v1 is an example of an API.
-
-Option B refers to a framework, which can expose an API, but it is not an API in itself. Option C refers to an interface, which may or may not include an API. Therefore, option D is not the correct answer.
-```
-
-2. Which of these does not belong in a controller?
-
-Multiple-choice options (select one):
-
-A. Core business logic
-
-B. Formulation of a response
-
-C. Interactions with 3rd party APIs and DBs✅️
-
-D. None of these
-
-**EXPLAINATION**
-
-```markdown
-Option D, "None of these," is not a correct answer because all of the options can potentially belong in a controller. However, if we consider which option is the least appropriate for a controller, then it would be option A, "Core business logic."
-
-Controllers in software architecture typically handle the request/response cycle and orchestrate the interaction between the user interface, models, and other components of the system. While business logic can be an integral part of the controller's implementation, it is generally not recommended to place too much complex business logic in the controller.
-
-Instead, business logic is typically encapsulated in the model layer or in service objects. This allows for better separation of concerns and maintainability of the codebase. Therefore, option A is the least appropriate for a controller.
-```
-
-3. Can a router sometimes contain business logic?
-
-Multiple-choice options (select one):
-
-A. Yes
-
-B. No✅️
-
-**EXPLAINATION**
-
-```markdown
-Option A, "Yes," is the correct answer.
-
-While a router is primarily responsible for directing incoming requests to the appropriate controller actions or endpoints, it can sometimes contain business logic as well. This is especially true when it comes to handling routing logic that is more complex than simply matching a URL pattern to a controller action.
-
-For example, in a web application with multi-tenancy support, a router might need to examine the domain name or subdomain of the incoming request in order to determine which tenant-specific resources to serve. This kind of routing logic might involve making database queries or other operations that involve business logic.
-
-In such cases, it can be appropriate to include some business logic in the router to keep the code organized and avoid duplicating logic across multiple parts of the system. However, it is important to keep in mind that the primary responsibility of the router is still routing, and it should not become overly burdened with business logic.
-```
-
-4. Which of these is the correct lifecycle of a request->response?
-
-Multiple-choice options (select one):
-
-A. Interceptor -> Router -> Middleware -> Controller
-
-B. Router -> Controller -> Middleware -> Interceptor
-
-C. Controller -> Router -> Middleware -> Interceptor
-
-✅️D. Router -> Middleware -> Controller -> Interceptor
-
-**EXPLAINATION**
-
-```markdown
-The correct answer is option D: Router -> Middleware -> Controller -> Interceptor.
-
-This is the typical order of execution for the lifecycle of a request -> response in a web application. Here's a breakdown of each step:
-
-Router: The router is responsible for mapping incoming requests to the appropriate controller action based on the URL and HTTP method.
-
-Middleware: Middleware functions are executed before the controller action is invoked, and they can perform tasks such as parsing request bodies, handling authentication, or adding headers to the response.
-
-Controller: The controller is where the main business logic of the application is implemented. It receives the request data from the middleware and produces a response.
-
-Interceptor: Finally, interceptors can be used to modify the response or perform other tasks after the controller action has completed, such as logging or error handling.
-
-It's worth noting that the precise order and components involved in the request/response lifecycle can vary depending on the specific architecture and framework being used. However, the general pattern of router -> middleware -> controller -> interceptor is common to many web development environments.
-```
-
 # Assignment 2 - Creating Simple APIs
+
+> create api without database connection
 
 Instructions
 

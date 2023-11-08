@@ -1,3 +1,5 @@
+- [Fetch and Display Different API Data Structure and Format](#fetch-and-display-different-api-data-structure-and-format)
+
 # Fetch and Display Different API Data Structure and Format
 
 1. dummyJSON 👉 'https://dummyjson.com/users' (The objects returned are highly nested)

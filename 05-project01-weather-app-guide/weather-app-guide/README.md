@@ -1,10 +1,15 @@
+- [What to install?](#what-to-install)
+- [Project 1 Specifications](#project-1-specifications)
+  - [Folder structure](#folder-structure)
+    - [config (dotenv, config, path)](#config-dotenv-config-path)
+
 # What to install?
 
 > express, ejs, dotenv, axios, nodemon
 > folder config, public, routes, controllers, views
 > require express, path, dotenv, axios. mw json, urlencoded, view engine --ejs, static --public, cors
 
-# Project Specifications
+# Project 1 Specifications
 
 1. `/(root route)`
 - Render a search page where users can search for a location.
