@@ -1,3 +1,10 @@
+- [Initiating Sequelize Connection with Node.js](#initiating-sequelize-connection-with-nodejs)
+  - [Installing](#installing)
+  - [Connecting to a database](#connecting-to-a-database)
+    - [Testing the connection](#testing-the-connection)
+- [Models](#models)
+  - [Connecting to the MySQL Server with the mysql Client](#connecting-to-the-mysql-server-with-the-mysql-client)
+
 # Initiating Sequelize Connection with Node.js
 
 In this tutorial you will learn to make a simple setup of Sequelize.

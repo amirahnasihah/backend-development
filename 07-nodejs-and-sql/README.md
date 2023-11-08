@@ -1,27 +1,184 @@
-# Sequelize, MySQL, and MySQL2
+- [Node.JS and SQL - Section 5 (Notes)](#nodejs-and-sql---section-5-notes)
+  - [An Introduction to Sequelize](#an-introduction-to-sequelize)
+  - [Initiating a Connection](#initiating-a-connection)
+  - [Models](#models)
+  - [Inserting and Reading Data](#inserting-and-reading-data)
+  - [Updating and Deleting Data](#updating-and-deleting-data)
+  - [One to One Relationship](#one-to-one-relationship)
+  - [One to Many Relationship](#one-to-many-relationship)
+  - [Many to Many (M:N) Association](#many-to-many-mn-association)
 
-1. MySQL: MySQL is a popular open-source relational database management system. It is the actual database software used for storing and managing data. It uses SQL for querying and managing data.
+# Node.JS and SQL - Section 5 (Notes)
 
-2. MySQL2: MySQL2 is a Node.js driver for MySQL. It is a library that allows Node.js applications to interact with MySQL databases. It is more efficient and performs better than the original MySQL driver for Node.js.
+## An Introduction to Sequelize
 
-3. Sequelize: Sequelize is an Object-Relational Mapping (ORM) library for Node.js. It provides an abstraction layer on top of databases like MySQL (and others) to work with them using JavaScript objects and models, rather than writing raw SQL queries. Sequelize can work with MySQL or MySQL2 as its underlying database driver.
-
-So, if you're building a Node.js application and want to work with a MySQL database, you might use MySQL2 as the driver to interact with the MySQL database, and you can use Sequelize as an additional layer to work with the database more easily using JavaScript objects and models. The choice between MySQL and MySQL2 depends on your specific requirements, but MySQL2 is generally considered more efficient and faster when working with Node.js.
-
-# Sequelize
-
-> source: https://sequelize.org/
-
-Installing. Sequelize is available via [npm](https://www.npmjs.com/package/sequelize) (or [yarn](https://yarnpkg.com/package/sequelize)).
-
-`npm install --save sequelize`
-
-# MySQL Command Line
-
-> source: https://maheshwaghmare.com/mysql/how-to/not-recognized-as-an-internal-or-external-command/
-
-If the MySQL command line is shown as below, [go here](https://maheshwaghmare.com/mysql/how-to/not-recognized-as-an-internal-or-external-command/):
+- ORM stands for Object Relationship Mapping, it’s a piece of software that abstracts away the complexity of having to write queries and makes interacting with databases as natural as possible for us as developers.
+- Sequelize is a really popular ORM that is widely used to interact with MySQL and can be installed using
 
 ```shell
-The term 'mysql' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+$ npm install sequelize mysql2
+```
+
+## Initiating a Connection
+
+- A sequelize connection can be initiated using the Sequelize function imported from the package, you need to pass certain connection options and the connection is good to go.
+
+```javascript
+const { Sequelize } = require("sequelize");
+const sequelize = new Sequelize({
+  dialect: "mysql", // the flavor, or dialect of SQL
+  port: <port>, // Port the server is running on, default 3306
+  username: <username>, // username with which to connect to the DB
+  password: <password>, // password for the username provided
+  database: <database> // database to use
+});
+```
+
+- The connection can then be opened and checked if it works using the authenticate method.
+
+```javascript
+await sequelize.authenticate().catch((err) => {
+  console.error("unable to connect to SQL\n", err);
+});
+```
+
+## Models
+
+- A model is the core essence of Sequelize, it’s the abstraction for a table in the database, it allows us to define and update tables straight from our application’s code. 
+- A model can be defined using the define method on sequelize:
+
+```javascript
+sequelize.define(`<model_name>`, attributes, options);
+
+// Example;
+sequelize.define("User", {
+  email: {
+    primaryKey: true,
+    allowNull: false,
+    unique: true,
+    type: DataTypes.STRING
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false
+  }
+});
+```
+
+## Inserting and Reading Data
+
+- Data can be inserted into a table by using the “create” method on a model.
+
+```javascript
+`<Model_Name>`.create({
+ property1: value1,
+ property2: value2
+});
+
+// Example;
+User.create({
+  property1: value1,
+  property2: value2
+});
+
+```
+
+- We can use one of the many methods that exist on the Model to find the data 
+we need.
+
+1. `findAll`: returns all the entries which match the criteria.
+2. `findOne`: returns the first entry to match the criteria specified.
+3. `findByPk`: finds an entry by the primary key.
+
+## Updating and Deleting Data
+
+- An instance of the model can be updated either by manipulating the attribute directly or by bulk updating the attributes using the set method.
+
+```javascript
+const user = await User.findByPk(email);
+user.firstName = "Jane"; // by manipulating attribute
+user.set({ // by using set method
+  age: 32,
+  salary: 72000
+});
+
+await user.save();
+```
+
+- An instance of a model can be deleted using the “destroy” method
+
+```javascript
+const user = await User.findByPk(email);
+await user.destroy();
+```
+
+## One to One Relationship
+
+> https://vertabelo.com/blog/one-to-one-relationship-in-database/
+
+- Say we have a Users Table and a Company table, each company has exactly one admin, to define that relationship we can use the association syntax in sequelize. The syntax needs us to specify the relation ship in both the DBs where, we state that the company “belongs to” a user and the user can “have one” company.
+
+The foreign key option here is used to define the foreign key to be created in the table marked as the the table which will belong to the other.
+
+```javascript
+const User = sequelize.define("User", `<attributes>`);
+const Company = sequelize.define("Company", `<attributes>`);
+
+// Example;
+User.hasOne(Company, { foreignKey: "owner" });
+Company.belongsTo(User, { foreignKey: "owner" });
+```
+
+## One to Many Relationship
+
+- One to many relationship is when one model owns multiple entities of another type, let’s take the example where we have one user who can have multiple posts, and we define this relationship with the foreign key of “creator” in the posts table.
+
+```javascript
+const User = sequelize.define("User", `<attributes>`);
+const Post = sequelize.define("Post", `<attributes>`);
+
+// Example;
+User.hasMany(Post, { foreignKey: "creator" });
+Post.belongsTo(User, { foreignKey: "creator" });
+```
+
+## Many to Many (M:N) Association
+
+- Let’s take the following case, we have a table of Projects and a Table of Employees, a Project can have many employees and an employee could be working on multiple projects at once. Or the case where one class can have many students and the student can be taking many classes, in such cases we have 2 tables which are associated to each other in a fashion know as M:N or Many to Many.
+
+In a Many to Many association we use a Junction Table, or a Join table to describe the relationship so as to not mess up the structure of the data and turning it into a mess in one of the other tables which controls the relationship.
+
+- A many to many association in Sequelize can be defined using the belongs to many method.
+
+```javascript
+const Company = sequelize.define("Company", `<attributes>`);
+const Project = sequelize.define("Project", `<attributes>`);
+const CompanyProjects = sequelize.define("CompanyProjects", {});
+
+// Example;
+Company.belongsToMany(Project, { through: CompanyProjects });
+Project.belongsToMany(Company, { through: CompanyProjects });
+```
+
+- Now we can define a User or a Project while creating one of the entities using the include option, or using the add relationship methods on any of the entities.
+
+```javascript
+const company = await Company.create({
+  companyName: "TalentLabs",
+  Projects: [
+    {
+      title: "Backend CABE"
+    },
+    {
+      title: "JavaScript M1"
+    }
+  ]
+}, {
+  include: [Project]
+});
+
+const company = await Company.findByPk(companyId);
+const project = await Project.findByPk(projectId);
+
+company.addProject(project, { through: CompanyProjects });
 ```

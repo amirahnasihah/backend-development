@@ -78,37 +78,37 @@ SHOW TABLES;
 
 -- Describe the structure of a specific table
 DESCRIBE your_table_name;
-
 ```
 
 1. To create a database
 
+```sql
 CREATE DATABASE <db_name>
 
-Example;
-```sql
+-- Example;
 CREATE DATABASE test_db;
 ```
 
 2. To use a database
 
+
+```sql
 USE <db_name>
 
-Example;
-```sql
+-- Example;
 USE test_db;
 ```
 
 3. Create a table
 
+```sql
 CREATE TABLE <table_name> (
  <column_name> <data_type> <…constraints>,
  <column_name> <data_type> <…constraints>,
  <column_name> <data_type> <…constraints>,
 );
 
-Example;
-```sql
+-- Example;
 CREATE TABLE users {
 column_1 string NOT NULL,
 };
@@ -116,71 +116,75 @@ column_1 string NOT NULL,
 
 4. Insert data and Read Data from a Table
 
-• To insert / add data
-** order as defined in schema */
+- To insert / add data
+
+```sql
+/* order as defined in schema */
 
 INSERT INTO <table_name>
 values(<value1>, <value2>);
 
-Example;
-```sql
+-- Example;
 INSERT INTO users
 values(Mozart, 31, musician);
 ```
 
-** custom order */
+```sql
+/* custom order */
 
 INSERT INTO <table_name> (<column2_name>, <column1_name>) 
 values(<value2>, <value1>);
 
-Example;
-```sql
+-- Example;
 INSERT INTO users(Name, Age, Job)
 values(Bach, 25, pianist)
 ```
 
-• To retrieve / get data
+- To retrieve / get data
 
+```sql
 SELECT <column1_name>,<column2_name> FROM <table_name>;
+```
 
 or retrieve all the fields using:
 
+```sql
 SELECT * FROM <table_name>;
 
-Example;
-```sql
+-- Example;
 SELECT (Name, Age) FROM users;
-
 SELECT * FROM users;
 ```
 
-5. Updating and Deleting Data
+1. Updating and Deleting Data
 
-• To Update
+- To Update
 
+```sql
 UPDATE <table_name>
 SET <column1_name> = <value1>, <column2_name> = <value2>
 WHERE <condition>;
 
-Example;
-```sql
+-- Example;
 UPDATE users
 SET Name = Liszt, Age = 47, Job = violinist
 WHERE ...
 ```
 
-• To delete data 
+- To delete data 
 
+```sql
 DELETE FROM <table_name>
 WHERE <condition>;
 
-Example;
-```sql
+-- Example;
 DELETE FROM users
 WHERE id is 2
 ```
 
 ## Database and Tables
+
+**Database:**
 
 To create a new database:
 
@@ -222,6 +226,8 @@ Check current database and verify it:
 ```sql
 SELECT database();
 ```
+
+**Tables:**
 
 List all the tables in the current database:
 

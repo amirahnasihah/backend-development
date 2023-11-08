@@ -16,7 +16,10 @@
 
 - A database can be defined as a set of related pieces of information stored somewhere, a database can be physical or virtual.
 - A relational database is a type of database in which entities can be linked using some relationships with their keys.
-- Database need to be written to and read from disk as we can’t save objects to disk so data goes through a process called serialization and deserialization, serialization is when an object is converted to a buffer that can be written to disk, deserialization is the process of taking the buffer and converting it into an object.
+- Database need to be written to and read from disk as we can’t save objects to disk so data goes through a process called serialization and deserialization, **serialization is when an object is converted to a buffer that can be written to disk**, **deserialization is the process of taking the buffer and converting it into an object**.
+
+> serialization: object → buffer
+> deserialization: buffer → object
 
 ## Why do we need to use Databases?
 

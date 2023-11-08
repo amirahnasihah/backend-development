@@ -78,3 +78,17 @@ const run = async () => {
 };
 run();
 ```
+
+---
+
+```sql
+CREATE DATABASE libraryapi;
+
+SHOW DATABASES;
+
+use libraryapi;
+
+SHOW TABLES;
+
+DESC books;
+```
