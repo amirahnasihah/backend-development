@@ -1,14 +1,7 @@
-> This is an online material. Please download and read the [online exercise guide](https://prod-public-lms-sg.s3.amazonaws.com/Online+Exercise+Guide.pdf) before starting.
-
-# Starting an online exercise
-
-Click on the "Start" button to start working on an online exercise.
+- [ES6 Quiz](#es6-quiz)
+  - [Questions](#questions)
 
 # ES6 Quiz
-
-You can have unlimited attempts on this auto-graded exercise. The threshold of passing is 80%. If you failed the auto-graded exercise, you can reset and retry again.
-
-You can always reset the test in TalentLabs Platform but all your previous answers would be cleared. That means you need to re-do the whole exercise again. So use that wisely. Do not put in blind guesses just because you can try unlimited times.
 
 ## Questions
 
@@ -16,7 +9,7 @@ You can always reset the test in TalentLabs Platform but all your previous answe
 
 Multiple-choice options (select one):
 
-✅️A. To iterate over the array and transform it into another
+A. To iterate over the array and transform it into another✅️
 
 B. To create a hash-map using the data-set
 
@@ -36,7 +29,7 @@ console.log(result);
 
 Multiple-choice options (select one):
 
-✅️A. [76, 54, 10]
+A. [76, 54, 10]✅️
 
 B. undefined
 
@@ -60,7 +53,7 @@ Multiple-choice options (select one):
 
 A. A regular function which follows the arrow function syntax
 
-✅️B. It is a wrapper for creating promises
+B. It is a wrapper for creating promises✅️
 
 C. A shorthand for a traditional function
 
@@ -89,7 +82,7 @@ A. “John”
 
 B. Object { name: “Jake”, age: 30 }
 
-✅️C. “Jake”
+C. “Jake”✅️
 
 D. Object { name: “John”, age: 30 }
 
@@ -107,7 +100,7 @@ Multiple-choice options (select one):
 
 A. Last matching element of the array
 
-✅️B. First matching element of the array
+B. First matching element of the array✅️
 
 C. All matching elements from the array
 

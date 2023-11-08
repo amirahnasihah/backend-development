@@ -1,3 +1,11 @@
+- [Standard Conforming APIs - Section 6 (Notes)](#standard-conforming-apis---section-6-notes)
+  - [SEMANTIC VERSIONING](#semantic-versioning)
+  - [THE OPEN API SPECIFICATION](#the-open-api-specification)
+  - [SETTING UP THE SWAGGER CONFIG](#setting-up-the-swagger-config)
+  - [BINDING SWAGGER TO ROUTER](#binding-swagger-to-router)
+  - [WRITING ROUTE DOCUMENTATION](#writing-route-documentation)
+  - [WRITING MODEL DOCUMENTATION](#writing-model-documentation)
+
 # Standard Conforming APIs - Section 6 (Notes)
 
 ## SEMANTIC VERSIONING

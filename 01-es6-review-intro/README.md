@@ -1,33 +1,29 @@
-- [An Introduction to ES6 (Review)](#an-introduction-to-es6-review)
-  - [Section 0 Notes](#section-0-notes)
-    - [What is ES6](#what-is-es6)
-    - [Arrow Functions](#arrow-functions)
-    - [Higher Order Array Methods](#higher-order-array-methods)
-      - [Some common examples of higher-order array methods are:](#some-common-examples-of-higher-order-array-methods-are)
-        - [1. `filter()` - returns a new array with only the elements that pass the test implemented by the callback function.](#1-filter---returns-a-new-array-with-only-the-elements-that-pass-the-test-implemented-by-the-callback-function)
-        - [2. `map()` - returns a new array with each element modified according to the callback function.](#2-map---returns-a-new-array-with-each-element-modified-according-to-the-callback-function)
-        - [3. `sort()` - sorts the array based on a comparison function.](#3-sort---sorts-the-array-based-on-a-comparison-function)
-        - [4. `find()`](#4-find)
-        - [5. `reduce()` - applies the callback function to reduce an array to a single value.](#5-reduce---applies-the-callback-function-to-reduce-an-array-to-a-single-value)
-        - [6. `forEach()` - executes the callback function for each element in the array.](#6-foreach---executes-the-callback-function-for-each-element-in-the-array)
-        - [7. `every()` - checks if every element in the array passes a test implemented by the callback function.](#7-every---checks-if-every-element-in-the-array-passes-a-test-implemented-by-the-callback-function)
-        - [8. `some()` - checks if at least one element in the array passes a test implemented by the callback function.](#8-some---checks-if-at-least-one-element-in-the-array-passes-a-test-implemented-by-the-callback-function)
-    - [Rest and Spread](#rest-and-spread)
-    - [Array and Object Destructuring](#array-and-object-destructuring)
-    - [The need for promises](#the-need-for-promises)
-    - [What is a promise?](#what-is-a-promise)
-    - [Async / Await](#async--await)
-- [ES6 Quiz](#es6-quiz)
-- [Modify or not?](#modify-or-not)
+- [An Introduction to ES6 - Section 0 (Notes)](#an-introduction-to-es6---section-0-notes)
+  - [What is ES6](#what-is-es6)
+  - [Arrow Functions](#arrow-functions)
+  - [Higher Order Array Methods](#higher-order-array-methods)
+    - [Example 1. `filter()` - returns a new array with only the elements that pass the test implemented by the callback function.](#example-1-filter---returns-a-new-array-with-only-the-elements-that-pass-the-test-implemented-by-the-callback-function)
+    - [Example 2. `map()` - returns a new array with each element modified according to the callback function.](#example-2-map---returns-a-new-array-with-each-element-modified-according-to-the-callback-function)
+    - [Example 3. `sort()` - sorts the array based on a comparison function.](#example-3-sort---sorts-the-array-based-on-a-comparison-function)
+    - [Example 4. `find()`](#example-4-find)
+    - [Example 5. `reduce()` - applies the callback function to reduce an array to a single value.](#example-5-reduce---applies-the-callback-function-to-reduce-an-array-to-a-single-value)
+    - [Example 6. `forEach()` - executes the callback function for each element in the array.](#example-6-foreach---executes-the-callback-function-for-each-element-in-the-array)
+    - [Example 7. `every()` - checks if every element in the array passes a test implemented by the callback function.](#example-7-every---checks-if-every-element-in-the-array-passes-a-test-implemented-by-the-callback-function)
+    - [Example 8. `some()` - checks if at least one element in the array passes a test implemented by the callback function.](#example-8-some---checks-if-at-least-one-element-in-the-array-passes-a-test-implemented-by-the-callback-function)
+  - [Rest and Spread](#rest-and-spread)
+  - [Array and Object Destructuring](#array-and-object-destructuring)
+  - [The need for promises](#the-need-for-promises)
+  - [What is a promise?](#what-is-a-promise)
+  - [Async / Await](#async--await)
+- [More Explanation](#more-explanation)
+  - [Modify or not the original array?](#modify-or-not-the-original-array)
 - [Assignment 1 - Async Function \& Higher Order Functions Exercises](#assignment-1---async-function--higher-order-functions-exercises)
   - [Task 1 (30 points)](#task-1-30-points)
   - [Task 2 (70 points)](#task-2-70-points)
 
-# An Introduction to ES6 (Review)
+# An Introduction to ES6 - Section 0 (Notes)
 
-## Section 0 Notes
-
-### What is ES6
+## What is ES6
 
 - ECMAScript provides the spec which JavaScript conforms to.
 - ES6 was the spec which was introduced in 2015.
@@ -35,7 +31,7 @@
 - Adds intuitive syntax sugar and operators.
 - Adds excellent support for asynchronous behavior.
 
-### Arrow Functions
+## Arrow Functions
 
 Arrow functions provide a quick shorthand to traditional functions but they are limited by the scope which they can operate in.
 
@@ -55,7 +51,7 @@ const fooFunc = (param) => {
 
 **JS FACT**
 
-### Higher Order Array Methods
+## Higher Order Array Methods
 
 - Higher order array methods allow you to take an array and perform certain operations on them.
 - - **Filter**: get a new array of elements which matches a certain criteria.
@@ -73,9 +69,7 @@ Higher order functions are functions that operate on other functions, either by 
 
 Higher-order array methods are methods in JavaScript that take a callback function as an argument and operate on arrays. These methods allow you to write more concise, declarative and functional code.
 
-#### Some common examples of higher-order array methods are:
-
-##### 1. `filter()` - returns a new array with only the elements that pass the test implemented by the callback function.
+### Example 1. `filter()` - returns a new array with only the elements that pass the test implemented by the callback function.
 
 The `filter()` function is what you'd use if you're creating a search bar from a given list of items, for example. The `filter()` method also creates a new array by executing the passed callback on every element of the array, and keeps it in the resulting array IF and ONLY IF the element passes the Boolean test returned by the callback.
 
@@ -118,7 +112,7 @@ const newArray = givenArray.filter( ({ population }) => population >= 5000000);
 console.log(newArray); // console: [{name: "Shanghai", population: 24300000}, {name: "New Delhi", population: 21800000}, {name: "Mumbai", population: 18400000}]
 ```
 
-##### 2. `map()` - returns a new array with each element modified according to the callback function.
+### Example 2. `map()` - returns a new array with each element modified according to the callback function.
 
 It forms a new array by calling the function passed into it as an argument, on each and every element of the Array. It will map each of the return values of the callback and create a new array.
 
@@ -150,7 +144,7 @@ const newArray = givenArray.map(w => w + 's');
 console.log(newArray); // console: ['pens', 'books', 'codes']
 ```
 
-##### 3. `sort()` - sorts the array based on a comparison function.
+### Example 3. `sort()` - sorts the array based on a comparison function.
 
 The `sort` method is self-explanatory: it "sorts" an array in place and returns a sorted the array. The default sort order is ascending.
 
@@ -210,7 +204,7 @@ If compareFunction(a, b) returns greater than 0, sort b to an index lower than a
 compareFunction(a, b) must always return the same value when given a specific pair of elements a and b as its two arguments. If inconsistent results are returned, then the sort order is undefined.
 To compare numbers instead of strings, the compare function can subtract b from a. The following function will sort the array in ascending order (if it doesn't contain Infinity and NaN).
 
-##### 4. `find()`
+### Example 4. `find()`
 
 `Array.prototype.find`
 
@@ -234,15 +228,15 @@ const apples = fruits.find( ({name}) => name  "apples" );
 console.log(apples); // console: {"name": "apples", "quantity": 80}
 ```
 
-##### 5. `reduce()` - applies the callback function to reduce an array to a single value.
+### Example 5. `reduce()` - applies the callback function to reduce an array to a single value.
 
-##### 6. `forEach()` - executes the callback function for each element in the array.
+### Example 6. `forEach()` - executes the callback function for each element in the array.
 
-##### 7. `every()` - checks if every element in the array passes a test implemented by the callback function.
+### Example 7. `every()` - checks if every element in the array passes a test implemented by the callback function.
 
-##### 8. `some()` - checks if at least one element in the array passes a test implemented by the callback function.
+### Example 8. `some()` - checks if at least one element in the array passes a test implemented by the callback function.
 
-### Rest and Spread
+## Rest and Spread
 
 ```javascript
 let arr = [0, 43, 54, 65, 76, 98];
@@ -252,9 +246,7 @@ let arr = [0, 43, 54, 65, 76, 98];
 
 - Rest operator allows you extract an infinite number of unnamed values, this can be used to pass an infinite number of arguments to a function which will be captured in the form of an array.
 
-**JS FACT**
-
-### Array and Object Destructuring
+## Array and Object Destructuring
 
 Destructuring allows you to extract values from an object or an array in a very clean semantic manner.
 
@@ -274,7 +266,7 @@ const { name, age } = person;
 
 This code will take the properties “name” and “age” of the variable person and extract them into variables called name and age.
 
-### The need for promises
+## The need for promises
 
 A callback is needed when we need to perform a blocking action which might take a while to execute and may indeed fail, we do not want to block the main thread, so instead we wait for the action to finish and then continue the execution from there.
 
@@ -292,7 +284,7 @@ fooBar(fooParam, function (param) {
 
 If we need to sequentially execute such callback heavy function then the code quickly starts becoming unreadable with nested callbacks and error handling also subsequently in this chain becomes a pain.
 
-### What is a promise?
+## What is a promise?
 
 A very simple way to understand how a promise works in essence is that it’s a piece of code which “promises” to give a result some time in the future. It returns a result and a status, which can be pending, resolved or rejected. Here is a sample declaration of a promise.
 
@@ -312,7 +304,7 @@ fooPromise
 
 Promises greatly improve error handling and improve the syntax quite a bit but we still run into a quasi-callback hell scenario with nested promise resolutions.
 
-### Async / Await
+## Async / Await
 
 async / await provides an easy syntax wrapper to writing promises where each function marked with the keyword async will return a promise which would resolve to the value returned or reject to the error raised.
 
@@ -328,13 +320,9 @@ const fooFunc = async (…params) => {
 const result = await fooFunc().catch((err) => { … });
 ```
 
-# ES6 Quiz
+# More Explanation
 
-> ℹ️ This is an online material. Please download and read the [online exercise guide](https://prod-public-lms-sg.s3.amazonaws.com/Online+Exercise+Guide.pdf) before starting.
-
-Progress: DONE✅️
-
-# Modify or not?
+## Modify or not the original array?
 
 1. Filter
 
@@ -432,9 +420,11 @@ In this example, `find()` identifies the first number in the original array that
 ];
 ```
 
+-----
+
 Answer & explanation:
 
-```
+```javascript
 const payingCustomers = customers.filter((customer) => customer.isPayingCustomer);
 
 const sortedCustomers = payingCustomers.sort((a, b) => b.totalAmountSpent - a.totalAmountSpent);
@@ -448,9 +438,7 @@ Then we sort the resulting array of paying customers by totalAmountSpent propert
 
 Finally, we log the sorted array to the console using console.log().
 
-**JS FACT**
-
-Source: https://dev.to/shrihankp/higher-order-array-methods-in-javascript-14e7
+> Source: https://dev.to/shrihankp/higher-order-array-methods-in-javascript-14e7
 
 Higher order functions are functions that operate on other functions, either by receiving them as arguments or by returning them. It is a function that accepts a function as a parameter or returns a function as the output.
 
@@ -468,9 +456,9 @@ Source (array methods): https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 
 **Task 2**: Write an asynchronous function called “getRandomCatFact” which queries to the “https://meowfacts.herokuapp.com/" and then display the fun fact returned in the response in the console. (70 points)
 
-**JS FACT**
+-----
 
-```javaScript
+```javascript
 const axios = require("axios");
 
 const getRandomCatFact = async () => {
@@ -483,7 +471,7 @@ getRandomCatFact();
 
 Or
 
-```javaScript
+```javascript
 getRandomCatFact = async () => {
   try {
     const response = await fetch("https://meowfacts.herokuapp.com/");
