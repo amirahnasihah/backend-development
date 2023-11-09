@@ -26,9 +26,12 @@ It provides a clear way to communicate the nature of changes in software version
 
 > The OpenAPI Specification, often abbreviated as OAS, is a standard for describing RESTful APIs. It allows developers to define the structure of an API, including endpoints, request/response formats, and more. This helps in creating consistent and easily understandable API documentation.
 
+## Setting the Swagger Config
+
 - Install the packages using (continuation from previous module libraryApi).
 - create a file “/config/swagger.config.js” in that file we can begin declaring our swagger config.
 - go to "package.json" and change the `"version": "0.1.0"` and import the file into "swagger.config.js".
+- after done the Swagger configuration, we want to connect it.
 
 ```bash
 $ npm install swagger-jsdoc swagger-ui-express
@@ -46,8 +49,20 @@ const swaggerConfig = {
       version: version,
     },
   },
-  apis: ["./routers/*.js", "./models/*.js"], // important: which routes should it actually look for.
+  apis: ["./routers/*.js", "./models/*.js"], // important: which routes should it actually look for. so, all ".js" file will be scanned by Swagger config.
 };
 
 module.exports = { swaggerConfig };
+```
+
+## Bind Swagger to Router
+
+- Now in “./routers/index.js” we can bind the route where the docs will be served by importing our swaggerOptions from “./config/swagger.config.js” and swaggerUi from “swagger-ui-express”.
+
+```javascript
+import { swaggerSpecification } from "../config/swagger.config.js";
+import swaggerUi from "swagger-ui-express";
+…
+router.use("/docs", swaggerUi.serve);
+router.use("/docs", swaggerUi.setup(swaggerOptions));
 ```
