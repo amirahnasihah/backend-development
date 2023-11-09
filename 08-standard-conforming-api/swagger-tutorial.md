@@ -16,7 +16,7 @@ In Semantic Versioning (SemVer), SemVer follows the following standard:
 
 - **Major version:** Increased for backward-incompatible changes.
 - **Minor version:** Added for backward-compatible new features.
-- **Patch version:** Incremented for backward-compatible bug fixes.
+- **Patch version:** Incremented for backward-compatible bug fixes or security fixes.
 
 It provides a clear way to communicate the nature of changes in software versions.
 
