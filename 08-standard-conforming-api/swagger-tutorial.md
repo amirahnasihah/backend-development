@@ -8,3 +8,8 @@
 
 ## Semantic Versioning
 
+SemVer follows the following standard:
+
+**MAJOR.MINOR.PATCH**
+
+Ex; v15.1.3 => 15 is Major version, 1 is Minor version, 3 is Patch version.
