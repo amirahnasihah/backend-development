@@ -64,6 +64,7 @@ module.exports = { swaggerSpecification };
 - Now in “./routers/index.js” we can bind the route where the docs will be served by importing our `swaggerConfig` from “./config/swagger.config.js” and swaggerUi from “swagger-ui-express”.
 - go to "localhost:3000/api/docs" will display Swagger logo and error: Unable to render this definition.
 - so, go back in swagger.config.js and require `swagger-jsdoc`. so, export `swaggerSpecification` into /routers/index.js instead of "swaggerConfig".
+- then, refresh localhost:3000.
 
 ```javascript
 // "/routers/index.js" //
