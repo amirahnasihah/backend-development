@@ -38,7 +38,7 @@ $ npm install swagger-jsdoc swagger-ui-express
 ```
 
 ```javascript
-// swagger.config.js
+// "/config/swagger.config.js" //
 conat { name, version } = require("../package.json");
 
 const swaggerConfig = {
@@ -57,12 +57,14 @@ module.exports = { swaggerConfig };
 
 ## Bind Swagger to Router
 
-- Now in “./routers/index.js” we can bind the route where the docs will be served by importing our swaggerOptions from “./config/swagger.config.js” and swaggerUi from “swagger-ui-express”.
+- Now in “./routers/index.js” we can bind the route where the docs will be served by importing our `swaggerConfig` from “./config/swagger.config.js” and swaggerUi from “swagger-ui-express”.
 
 ```javascript
-import { swaggerSpecification } from "../config/swagger.config.js";
-import swaggerUi from "swagger-ui-express";
-…
+// "/routers/index.js" //
+const swaggerUi = require("swagger-ui-express");
+const { swaggerConfig } = require("../config/swagger.config");
+
+// ...
 router.use("/docs", swaggerUi.serve);
-router.use("/docs", swaggerUi.setup(swaggerOptions));
+router.use("/docs", swaggerUi.setup(swaggerConfig));
 ```
