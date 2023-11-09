@@ -34,7 +34,7 @@ $ npm install swagger-jsdoc swagger-ui-express
 ```
 
 ```javascript
-// swagger.js
+// swagger.config.js
 const swaggerOptions = {
   definition: {
     openapi: "3.0.0",
