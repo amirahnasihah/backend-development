@@ -93,7 +93,7 @@ We can now actually start writing comments which would create our swagger docume
 
 ## WRITING MODEL DOCUMENTATION
 
-Models follow a similar documentation style to how we documented our API Paths
+Models follow a similar documentation style to how we documented our API Paths.
 
 - Each documentation comment must start with ”/**” and end with “*/” the first line of the comment must have the “@openapi” tag.
 - The Model documentation begins first with defining a components and schemas indentation block.
