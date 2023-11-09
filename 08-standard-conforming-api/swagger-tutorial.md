@@ -75,3 +75,5 @@ const { swaggerSpecification } = require("../config/swagger.config");
 router.use("/docs", swaggerUi.serve);
 router.use("/docs", swaggerUi.setup(swaggerSpecification));
 ```
+
+## Writing OpenAPI model documentation
