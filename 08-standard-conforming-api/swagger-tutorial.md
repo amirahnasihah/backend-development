@@ -22,3 +22,7 @@ It provides a clear way to communicate the nature of changes in software version
 
 > Ex; v15.1.3 => 15 is Major version, 1 is Minor version, 3 is Patch version.
 
+## The Open API Specification
+
+> The OpenAPI Specification, often abbreviated as OAS, is a standard for describing RESTful APIs. It allows developers to define the structure of an API, including endpoints, request/response formats, and more. This helps in creating consistent and easily understandable API documentation.
+
