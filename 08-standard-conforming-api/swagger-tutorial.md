@@ -46,7 +46,7 @@ const swaggerConfig = {
       version: version,
     },
   },
-  apis: ["./src/routers/*.ts", "./src/models/*.ts"], // important: which routes should it actually look for.
+  apis: ["./routers/*.js", "./models/*.js"], // important: which routes should it actually look for.
 };
 
 module.exports = { swaggerConfig };
