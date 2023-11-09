@@ -21,3 +21,4 @@ In Semantic Versioning (SemVer), SemVer follows the following standard:
 It provides a clear way to communicate the nature of changes in software versions.
 
 > Ex; v15.1.3 => 15 is Major version, 1 is Minor version, 3 is Patch version.
+
