@@ -39,7 +39,8 @@ $ npm install swagger-jsdoc swagger-ui-express
 
 ```javascript
 // "/config/swagger.config.js" //
-conat { name, version } = require("../package.json");
+const { name, version } = require("../package.json");
+const swaggerJsdoc = require("swagger-jsdoc"); // newly add this
 
 const swaggerConfig = {
   definition: {
@@ -52,19 +53,24 @@ const swaggerConfig = {
   apis: ["./routers/*.js", "./models/*.js"], // important: which routes should it actually look for. so, all ".js" file will be scanned by Swagger config.
 };
 
-module.exports = { swaggerConfig };
+// newly add this
+const swaggerSpecification = swaggerJsdoc(swaggerConfig);
+
+module.exports = { swaggerSpecification };
 ```
 
 ## Bind Swagger to Router
 
 - Now in “./routers/index.js” we can bind the route where the docs will be served by importing our `swaggerConfig` from “./config/swagger.config.js” and swaggerUi from “swagger-ui-express”.
+- go to "localhost:3000/api/docs" will display Swagger logo and error: Unable to render this definition.
+- so, go back in swagger.config.js and require `swagger-jsdoc`. so, export `swaggerSpecification` into /routers/index.js instead of "swaggerConfig".
 
 ```javascript
 // "/routers/index.js" //
 const swaggerUi = require("swagger-ui-express");
-const { swaggerConfig } = require("../config/swagger.config");
+const { swaggerSpecification } = require("../config/swagger.config");
 
 // ...
 router.use("/docs", swaggerUi.serve);
-router.use("/docs", swaggerUi.setup(swaggerConfig));
+router.use("/docs", swaggerUi.setup(swaggerSpecification));
 ```
