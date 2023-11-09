@@ -26,3 +26,23 @@ It provides a clear way to communicate the nature of changes in software version
 
 > The OpenAPI Specification, often abbreviated as OAS, is a standard for describing RESTful APIs. It allows developers to define the structure of an API, including endpoints, request/response formats, and more. This helps in creating consistent and easily understandable API documentation.
 
+- Install the packages using (continuation from previous module libraryApi).
+- create a file “/config/swagger.config.js” in that file we can begin declaring our swagger config.
+
+```bash
+$ npm install swagger-jsdoc swagger-ui-express
+```
+
+```javascript
+// swagger.js
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: name,
+      version: "0.1.0",
+    },
+  },
+  apis: ["./src/routers/*.ts", "./src/models/*.ts"],
+};
+```
