@@ -28,6 +28,7 @@ It provides a clear way to communicate the nature of changes in software version
 
 - Install the packages using (continuation from previous module libraryApi).
 - create a file “/config/swagger.config.js” in that file we can begin declaring our swagger config.
+- go to "package.json" and change the `"version": "0.1.0"` and import the file into "swagger.config.js".
 
 ```bash
 $ npm install swagger-jsdoc swagger-ui-express
@@ -35,14 +36,18 @@ $ npm install swagger-jsdoc swagger-ui-express
 
 ```javascript
 // swagger.config.js
-const swaggerOptions = {
+conat { name, version } = require("../package.json");
+
+const swaggerConfig = {
   definition: {
     openapi: "3.0.0",
     info: {
       title: name,
-      version: "0.1.0",
+      version: version,
     },
   },
   apis: ["./src/routers/*.ts", "./src/models/*.ts"],
 };
+
+module.exports = { swaggerConfig };
 ```
