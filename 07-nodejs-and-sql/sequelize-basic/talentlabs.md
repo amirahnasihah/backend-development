@@ -69,7 +69,7 @@ const Post = db.define("Post", {
 })
 
 // 9) create associations (based on type of db relation)
-	// > one user can have many posts (O:M)
+	// > one user can have many posts (1:M)
 User.hasMany(Post, { foreignKey: "creatorId" });
 Post.belongsTo(User, { foreignKey: "creatorId" });
 
@@ -80,6 +80,9 @@ const run = async () => {
     await db.authenticate();
     // 4) .sync() method to create or update database tables based on your defined models
     await db.sync();
+
+    console.log("Connection has been established successfully.");
+    
     // 7) Model Instances - we create entities (values)
     const user = await User.create({
       firstName: "Jane",
@@ -97,7 +100,7 @@ const run = async () => {
     
     const users = await User.findAll({ where: {email: { [Op.like]: "%doe.com" } } });
     
-    // 10) with associations (O:O, O:M, M:M)
+    // 10) with associations (1:1, 1:M, M:M)
     // ex; O:M (want to show multiple post -> loop)
     for (let i = 0; i < 5; i++) {
     	const post = await Post.create({
@@ -113,8 +116,6 @@ const run = async () => {
      // 8) debug
 	console.log(user, "\n", user.toJSON());
 	console.log(bob.toJSON());
-  
-    console.log("Connection has been established successfully.");
   } catch (error) {
     console.error("Unable to connect to the database:", error);
   }

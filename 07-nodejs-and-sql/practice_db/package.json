@@ -1,0 +1,19 @@
+{
+  "name": "practice_db",
+  "version": "1.0.0",
+  "description": "Let's practice creating and manipulating database with MySQL.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "nodemon main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.6.3",
+    "sequelize": "^6.34.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
