@@ -111,7 +111,10 @@ router.use("/docs", swaggerUi.setup(swaggerSpecification));
 
 Go to "book.model.js" and put Swagger documentation.
 
-> need to have consistent indentation either using tab of 2-spaces or spaces
+> need to have consistent indentation either using tab of 2-spaces or a space,
+> DTO = Data Transfer Object
+
+
 
 ```javascript
 // book.model.js //
@@ -120,23 +123,17 @@ Go to "book.model.js" and put Swagger documentation.
  * @openapi
  * components:
  *   schemas:
- *     UserSchema:
+ *     CreateBookDto:
  *       type: object
  *       properties:
- *         id:
+ *         title:
  *           type: string
- *         email:
+ *           default: An amazing book
+ *         author:
  *           type: string
- *         createdAt:
- *           type: string
- *           format: date
- *         updatedAt:
- *           type: string
- *           format: date
+ *           default: Jane Doe
  *       required:
- *         - email
- *         - id
- *         - createdAt
- *         - updatedAt
+ *         - title
+ *         - author
  */
 ```
