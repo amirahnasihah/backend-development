@@ -109,3 +109,34 @@ router.use("/docs", swaggerUi.setup(swaggerSpecification));
  */
 ```
 
+Go to "book.model.js" and put Swagger documentation.
+
+> need to have consistent indentation either using tab of 2-spaces or spaces
+
+```javascript
+// book.model.js //
+
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     UserSchema:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *         email:
+ *           type: string
+ *         createdAt:
+ *           type: string
+ *           format: date
+ *         updatedAt:
+ *           type: string
+ *           format: date
+ *       required:
+ *         - email
+ *         - id
+ *         - createdAt
+ *         - updatedAt
+ */
+```
