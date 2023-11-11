@@ -114,8 +114,6 @@ Go to "book.model.js" and put Swagger documentation.
 > need to have consistent indentation either using tab of 2-spaces or a space,
 > DTO = Data Transfer Object
 
-
-
 ```javascript
 // book.model.js //
 
@@ -136,4 +134,63 @@ Go to "book.model.js" and put Swagger documentation.
  *         - title
  *         - author
  */
+ 
+ // ...
+```
+
+after done `CreateBookDto`, go to localhost to preview it.
+
+next, `UpdateBookDto` is similar but will have no mandatory fields (required block contain nothing).
+
+next, `BookDto` and thats just the response.
+
+```javascript
+// book.model.js //
+
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     CreateBookDto:
+ *       type: object
+ *       properties:
+ *         title:
+ *           type: string
+ *           default: An amazing book
+ *         author:
+ *           type: string
+ *           default: Jane Doe
+ *       required:
+ *         - title
+ *         - author
+ *     UpdateBookDto:
+ *       type: object
+ *       properties:
+ *         title:
+ *           type: string
+ *           default: An amazing book
+ *         author:
+ *           type: string
+ *           default: Jane Doe
+ *       required:
+ *     BookDto:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *         title:
+ *           type: string
+ *           default: An amazing book
+ *         author:
+ *           type: string
+ *           default: Jane Doe
+ *         createdAt:
+ *           type: string
+ *           format: date
+ *         updatedAt:
+ *           type: string
+ *           format: date
+ */
+ 
+ // ...
 ```
