@@ -111,4 +111,4 @@ router.use("/docs", swaggerUi.setup(swaggerSpecification));
  */
 ```
 
-todo: practice db
+todo: practice db using mysql
