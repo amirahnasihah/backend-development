@@ -194,3 +194,25 @@ next, `BookDto` and thats just the response.
  
  // ...
 ```
+
+## Writing OpenAPI Route documentation
+
+> The documentation of a Route begins with the route declared for example “/api/books”, any methods belonging to the route can be declared in one indentation level in with the method specifiers get, post, put, patch, delete etc.
+
+```javascript
+/**
+ * @openapi
+ * "/api/books/":
+ *   get:
+ *     tags:
+ *       - Books
+ *     summary: Get all the books
+ *     responses:
+ *       200:
+ *         description: Success, returns an array of all the books
+ *       500:
+ *         description: Internal server error occurred
+ */
+```
+
+Each route would get a tag.
