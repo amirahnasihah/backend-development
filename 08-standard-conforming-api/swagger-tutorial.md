@@ -199,7 +199,7 @@ The Model documentation begins first with defining a components and schemas inde
 ## Writing OpenAPI Route documentation
 
 > The documentation of a Route begins with the route declared for example “/api/books”, any methods belonging to the route can be declared in one indentation level in with the method specifiers "get", "post", "put", "patch", "delete" etc.
-> Route documentation: 
+> Route documentation: https://spec.openapis.org/oas/v3.1.0#schemaObject
 
 - Each route would have a tags.
 - go to "/routers/book.router.js" and put Swagger Route documentation.
