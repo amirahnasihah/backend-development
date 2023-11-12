@@ -214,7 +214,7 @@ The Model documentation begins first with defining a components and schemas inde
 
 - next lets document our by `id` route.
 - first, declare the route `"/api/books/{id}"`. `{id}` this declared any param in this format (curly bracket).
-- 
+- for "patch" route, 
 
 ```javascript
 // book.router.js //
