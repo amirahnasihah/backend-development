@@ -216,6 +216,8 @@ The Model documentation begins first with defining a components and schemas inde
 - first, declare the route `"/api/books/{id}"`. `{id}` this declared any param in this format (curly bracket).
 - for "patch" route, 
 
+- next is for "delete" route, is similar to patch but without requestBody
+
 ```javascript
 // book.router.js //
 
@@ -274,6 +276,23 @@ The Model documentation begins first with defining a components and schemas inde
  *         application/json
  *           schema:
  *             $ref: "#/components/schemas/UpdateBookDto"
+ *     responses:
+ *       202:
+ *         description: Successfully updated the book
+ *         content:
+ *           application/json
+ *             schema:
+ *               $ref: "#/components/schemas/BookDto"
+ *   delete:
+ *     tags:
+ *       - Books
+ *     summary: delete book by id
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
  *     responses:
  *       202:
  *         description: Successfully updated the book
