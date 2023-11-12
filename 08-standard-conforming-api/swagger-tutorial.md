@@ -201,11 +201,15 @@ The Model documentation begins first with defining a components and schemas inde
 > The documentation of a Route begins with the route declared for example “/api/books”, any methods belonging to the route can be declared in one indentation level in with the method specifiers "get", "post", "put", "patch", "delete" etc.
 > Route documentation: 
 
-- Each route would get a tag.
+- Each route would have a tags.
 - go to "/routers/book.router.js" and put Swagger Route documentation.
+
+- lets start with "get"
 - `$ref:` we are referencing something. `#` hash means the "root". so, from the root, we need to go into components. `$ref: "#/components"`
 - remember, we declared our schemas in the components block then in schemas and then BookDto. (and we do not need hyphen) `$ref: "#/components/schemas/BookDto"` referring in book.model.js
-- 
+
+- next is "post".
+- inside the schema, can just directly reference the BookDto since we dont create an array as its not an array. `$ref: "#/components/schemas/BookDto"` 
 
 
 ```javascript
@@ -231,6 +235,17 @@ The Model documentation begins first with defining a components and schemas inde
  *                 $ref: "#/components/schemas/BookDto"
  *       500:
  *         description: Internal server error occurred
+ *   post:
+ *     tags:
+ *       - Books
+ *     summary: Create a new book
+ *     responses:
+ *       201:
+ *         description: Accepted, created new book
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: "#/components/schemas/BookDto"
  */
  
  // ...
