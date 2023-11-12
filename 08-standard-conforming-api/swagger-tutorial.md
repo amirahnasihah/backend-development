@@ -210,7 +210,11 @@ The Model documentation begins first with defining a components and schemas inde
 
 - next is "post".
 - inside the schema, can just directly reference the BookDto since we dont create an array as its not an array. `$ref: "#/components/schemas/BookDto"` 
+- but, in POST we required to have request body (`requestBody:`). so, add "request" above the responses. add `required` as true since this is required. inside schema put `$ref: "#/components/schemas/CreateBookDto"`
 
+- next lets document our by `id` route.
+- first, declare the route `"/api/books/{id}"`. `{id}` this declared any param in this format (curly bracket).
+- 
 
 ```javascript
 // book.router.js //
@@ -239,6 +243,12 @@ The Model documentation begins first with defining a components and schemas inde
  *     tags:
  *       - Books
  *     summary: Create a new book
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json
+ *           schema:
+ *             $ref: "#/components/schemas/CreateBookDto"
  *     responses:
  *       201:
  *         description: Accepted, created new book
@@ -246,6 +256,9 @@ The Model documentation begins first with defining a components and schemas inde
  *           application/json:
  *             schema:
  *               $ref: "#/components/schemas/BookDto"
+ * 
+ * /api/books/{id}:
+ *   patch:
  */
  
  // ...
