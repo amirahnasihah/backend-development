@@ -80,8 +80,9 @@ router.use("/docs", swaggerUi.setup(swaggerSpecification));
 
 > Models follow a similar documentation style to how we documented our API Paths.
 
-- Each documentation comment must start with `/**` and end with `*/` the **first line of the comment must have the `@openapi` tag**.
-- The Model documentation begins first with defining a components and schemas indentation block. Inside of these we can start defining our models. Each of the properties of the model can be declared in the properties block and all the mandatory properties can be declared in the required block.
+Each documentation comment must start with `/**` and end with `*/` the **first line of the comment must have the `@openapi` tag**.
+
+The Model documentation begins first with defining a components and schemas indentation block. Inside of these we can start defining our models. Each of the properties of the model can be declared in the properties block and all the mandatory properties can be declared in the required block.
 
 ```javascript
 /**
@@ -109,10 +110,10 @@ router.use("/docs", swaggerUi.setup(swaggerSpecification));
  */
 ```
 
-Go to "book.model.js" and put Swagger documentation.
+- Go to "/models/book.model.js" and put Swagger Model documentation.
 
 > need to have consistent indentation either using tab of 2-spaces or a space,
-> DTO = Data Transfer Object
+> DTO is Data Transfer Object
 
 ```javascript
 // book.model.js //
@@ -138,14 +139,14 @@ Go to "book.model.js" and put Swagger documentation.
  // ...
 ```
 
-after done `CreateBookDto`, go to localhost to preview it.
-
-next, `UpdateBookDto` is similar but will have no mandatory fields (required block contain nothing).
-
-next, `BookDto` and thats just the response.
+- after done `CreateBookDto`, go to localhost to preview it.
+- next, `UpdateBookDto` is similar but will have no mandatory fields (required block contain nothing).
+- next, `BookDto` and thats just the response.
 
 ```javascript
 // book.model.js //
+
+// /** ...
 
 /**
  * @openapi
@@ -197,9 +198,21 @@ next, `BookDto` and thats just the response.
 
 ## Writing OpenAPI Route documentation
 
-> The documentation of a Route begins with the route declared for example “/api/books”, any methods belonging to the route can be declared in one indentation level in with the method specifiers get, post, put, patch, delete etc.
+> The documentation of a Route begins with the route declared for example “/api/books”, any methods belonging to the route can be declared in one indentation level in with the method specifiers "get", "post", "put", "patch", "delete" etc.
+> Route documentation: 
+
+- Each route would get a tag.
+- go to "/routers/book.router.js" and put Swagger Route documentation.
+- `$ref:` we are referencing something. `#` hash means the "root". so, from the root, we need to go into components. `$ref: "#/components"`
+- remember, we declared our schemas in the components block then in schemas and then BookDto. (and we do not need hyphen) `$ref: "#/components/schemas/BookDto"` referring in book.model.js
+- 
+
 
 ```javascript
+// book.router.js //
+
+// ...
+
 /**
  * @openapi
  * "/api/books/":
@@ -210,9 +223,16 @@ next, `BookDto` and thats just the response.
  *     responses:
  *       200:
  *         description: Success, returns an array of all the books
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: "#/components/schemas/BookDto"
  *       500:
  *         description: Internal server error occurred
  */
+ 
+ // ...
 ```
 
-Each route would get a tag.
