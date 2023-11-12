@@ -14,7 +14,7 @@ Multiple-choice options (select one):
 A.
 v1.0.1.0
 
-B.
+B.✅
 v15.34.3
 
 C.
@@ -27,7 +27,7 @@ v1.0.0-beta
 
 Multiple-choice options (select one):
 
-A.
+A.✅
 Minor Version
 
 B.
@@ -49,5 +49,5 @@ v1.1.9
 C.
 v2.0.0
 
-D.
+D.✅
 v1.0.10

@@ -1,3 +1,11 @@
+- [Standard Conforming APIs (Tutorial)](#standard-conforming-apis-tutorial)
+  - [Semantic Versioning](#semantic-versioning)
+  - [The Open API Specification](#the-open-api-specification)
+  - [Setting the Swagger Config](#setting-the-swagger-config)
+  - [Bind Swagger to Router](#bind-swagger-to-router)
+  - [Writing OpenAPI Model documentation](#writing-openapi-model-documentation)
+  - [Writing OpenAPI Route documentation](#writing-openapi-route-documentation)
+
 # Standard Conforming APIs (Tutorial)
 
 > OpenAPI: https://www.openapis.org/
