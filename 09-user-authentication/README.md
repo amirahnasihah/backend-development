@@ -73,3 +73,5 @@ When the user logs in we need to give a token to the user which uniquely identif
 - The access control middleware shall set the variable “req.user” to the user which has been authenticated.
 
 ![ACCESS-CONTROL MIDDLEWARE](07-flow-login.jpeg)
+
+fin.
