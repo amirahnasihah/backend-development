@@ -10,7 +10,7 @@
 
 ## SEMANTIC VERSIONING
 
-> todo: firebase, auth
+> todo: firebase, auth, sequelize
 
 - Semantic Versioning, more popularly known as SemVer is an industry standard for versioning your software as it is being developed.
 - SemVer follows the following standard:
