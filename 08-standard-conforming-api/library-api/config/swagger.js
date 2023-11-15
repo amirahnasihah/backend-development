@@ -8,10 +8,12 @@ const swaggerOptions = {
     openapi: "3.0.0",
     info: {
       title: name,
-      version: "0.1.0",
+      version: version,
     },
   },
   apis: ["./src/routers/*.js", "./src/models/*.js"],
 };
 
-const swaggerSpecifications = swaggerJsdoc(swaggerOptions);
+const swaggerSpecification = swaggerJsdoc(swaggerOptions);
+
+module.exports = {swaggerSpecification};
