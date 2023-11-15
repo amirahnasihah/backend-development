@@ -1,6 +1,7 @@
 // swagger config
 
-const {name, version) = require("../package.json")
+const {name, version) = require("../package.json");
+const swaggerJsdoc = require("swagger-jsdoc");
 
 const swaggerOptions = {
   definition: {
@@ -12,3 +13,4 @@ const swaggerOptions = {
   },
   apis: ["./src/routers/*.ts", "./src/models/*.ts"],
 };
+
