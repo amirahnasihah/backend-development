@@ -1,4 +1,6 @@
-// swagger cinfig
+// swagger config
+
+const {name, version) = require("../package.json")
 
 const swaggerOptions = {
   definition: {
