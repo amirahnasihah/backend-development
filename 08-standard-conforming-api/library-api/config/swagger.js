@@ -1,5 +1,5 @@
 // swagger config
-const {name, version) = require("../package.json");
+const { name, version } = require("../package.json");
 const swaggerJsdoc = require("swagger-jsdoc");
 
 const swaggerOptions = {
@@ -15,4 +15,4 @@ const swaggerOptions = {
 
 const swaggerSpecification = swaggerJsdoc(swaggerOptions);
 
-module.exports = {swaggerSpecification};
+module.exports = { swaggerSpecification };
