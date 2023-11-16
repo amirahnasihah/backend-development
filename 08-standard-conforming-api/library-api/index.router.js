@@ -10,3 +10,5 @@ const { swaggerSpecification } = require("./config/swagger.config");
 // ... router.use("/api", bookController)
 router.use("/docs", swaggerUi.serve);
 router.use("/docs", swaggerUi.setup(swaggerSpecification));
+
+module.exports = router;
