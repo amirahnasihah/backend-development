@@ -3,9 +3,10 @@ const { Router } = require('express');
 const router = Router();
 
 // swagger js config require
-const swaggerUi = require("swa")
+const swaggerUi = require("swagger-ui-express")
 const { swaggerSpecification } = require("./config/swagger.config");
 
 
-// ... router.use("/api", )
-router.use("/docs", )
+// ... router.use("/api", bookController)
+router.use("/docs", swaggerUi.serve);
+router
