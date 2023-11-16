@@ -9,4 +9,4 @@ const { swaggerSpecification } = require("./config/swagger.config");
 
 // ... router.use("/api", bookController)
 router.use("/docs", swaggerUi.serve);
-router
+router.use("/docs", swaggerUi.setup(swaggerSpecification));
