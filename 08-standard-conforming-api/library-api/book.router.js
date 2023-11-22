@@ -1,3 +1,8 @@
+const {Router} = require('express');
+
+const router = Router();
+
+
 /**
  * @openapi
  * "/api/books/":
