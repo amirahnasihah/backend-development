@@ -2,7 +2,7 @@ const {Router} = require('express');
 
 const router = Router();
 
-router.use("/books")
+router.use("/books");
 
 /**
  * @openapi
