@@ -1,8 +1,10 @@
-const {Router} = require('express');
+const { Router } = require("express");
+const { fetchBooks } = require("../controllers/book.controller");
 
 const router = Router();
 
-router.use("/books");
+// router.route("/").get(</controllers>)
+router.route("/").get(fetchBooks);
 
 /**
  * @openapi
@@ -39,7 +41,7 @@ router.use("/books");
  *           application/json:
  *             schema:
  *               $ref: "#/components/schemas/BookDto"
- * 
+ *
  * /api/books/{id}:
  *   patch:
  *     tags:
@@ -82,3 +84,5 @@ router.use("/books");
  *             schema:
  *               $ref: "#/components/schemas/BookDto"
  */
+
+module.exports = router;

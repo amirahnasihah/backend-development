@@ -31,7 +31,8 @@ const bookModel = (db) => {
  *          type: string
  *          default: An amazing book
  *        author:
- *
+ *          type: string
+ *          default:
  */
 
 module.exports = { bookModel };
