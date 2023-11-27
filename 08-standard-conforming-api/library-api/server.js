@@ -9,7 +9,7 @@ app.use(express.json());
 app.use("/api", routers);
 
 // Basic route for the root URL "/"
-app.route("/").get(async (req, res, next) => {
+app.route("/").get( (req, res, next) => {
   res.json({ msg: "OK" });
 });
 
