@@ -1,6 +1,7 @@
 // routers/index.js
 const { Router } = require("express");
-// 1️⃣ Bind Swagger to Router - swagger require config
+
+// 1️⃣ Bind Swagger to Route,  swagger require config
 const swaggerUi = require("swagger-ui-express");
 const { swaggerSpecification } = require("../config/swagger.config");
 
