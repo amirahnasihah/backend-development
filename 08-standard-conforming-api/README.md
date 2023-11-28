@@ -127,5 +127,3 @@ Models follow a similar documentation style to how we documented our API Paths.
  *         - updatedAt
  */
 ```
-
-fin.
