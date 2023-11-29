@@ -10,7 +10,7 @@
 
 ## SEMANTIC VERSIONING
 
-> todo: sequelize, open api
+> todo: sequelize, open api spec
 
 - Semantic Versioning, more popularly known as SemVer is an industry standard for versioning your software as it is being developed.
 - SemVer follows the following standard:
