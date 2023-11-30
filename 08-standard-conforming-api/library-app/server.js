@@ -7,10 +7,10 @@ const port = 3000 || PORT;
 const app = express();
 
 app.use(express.json());
+app.use(errorHandler);
 
 // all routers (bookRouter)
 app.use("/api", router);
-app.use(errorHandler);
 
 console.log(MODE);
 app.listen(port, () => {
