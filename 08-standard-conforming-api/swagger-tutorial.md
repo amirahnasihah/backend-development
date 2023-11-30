@@ -159,49 +159,49 @@ The Model documentation begins first with defining a components and schemas inde
 /**
  * @openapi
  * components:
- *   schemas:
- *     CreateBookDto:
- *       type: object
- *       properties:
- *         title:
- *           type: string
- *           default: An amazing book
- *         author:
- *           type: string
- *           default: Jane Doe
- *       required:
- *         - title
- *         - author
- *     UpdateBookDto:
- *       type: object
- *       properties:
- *         title:
- *           type: string
- *           default: An amazing book
- *         author:
- *           type: string
- *           default: Jane Doe
- *       required:
- *     BookDto:
- *       type: object
- *       properties:
- *         id:
- *           type: string
- *         title:
- *           type: string
- *           default: An amazing book
- *         author:
- *           type: string
- *           default: Jane Doe
- *         createdAt:
- *           type: string
- *           format: date
- *         updatedAt:
- *           type: string
- *           format: date
+ *  schemas:
+ *    CreateBookDto:
+ *      type: object
+ *      properties:
+ *        title:
+ *          type: string
+ *          default: An amazing book
+ *        author:
+ *          type: string
+ *          default: Jane Doe
+ *      required:
+ *        - title
+ *        - author
+ *    UpdateBookDto:
+ *      type: object
+ *      properties:
+ *        title:
+ *          type: string
+ *          default: An amazing book
+ *        author:
+ *          type: string
+ *          default: Jane Doe
+ *      required:
+ *    BookDto:
+ *      type: object
+ *      properties:
+ *        id:
+ *          type: string
+ *        title:
+ *          type: string
+ *          default: An amazing book
+ *        author:
+ *          type: string
+ *          default: Jane Doe
+ *        createdAt:
+ *          type: string
+ *          format: date
+ *        updateAt:
+ *          type: string
+ *          format: date
  */
- 
- // ...
+
+// ...
 ```
 
 ## Writing OpenAPI Route documentation
@@ -234,82 +234,81 @@ The Model documentation begins first with defining a components and schemas inde
 /**
  * @openapi
  * "/api/books/":
- *   get:
- *     tags:
- *       - Books
- *     summary: Get all the books
- *     responses:
- *       200:
- *         description: Success, returns an array of all the books
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 $ref: "#/components/schemas/BookDto"
- *       500:
- *         description: Internal server error occurred
- *   post:
- *     tags:
- *       - Books
- *     summary: Create a new book
- *     requestBody:
- *       required: true
- *       content:
- *         application/json
- *           schema:
- *             $ref: "#/components/schemas/CreateBookDto"
- *     responses:
- *       201:
- *         description: Accepted, created new book
- *         content:
- *           application/json:
- *             schema:
- *               $ref: "#/components/schemas/BookDto"
- * 
+ *  get:
+ *    tags:
+ *      - Books
+ *    summary: Get all the books
+ *    responses:
+ *      200:
+ *        description: Success, return an array of all the books
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                $ref: "#/components/schemas/BookDto"
+ *      500:
+ *        description: Internal server error occurred
+ *  post:
+ *    tags:
+ *      - Books
+ *    summary: Create a new book
+ *    requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: "#/components/schemas/CreateBookDto"
+ *    responses:
+ *      201:
+ *        description: Accepted, created a new book
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: "#/components/schemas/BookDto"
+ *
  * /api/books/{id}:
- *   patch:
- *     tags:
- *       - Books
- *     summary: update book by id
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *     requestBody:
- *       required: true
- *       content:
- *         application/json
- *           schema:
- *             $ref: "#/components/schemas/UpdateBookDto"
- *     responses:
- *       202:
- *         description: Successfully updated the book
- *         content:
- *           application/json
- *             schema:
- *               $ref: "#/components/schemas/BookDto"
- *   delete:
- *     tags:
- *       - Books
- *     summary: delete book by id
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *     responses:
- *       202:
- *         description: Successfully updated the book
- *         content:
- *           application/json
- *             schema:
- *               $ref: "#/components/schemas/BookDto"
+ *  patch:
+ *    tags:
+ *      - Books
+ *    summary: Update book by id
+ *    parameters:
+ *      - in: path
+ *        name: id
+ *        required: true
+ *        schema:
+ *          type: string
+ *    requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: "#/components/schemas/UpdateBookDto"
+ *    responses:
+ *      202:
+ *        descritpion: Successfully updated the book
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: "#/components/schemas/BookDto"
+ *  delete:
+ *    tags:
+ *      - Books
+ *    summary: delete book by id
+ *    parameters:
+ *      - in: path
+ *        name: id
+ *        required: true
+ *        schema:
+ *          type: string
+ *    responses:
+ *      201:
+ *        descritpion: Successfully deleted the book
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: "#/components/schemas/BookDto"
  */
- 
- // ...
-```
 
+// ...
+```

@@ -20,4 +20,50 @@ const bookModel = (db) => {
   });
 };
 
+// OPEN API MODEL SPEC
+/**
+ * @openapi
+ * components:
+ *  schemas:
+ *    CreateBookDto:
+ *      type: object
+ *      properties:
+ *        title:
+ *          type: string
+ *          default: An amazing book
+ *        author:
+ *          type: string
+ *          default: Jane Doe
+ *      required:
+ *        - title
+ *        - author
+ *    UpdateBookDto:
+ *      type: object
+ *      properties:
+ *        title:
+ *          type: string
+ *          default: An amazing book
+ *        author:
+ *          type: string
+ *          default: Jane Doe
+ *      required:
+ *    BookDto:
+ *      type: object
+ *      properties:
+ *        id:
+ *          type: string
+ *        title:
+ *          type: string
+ *          default: An amazing book
+ *        author:
+ *          type: string
+ *          default: Jane Doe
+ *        createdAt:
+ *          type: string
+ *          format: date
+ *        updateAt:
+ *          type: string
+ *          format: date
+ */
+
 module.exports = { bookModel };
