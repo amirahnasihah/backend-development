@@ -10,7 +10,7 @@
 
 ## SEMANTIC VERSIONING
 
-> todo: sequelize, api, react redux
+> todo: sequelize, react redux
 
 - Semantic Versioning, more popularly known as SemVer is an industry standard for versioning your software as it is being developed.
 - SemVer follows the following standard:
