@@ -230,7 +230,6 @@ The Model documentation begins first with defining a components and schemas inde
 // book.router.js //
 
 // ...
-
 /**
  * @openapi
  * "/api/books/":
