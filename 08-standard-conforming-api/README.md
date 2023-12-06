@@ -10,7 +10,7 @@
 
 ## SEMANTIC VERSIONING
 
-> todo: sequelize, jwt token auth, react redux, next, context api
+> todo: sequelize, jwt token auth, react redux, context api
 
 - Semantic Versioning, more popularly known as SemVer is an industry standard for versioning your software as it is being developed.
 - SemVer follows the following standard:
