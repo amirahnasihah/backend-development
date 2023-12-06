@@ -18,8 +18,11 @@
 **MAJOR.MINOR.PATCH**
 
 - The Major version is for any non-backwards compatible API changes, minor is for backwards compatible feature releases and patch is for bugfixes or patches being made to existing backwards compatible feature implementations.
+
 - Major Version 0 is used for development and is not considered stable, thus alpha and beta software’s version must be v0.x.x
+
 - All the version numbers get incremented numerically, for example after v2.9.0 we have v2.10.0 and not v3.0.0
+
 - Semantically versioned software must have well documented API.
 
 ## THE OPEN API SPECIFICATION
