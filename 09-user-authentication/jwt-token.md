@@ -1,4 +1,4 @@
-# jwt token
+# jwt
 
 1. **Authentication**: the process of verifying someone of who they are claiming to be, for example, someone saying that they are “john@doe.com” and want to access the application.
 
