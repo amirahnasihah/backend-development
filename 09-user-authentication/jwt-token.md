@@ -1,11 +1,11 @@
 # JWT tutorial
 
 > JSON Web Tokens: https://jwt.io/
+> Get started: https://jwt.io/introduction
 
 JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
 
 JWT.IO allows you to decode, verify and generate JWT.
-
 
 ## Authentication and Authorization
 
