@@ -13,17 +13,13 @@
 
 Multiple-choice options (select one):
 
-A.
-Authentication
+A. Authentication
 
-B.
-Login
+B. Login
 
-C.
-Sign In
+C. Sign In
 
-D.
-Authorization
+D. Authorization
 
 ## 2. Why should passwords not be stored in plain text?
 
