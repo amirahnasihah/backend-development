@@ -49,17 +49,13 @@ D. Both (a) and (b)
 
 Multiple-choice options (select one):
 
-A.
-Hashes when produced with the same input produce the same result so it leaves them vulnerable to password-table attacks, salts add a bit of randomness and prevent that.
+A. Hashes when produced with the same input produce the same result so it leaves them vulnerable to password-table attacks, salts add a bit of randomness and prevent that.
 
-B.
-Salts add an additional layer of encryption to the hashes.
+B. Salts add an additional layer of encryption to the hashes.
 
-C.
-A Salt appends a random string to the raw password before the hash is produced, which is only familiar to the server.
+C. A Salt appends a random string to the raw password before the hash is produced, which is only familiar to the server.
 
-D.
-Both (a) and (c)
+D. Both (a) and (c)
 
 ## 5. Consider this JWT, what is the highlighted part of the token called
 
