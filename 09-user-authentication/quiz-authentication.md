@@ -72,5 +72,4 @@ Signature
 C.
 Hash
 
-D.
-Header
+D. Header
