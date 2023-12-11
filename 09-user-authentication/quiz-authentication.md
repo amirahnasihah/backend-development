@@ -25,33 +25,25 @@ D. Authorization
 
 Multiple-choice options (select one):
 
-A.
-passwords are critical pieces of data and are always prime targets of data breaches
+A. passwords are critical pieces of data and are always prime targets of data breaches
 
-B.
-Many users use the same passwords and email combinations across websites including but not limited to important personal accounts and financial accounts so it is our responsibility as developers to protect that.
+B. Many users use the same passwords and email combinations across websites including but not limited to important personal accounts and financial accounts so it is our responsibility as developers to protect that.
 
-C.
-Passwords shall never be able to be read by anyone because of how important they are
+C. Passwords shall never be able to be read by anyone because of how important they are
 
-D.
-All of the above
+D. All of the above
 
 ## 3. Why do we need to use a hash?
 
 Multiple-choice options (select one):
 
-A.
-Hash is an unbreakable string which can only be decrypted with a secret only known the the server
+A. Hash is an unbreakable string which can only be decrypted with a secret only known the the server
 
-B.
-A hash produces a randomized fixed string which can never be decrypted and can only be compared with
+B. A hash produces a randomized fixed string which can never be decrypted and can only be compared with
 
-C.
-A hash encrypts the buffer of the string
+C. A hash encrypts the buffer of the string
 
-D.
-Both (a) and (b)
+D. Both (a) and (b)
 
 ## 4. Why do we use salt in combination with Hashes?
 
