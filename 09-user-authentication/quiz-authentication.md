@@ -63,13 +63,10 @@ D. Both (a) and (c)
 
 Multiple-choice options (select one):
 
-A.
-Payload
+A. Payload
 
-B.
-Signature
+B. Signature
 
-C.
-Hash
+C. Hash
 
 D. Header
