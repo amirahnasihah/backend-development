@@ -7,6 +7,8 @@
 
 # Authentication Quiz
 
+todo: ecommerce
+
 **Questions:**
 
 ## 1. What is the process of verifying someone is who they are claiming to be called?
