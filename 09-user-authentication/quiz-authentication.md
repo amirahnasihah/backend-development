@@ -7,7 +7,7 @@
 
 # Authentication Quiz
 
-todo: ecommerce (harrddd), sort and filter products, backend to function as API??
+todo: ecommerce (harrddd), sort and filter products, backend to function as API??!??
 
 **Questions:**
 
